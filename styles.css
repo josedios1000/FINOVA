@@ -1,0 +1,491 @@
+/* Estilos base */
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilos para la imagen del logo */
+.logo-img {
+    height: 110px; /* Ajusta el tamaño según sea necesario */
+    width: auto;
+}
+
+/* Estilos para el nombre CASH DROP */
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50; /* Color oscuro y elegante */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.logo-text span {
+    color: #007bff; /* Color azul para "DROP" */
+}
+
+/* Línea de subrayado animada */
+.logo-text::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #007bff, #00bfff);
+    bottom: -10px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease;
+}
+
+.logo-text:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Botones de autenticación (Registro e Iniciar Sesión) */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #007bff;
+    color: #007bff;
+}
+
+.btn-secondary:hover {
+    background: #007bff;
+    color: #ffffff;
+}
+
+/* Sección Introductoria */
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #007bff, #00bfff);
+    color: #ffffff;
+    flex: 1;
+}
+
+.intro-content {
+    max-width: 600px;
+}
+
+.intro-content h2 {
+    font-size: 2.5rem;
+    margin: 0 0 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    margin: 0 0 20px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.intro-buttons {
+    display: flex;
+    gap: 10px;
+    animation: fadeInUp 2s ease-out;
+}
+
+.intro-image img {
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInRight 1.5s ease-out;
+}
+
+/* Sección de Beneficios */
+.benefits {
+    padding: 60px 20px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.benefits h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #007bff;
+}
+
+.benefits-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.benefit-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card i {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.benefit-card h3 {
+    margin: 10px 0;
+    color: #007bff;
+}
+
+.benefit-card p {
+    color: #555;
+}
+
+/* Sección de Testimonios */
+.testimonials {
+    padding: 60px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #007bff;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.testimonial-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.testimonial-card span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Footer */
+footer {
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    color: #555;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header {
+    background: #1e1e1e;
+}
+
+body.dark-mode header h1 {
+    color: #007bff;
+}
+
+body.dark-mode .auth-buttons .btn-secondary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+body.dark-mode .auth-buttons .btn-secondary:hover {
+    background: #007bff;
+    color: #ffffff;
+}
+
+body.dark-mode .intro {
+    background: linear-gradient(to right, #004080, #0066cc);
+}
+
+body.dark-mode .benefits {
+    background: #1e1e1e;
+}
+
+body.dark-mode .benefit-card {
+    background: #2c2c2c;
+    color: #ffffff;
+}
+
+body.dark-mode .benefit-card h3 {
+    color: #007bff;
+}
+
+body.dark-mode .benefit-card p {
+    color: #f0f0f0;
+}
+
+body.dark-mode .testimonials {
+    background: #1e1e1e;
+}
+
+body.dark-mode .testimonial-card {
+    background: #2c2c2c;
+    color: #ffffff;
+}
+
+body.dark-mode .testimonial-card p {
+    color: #f0f0f0;
+}
+
+body.dark-mode footer {
+    background: #1e1e1e;
+}
+
+body.dark-mode footer p {
+    color: #f0f0f0;
+}
+
+/* Estilos para la página de inicio de sesión */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), url('img/Fondo.png') no-repeat center center/cover;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: background 0.3s, box-shadow 0.3s;
+    position: relative; /* Necesario para posicionar el botón de cierre */
+}
+
+/* Estilos para el botón de cierre (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #007bff; /* Cambia el color al pasar el mouse */
+}
+
+.login-box h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.login-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password {
+    font-size: 14px;
+    color: #007bff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.social-login {
+    margin-top: 20px;
+}
+
+.social-login p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.btn-social {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    width: 48%;
+}
+
+.btn-social:hover {
+    background-color: #f4f4f4;
+}
+
+.location, .terms, .location-question {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.terms a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
