@@ -3,90 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASH DROP</title>
+    <title>FINOVA | Revolución en Información Financiera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <!-- Logo -->
-        <div class="logo-container">
-            <img src="img/logo_mejorado.png" alt="Logo CASH DROP" class="logo-img">
-            <h1 class="logo-text">CASH <span>DROP</span></h1>
-        </div>
-        <!-- Botones de Inicio de Sesión y Registro -->
-        <div class="auth-buttons">
-            <a href="registro.html" class="btn btn-secondary">Registro</a>
-            <a href="inicio-sesion.html" class="btn btn-primary">Iniciar Sesión</a>
+    <!-- Barra de Mercado en Tiempo Real -->
+    <div class="market-ticker">
+        <div class="ticker-container" id="ticker-container"></div>
+    </div>
+
+    <!-- Header con Búsqueda Inteligente -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <h1 class="logo">FINOVA</h1>
+                <p class="slogan">Inteligencia financiera en tiempo real</p>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Buscar acciones, criptos, noticias...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-suggestions" id="search-suggestions"></div>
+            </div>
+            
+            <div class="user-actions">
+                <button class="btn-alerts"><i class="fas fa-bell"></i> Alertas</button>
+                <button class="btn-login">Acceder</button>
+                <button class="btn-premium">Premium</button>
+            </div>
         </div>
     </header>
 
-    <main>
-        <!-- Sección Introductoria -->
-        <section class="intro">
-            <div class="intro-content">
-                <h2>Transforma tu vida financiera</h2>
-                <p>
-                    En un mundo donde el 70% de las personas luchan por alcanzar la libertad financiera, 
-                    nuestra plataforma te ofrece las herramientas, el conocimiento y la comunidad 
-                    necesarios para tomar el control de tu dinero. 
-                    <strong>¡Es hora de vivir sin preocupaciones económicas!</strong>
-                </p>
-            <div class="intro-image">
-            </div>
-        </section>
+    <!-- Navegación por Sectores -->
+    <nav class="sector-nav">
+        <ul class="sector-list" id="sector-list">
+            <!-- Dinámico desde JS -->
+        </ul>
+    </nav>
 
-        <!-- Sección de Beneficios -->
-        <section class="benefits">
-            <h2>¿Por qué elegirnos?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Herramientas Potentes</h3>
-                    <p>Accede a calculadoras, presupuestos y asesores virtuales para gestionar tus finanzas.</p>
+    <!-- Contenido Principal -->
+    <main class="content-container">
+        <!-- Sección Hero con Noticia Destacada -->
+        <section class="hero-section">
+            <div class="hero-tag">DESTACADO DEL DÍA</div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="news-category" id="hero-category">MERCADOS</span>
+                    <h2 id="hero-title">La Fed anuncia nueva política monetaria: impacto global</h2>
+                    <p id="hero-excerpt">Analizamos cómo afectará a las economías emergentes y tus inversiones personales.</p>
+                    <div class="hero-meta">
+                        <span id="hero-time"><i class="far fa-clock"></i> Hace 2 horas</span>
+                        <span id="hero-author"><i class="far fa-user"></i> María Rodríguez</span>
+                    </div>
+                    <button class="btn-read-more">Leer Análisis Completo</button>
                 </div>
-                <div class="benefit-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Comunidad Activa</h3>
-                    <p>Conéctate con otros usuarios y expertos en finanzas para compartir conocimientos.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Educación de Calidad</h3>
-                    <p>Aprende con recursos actualizados y tutoriales paso a paso.</p>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mercados financieros" id="hero-img">
                 </div>
             </div>
         </section>
 
-        <!-- Sección de Testimonios -->
-        <section class="testimonials">
-            <h2>Primeras impresiones de nuestros usuarios</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <img src="img/.jpg" alt="Usuario 1">
-                    <p>"Gracias a esta plataforma, he logrado ahorrar un 30% de mis ingresos."</p>
-                    <span>- María González</span>
+        <!-- Widget de Mercados -->
+        <section class="market-widget">
+            <h3 class="section-title"><i class="fas fa-chart-line"></i> Mercados en Tiempo Real</h3>
+            <div class="market-grid" id="market-grid">
+                <!-- Dinámico desde JS -->
+            </div>
+        </section>
+
+        <!-- Noticias Recientes -->
+        <section class="news-section">
+            <div class="section-header">
+                <h3 class="section-title"><i class="far fa-newspaper"></i> Últimas Noticias</h3>
+                <div class="news-filter">
+                    <select id="news-filter">
+                        <option value="all">Todas las categorías</option>
+                        <option value="markets">Mercados</option>
+                        <option value="crypto">Criptomonedas</option>
+                        <option value="economy">Economía</option>
+                        <option value="stocks">Acciones</option>
+                    </select>
                 </div>
-                <div class="testimonial-card">
-                    <img src="img/user2.jpg" alt="Usuario 2">
-                    <p>"Las herramientas son fáciles de usar y muy efectivas."</p>
-                    <span>- Juan Pérez</span>
+            </div>
+            
+            <div class="news-grid" id="news-grid">
+                <!-- Dinámico desde JS -->
+            </div>
+            
+            <div class="news-pagination">
+                <button class="btn-prev"><i class="fas fa-chevron-left"></i> Anteriores</button>
+                <span class="page-indicator">Página <span id="current-page">1</span></span>
+                <button class="btn-next">Siguientes <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Análisis Exclusivos -->
+        <section class="analysis-section">
+            <h3 class="section-title"><i class="fas fa-chart-pie"></i> Análisis FINOVA</h3>
+            <div class="analysis-cards" id="analysis-cards">
+                <!-- Dinámico desde JS -->
+            </div>
+        </section>
+
+        <!-- Newsletter Inteligente -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Recibe inteligencia financiera directamente</h3>
+                    <p>Resumen diario, alertas de mercado y análisis exclusivos</p>
                 </div>
-                <div class="testimonial-card">
-                    <img src="img/user3.jpg" alt="Usuario 3">
-                    <p>"La comunidad es increíble, siempre encuentro respuestas a mis preguntas."</p>
-                    <span>- Ana López</span>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="tu@email.com">
+                    <button class="btn-subscribe">Suscribirse <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <span class="logo-text">CASH <span>DROP</span></span>.
-        <p>&copy;2025  Todos los derechos reservados.</p>
+    <!-- Footer Completo -->
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4 class="footer-logo">FINOVA</h4>
+                <p class="footer-description">Plataforma líder en información financiera y análisis de mercados.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h5 class="footer-title">Mercados</h5>
+                <ul>
+                    <li><a href="#">Acciones</a></li>
+                    <li><a href="#">Bonos</a></li>
+                    <li><a href="#">Divisas</a></li>
+                    <li><a href="#">Materias Primas</a></li>
+                    <li><a href="#">Criptomonedas</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h5 class="footer-title">Herramientas</h5>
+                <ul>
+                    <li><a href="#">Calculadoras</a></li>
+                    <li><a href="#">Gráficos</a></li>
+                    <li><a href="#">Calendario Económico</a></li>
+                    <li><a href="#">Screener</a></li>
+                    <li><a href="#">Portafolio</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h5 class="footer-title">Empresa</h5>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Equipo</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Trabaja con Nosotros</a></li>
+                    <li><a href="#">Transparencia</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="#">Términos de Uso</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Cookies</a>
+                <a href="#">Descargo de Responsabilidad</a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025 FINOVA. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="main.js"></script>
+    <script src="marketData.js"></script>
+    <script src="nwesdata.js"></script>
 </body>
 </html>
