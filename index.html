@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-es="Finova - Educación Financiera para Todos" data-en="Finova - Financial Education for Everyone">Finova - Educación Financiera para Todos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    <!-- Pantalla de carga -->
+    <div id="pantalla-carga">
+        <div class="fondo"></div>
+        <div class="fondo fondo2"></div>
+        <div class="fondo fondo3"></div>
+        <div class="contenedor-logo">
+            <img src="Finova.webp" alt="Logo de Finova" class="logo">
+        </div>
+    </div>
+
+    <!-- Video de fondo -->
+    <div class="video-fondo">
+        <video autoplay muted loop id="video-background">
+            <source src="dubai.mp4" type="video/mp4">
+            <span data-es="Tu navegador no soporta videos HTML5." data-en="Your browser does not support HTML5 video.">Tu navegador no soporta videos HTML5.</span>
+        </video>
+    </div>
+
+    <header>
+        <div class="contenedor-header">
+            <button id="cambiar-idioma" class="boton-header boton-idioma" data-current-lang="es">ES / EN</button>
+    
+            <nav class="menu-header menu-izquierda">
+                <a href="biblioteca/biblioteca.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Biblioteca" data-en="Library">Biblioteca</span>
+                        <span class="text replacement" data-es="Biblioteca" data-en="Library">Biblioteca</span>
+                    </span>                    
+                </a>
+                <a href="sobre-nosotros.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Expertos" data-en="Experts">Expertos</span>
+                        <span class="text replacement" data-es="Expertos" data-en="Experts">Expertos</span>
+                    </span>
+                </a>
+                <a href="servicios.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Cursos" data-en="Courses">Cursos</span>
+                        <span class="text replacement" data-es="Cursos" data-en="Courses">Cursos</span>
+                    </span>
+                </a>
+            </nav>
+    
+            <div class="logo">
+                    <h1 id="logo-text">FINOVA</h1>
+            </div>
+    
+            <nav class="menu-header menu-derecha">
+                <a href="index.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Inicio" data-en="Home">Inicio</span>
+                        <span class="text replacement" data-es="Inicio" data-en="Home">Inicio</span>
+                    </span>
+                </a>
+                <a href="#contacto" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Contacto" data-en="Contact">Contacto</span>
+                        <span class="text replacement" data-es="Contacto" data-en="Contact">Contacto</span>
+                    </span>
+                </a>
+                <a href="faq.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Recursos" data-en="Resources">Recursos</span>
+                        <span class="text replacement" data-es="Recursos" data-en="Resources">Recursos</span>
+                    </span>
+                </a>
+            </nav>
+    
+            <button class="boton-menu" id="boton-menu">
+                <span class="material-symbols-outlined" data-es="menu" data-en="menu">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Barra lateral accesible -->
+        <aside class="barra-lateral" id="barra-lateral" aria-labelledby="boton-menu">
+            <div class="contenido-desplazable">
+                <ul class="enlaces-barra">
+                    <li>
+                        <h4><span data-es="Menú Principal" data-en="Main Menu">Menú Principal</span></h4>
+                        <div class="separador-menu"></div>
+                    </li>
+                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">home</span><span data-es="Inicio" data-en="Home">Inicio</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">download</span><span data-es="Descargas" data-en="Downloads">Descargas</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">notifications</span><span data-es="Notificaciones" data-en="Notifications">Notificaciones</span></a></li>
+                    
+                    <li>
+                        <h4><span data-es="Recursos Destacados" data-en="Featured Resources">Recursos Destacados</span></h4>
+                        <div class="separador-menu"></div>
+                    </li>
+                    <li><a href="biblioteca/biblioteca.html"><span class="material-symbols-outlined" aria-hidden="true">library_books</span><span data-es="Biblioteca" data-en="Library">Biblioteca</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">calculate</span><span data-es="Calculadoras" data-en="Calculators">Calculadoras</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">forum</span><span data-es="Comunidad" data-en="Community">Comunidad</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">groups</span><span data-es="Asesores" data-en="advisors">Asesores</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">description</span><span data-es="Reportes" data-en="Reports">Reportes</span></a></li>
+                    
+                    <li>
+                        <h4><span data-es="Cuenta" data-en="Account">Cuenta</span></h4>
+                        <div class="separador-menu"></div>
+                    </li>
+                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">person</span><span data-es="Perfil" data-en="Profile">Perfil</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">settings</span><span data-es="Configuración" data-en="Settings">Configuración</span></a></li>
+                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">logout</span><span data-es="Cerrar Sesión" data-en="Logout">Cerrar Sesión</span></a></li>
+                </ul>
+                
+                <div class="cuenta-usuario">
+                    <div class="perfil-usuario">
+                        <img src="Copia-de-luis.webp" alt="Foto de perfil del usuario" width="42" height="42" loading="lazy">
+                        <div class="detalles-usuario">
+                            <h3>Usuario Finova</h3>
+                            <span data-es="Miembro Premium" data-en="Premium Member">Miembro Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    <!-- Contenido principal -->
+    <main id="contenido-principal" class="seccion-principal">
+        <section class="inicio seccion-revelada" id="inicio">
+            <div class="contenido-inicio">
+                <h1 data-es="Domina tus finanzas con Finova" data-en="Master your finances with Finova">Domina tus finanzas con Finova</h1>
+                <h3 class="texto-animado">
+                    <span class="texto-estatico" data-es="Aprende sobre" data-en="Learn about">Aprende sobre</span> 
+                    <span class="texto-dinamico"></span>
+                  </h3>
+                <p data-es="Finova es tu plataforma integral de educación financiera. Ofrecemos cursos, herramientas y recursos para ayudarte a tomar el control de tu dinero y construir un futuro financiero sólido." data-en="Finova is your comprehensive financial education platform. We offer courses, tools and resources to help you take control of your money and build a solid financial future.">Finova es tu plataforma integral de educación financiera. Ofrecemos cursos, herramientas y recursos para ayudarte a tomar el control de tu dinero y construir un futuro financiero sólido.</p>
+
+                <div class="iconos-sociales">
+                    <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" aria-label="Instagram"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                    <a href="#" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+                </div>
+
+                <div class="grupo-botones">
+                    <a href="inicio sesion/inicio de sesion.html" class="boton" data-es="Empieza Ahora" data-en="Start Now">Empieza Ahora</a>
+                    <a href="#contacto" class="boton" data-es="Contáctanos" data-en="Contact Us">Contáctanos</a>
+                </div>
+            </div>
+            <div class="imagen-inicio">
+                <img src="" alt="">
+            </div>
+        </section>
+
+        <section class="educacion seccion-revelada" id="educacion">
+            <h2 class="titulo-seccion" data-es="Nuestro Programa" data-en="Our Program">Nuestro Programa</h2>
+            <div class="linea-tiempo">
+                <div class="item-linea-tiempo">
+                    <div class="punto-linea-tiempo"></div>
+                    <div class="fecha-linea-tiempo">Nivel 1</div>
+                    <div class="contenido-linea-tiempo">
+                        <h3 data-es="Fundamentos Financieros" data-en="Financial Fundamentals">Fundamentos Financieros</h3>
+                        <p data-es="Aprende los conceptos básicos de administración del dinero, presupuestos y ahorro." data-en="Learn the basics of money management, budgeting and saving.">Aprende los conceptos básicos de administración del dinero, presupuestos y ahorro.</p>
+                    </div>
+                </div>
+
+                <div class="item-linea-tiempo">
+                    <div class="punto-linea-tiempo"></div>
+                    <div class="fecha-linea-tiempo">Nivel 2</div>
+                    <div class="contenido-linea-tiempo">
+                        <h3 data-es="Deuda y Crédito" data-en="Debt and Credit">Deuda y Crédito</h3>
+                        <p data-es="Domina el manejo inteligente de deudas, créditos y cómo mejorar tu historial crediticio." data-en="Master smart debt management, credit and how to improve your credit history.">Domina el manejo inteligente de deudas, créditos y cómo mejorar tu historial crediticio.</p>
+                    </div>
+                </div>
+
+                <div class="item-linea-tiempo">
+                    <div class="punto-linea-tiempo"></div>
+                    <div class="fecha-linea-tiempo">Nivel 3</div>
+                    <div class="contenido-linea-tiempo">
+                        <h3 data-es="Inversiones Básicas" data-en="Basic Investments">Inversiones Básicas</h3>
+                        <p data-es="Introducción al mundo de las inversiones: acciones, bonos, fondos y más." data-en="Introduction to the world of investments: stocks, bonds, funds and more.">Introducción al mundo de las inversiones: acciones, bonos, fondos y más.</p>
+                    </div>
+                </div>
+
+                <div class="item-linea-tiempo">
+                    <div class="punto-linea-tiempo"></div>
+                    <div class="fecha-linea-tiempo">Nivel 4</div>
+                    <div class="contenido-linea-tiempo">
+                        <h3 data-es="Planificación Financiera" data-en="Financial Planning">Planificación Financiera</h3>
+                        <p data-es="Estrategias avanzadas para planificar tu futuro financiero y alcanzar la libertad económica." data-en="Advanced strategies to plan your financial future and achieve economic freedom.">Estrategias avanzadas para planificar tu futuro financiero y alcanzar la libertad económica.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="servicios seccion-revelada" id="servicios">
+            <h2 class="titulo-seccion" data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</h2>
+            <div class="contenedor-servicios">
+                <div class="caja-servicio">
+                    <div class="info-servicio">
+                        <h4 data-es="Cursos Online" data-en="Online Courses">Cursos Online</h4>
+                        <p data-es="Accede a nuestros cursos interactivos desde cualquier lugar y a tu propio ritmo." data-en="Access our interactive courses from anywhere at your own pace.">Accede a nuestros cursos interactivos desde cualquier lugar y a tu propio ritmo.</p>
+                    </div>
+                </div>
+
+                <div class="caja-servicio">
+                    <div class="info-servicio">
+                        <h4 data-es="Asesoría Personalizada" data-en="Personal Advice">Asesoría Personalizada</h4>
+                        <p data-es="Sesiones individuales con nuestros expertos para crear un plan financiero a tu medida." data-en="Individual sessions with our experts to create a financial plan tailored to you.">Sesiones individuales con nuestros expertos para crear un plan financiero a tu medida.</p>
+                    </div>
+                </div>
+
+                <div class="caja-servicio">
+                    <div class="info-servicio">
+                        <h4 data-es="Herramientas Digitales" data-en="Digital Tools">Herramientas Digitales</h4>
+                        <p data-es="Calculadoras, simuladores y seguimiento de metas para gestionar tus finanzas." data-en="Calculators, simulators and goal tracking to manage your finances.">Calculadoras, simuladores y seguimiento de metas para gestionar tus finanzas.</p>
+                    </div>
+                </div>
+
+                <div class="caja-servicio">
+                    <div class="info-servicio">
+                        <h4 data-es="Comunidad Finova" data-en="Finova Community">Comunidad Finova</h4>
+                        <p data-es="Conéctate con otros miembros, comparte experiencias y resuelve dudas." data-en="Connect with other members, share experiences and solve doubts.">Conéctate con otros miembros, comparte experiencias y resuelve dudas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonios seccion-revelada" id="testimonios">
+            <h2 class="titulo-seccion" data-es="Testimonios" data-en="Testimonials">Testimonios</h2>
+            <div class="contenedor-testimonios">
+                <div class="item-testimonio">
+                    <img src="js.webp" alt="María G.">
+                    <h2>Jose Torrez</h2>
+                    <div class="calificacion">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p data-es="Gracias a Finova logré saldar mis deudas y empezar a invertir. ¡Cambió mi vida!" data-en="Thanks to Finova I was able to pay off my debts and start investing. It changed my life!">"Gracias a Finova logré saldar mis deudas y empezar a invertir. ¡Cambió mi vida!"</p>
+                </div>
+
+                <div class="item-testimonio">
+                    <img src="Copia de luis.webp" alt="Carlos M.">
+                    <h2>Luis Salinas</h2>
+                    <div class="calificacion">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <p data-es="Los cursos son claros y prácticos. En 3 meses mejoré mi situación financiera." data-en="The courses are clear and practical. In 3 months I improved my financial situation.">"Los cursos son claros y prácticos. En 3 meses mejoré mi situación financiera."</p>
+                </div>
+
+                <div class="item-testimonio">
+                    <img src="fy.webp" alt="Ana L.">
+                    <h2>Francisco Herrera</h2>
+                    <div class="calificacion">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p data-es="Por fin entendí cómo invertir mi dinero. Los asesores son excelentes." data-en="I finally understood how to invest my money. The advisors are excellent.">"Por fin entendí cómo invertir mi dinero. Los asesores son excelentes."</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacto seccion-revelada" id="contacto">
+            <h2 class="titulo-seccion" data-es="Contacto" data-en="Contact">Contacto</h2>
+            <form action="#">
+                <div class="grupo-input">
+                    <div class="caja-input">
+                        <input type="text" id="nombre" placeholder="Nombre completo" required 
+                               data-es-ph="Nombre completo" data-en-ph="Full name">
+                        <input type="email" id="email" placeholder="Correo electrónico" required 
+                               data-es-ph="Correo electrónico" data-en-ph="Email">
+                    </div>
+                    <div class="caja-input">
+                        <input type="tel" id="telefono" placeholder="Número de teléfono" 
+                               data-es-ph="Número de teléfono" data-en-ph="Phone number">
+                        <input type="text" id="asunto" placeholder="Asunto" required 
+                               data-es-ph="Asunto" data-en-ph="Subject">
+                    </div>
+                </div>
+                <div class="grupo-input-2">
+                    <textarea id="mensaje" cols="30" rows="8" placeholder="Tu mensaje" required 
+                              data-es-ph="Tu mensaje" data-en-ph="Your message"></textarea>
+                    <input type="submit" class="boton" value="Enviar mensaje" 
+                           data-es-value="Enviar mensaje" data-en-value="Send Message">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Modal de suscripción -->
+    <div id="modal-suscripcion" class="modal-suscripcion">
+        <div class="contenido-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2 data-es="¡No te pierdas nada!" data-en="Don't miss out!">¡No te pierdas nada!</h2>
+            <p data-es="Suscríbete para recibir contenido exclusivo y ofertas especiales." data-en="Subscribe to receive exclusive content and special offers.">Suscríbete para recibir contenido exclusivo y ofertas especiales.</p>
+            <form id="form-suscripcion">
+                <input type="email" id="email-suscripcion" required 
+                    data-es-ph="Tu correo electrónico" data-en-ph="Your email address"
+                    placeholder="Tu correo electrónico">
+                <button type="submit" class="boton" data-es="Suscribirme" data-en="Subscribe">Suscribirme</button>
+            </form>
+            <p class="politica" data-es="Nosotros respetamos tu privacidad. Sin spam." data-en="We respect your privacy. No spam.">Nosotros respetamos tu privacidad. Sin spam.</p>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+        <div class="social">
+            <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+            <a href="#" aria-label="Instagram"><i class='bx bxl-instagram-alt'></i></a>
+            <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+            <a href="#" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+        </div>
+        <p class="copyright">&copy; <span id="ano">2023</span> <span data-es="Finova Educación Financiera. Todos los derechos reservados." data-en="Finova Financial Education. All rights reserved.">Finova Educación Financiera. Todos los derechos reservados.</span></p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-es="Finova - Educación Financiera para Todos" data-en="Finova - Financial Education for Everyone">Finova - Educación Financiera para Todos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Pantalla de carga -->
+    <div id="pantalla-carga" aria-hidden="true">
+        <div class="fondo"></div>
+        <div class="fondo fondo2"></div>
+        <div class="fondo fondo3"></div>
+        <div class="contenedor-logo">
+            <img src="Finova-removebg-preview.webp" alt="Logo de Finova" class="logo" width="200" height="100" loading="eager">
+        </div>
+    </div>
+
+    <!-- Imagen de fondo -->
+    <div class="imagen-fondo" aria-hidden="true">
+        <img src="biblioteca.webp" alt="Fondo decorativo" id="background-image" loading="lazy">
+    </div>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="contenedor-header">
+            <!-- Botón de idioma accesible -->
+            <button id="cambiar-idioma" class="boton-header boton-idioma" aria-label="Cambiar idioma" data-current-lang="es">
+                <span aria-hidden="true">ES / EN</span>
+            </button>
+    
+            <!-- Navegación principal izquierda -->
+            <nav class="menu-header menu-izquierda" aria-label="Navegación principal">
+                <a href="acerca-finanza.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Nuestra Misión" data-en="Our Mission">Nuestra Misión</span>
+                        <span class="text replacement" data-es="Nuestra Misión" data-en="Our Mission">Nuestra Misión</span>
+                    </span>                    
+                </a>
+                <a href="sobre-nosotros.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Expertos" data-en="Experts">Expertos</span>
+                        <span class="text replacement" data-es="Expertos" data-en="Experts">Expertos</span>
+                    </span>
+                </a>
+                <a href="servicios.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Cursos" data-en="Courses">Cursos</span>
+                        <span class="text replacement" data-es="Cursos" data-en="Courses">Cursos</span>
+                    </span>
+                </a>
+            </nav>
+    
+            <!-- Logo con enlace a inicio -->
+            <div class="logo">
+                <a href="index.html" id="logo-link" aria-label="Inicio">
+                    <h1 id="logo-text">FINOVA</h1>
+                </a>
+            </div>
+    
+            <!-- Navegación principal derecha -->
+            <nav class="menu-header menu-derecha" aria-label="Navegación secundaria">
+                <a href=".html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Inicio" data-en="Home">Inicio</span>
+                        <span class="text replacement" data-es="Inicio" data-en="Home">Inicio</span>
+                    </span>
+                </a>
+                <a href="#contacto" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Contacto" data-en="Contact">Contacto</span>
+                        <span class="text replacement" data-es="Contacto" data-en="Contact">Contacto</span>
+                    </span>
+                </a>
+                <a href="faq.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Recursos" data-en="Resources">Recursos</span>
+                        <span class="text replacement" data-es="Recursos" data-en="Resources">Recursos</span>
+                    </span>
+                </a>
+            </nav>
+    
+            <button class="boton-menu" id="boton-menu" aria-label="Menú" aria-expanded="false" aria-controls="barra-lateral">
+                <span class="material-symbols-outlined" data-es="menu" data-en="menu">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Barra lateral accesible -->
+    <aside class="barra-lateral" id="barra-lateral" aria-labelledby="boton-menu">
+        <div class="contenido-desplazable">
+            <ul class="enlaces-barra">
+                <li>
+                    <h4><span data-es="Menú Principal" data-en="Main Menu">Menú Principal</span></h4>
+                    <div class="separador-menu"></div>
+                </li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">home</span><span data-es="Inicio" data-en="Home">Inicio</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">download</span><span data-es="Descargas" data-en="Downloads">Descargas</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">notifications</span><span data-es="Notificaciones" data-en="Notifications">Notificaciones</span></a></li>
+                
+                <li>
+                    <h4><span data-es="Recursos Destacados" data-en="Featured Resources">Recursos Destacados</span></h4>
+                    <div class="separador-menu"></div>
+                </li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">library_books</span><span data-es="Biblioteca" data-en="Library">Biblioteca</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">calculate</span><span data-es="Calculadoras" data-en="Calculators">Calculadoras</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">forum</span><span data-es="Comunidad" data-en="Community">Comunidad</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">groups</span><span data-es="Asesores" data-en="advisors">Asesores</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">description</span><span data-es="Reportes" data-en="Reports">Reportes</span></a></li>
+                
+                <li>
+                    <h4><span data-es="Cuenta" data-en="Account">Cuenta</span></h4>
+                    <div class="separador-menu"></div>
+                </li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">person</span><span data-es="Perfil" data-en="Profile">Perfil</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">settings</span><span data-es="Configuración" data-en="Settings">Configuración</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">logout</span><span data-es="Cerrar Sesión" data-en="Logout">Cerrar Sesión</span></a></li>
+            </ul>
+            
+            <div class="cuenta-usuario">
+                <div class="perfil-usuario">
+                    <img src="Copia-de-luis.webp" alt="Foto de perfil del usuario" width="42" height="42" loading="lazy">
+                    <div class="detalles-usuario">
+                        <h3>Usuario Finova</h3>
+                        <span data-es="Miembro Premium" data-en="Premium Member">Miembro Premium</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <!-- Sección de búsqueda -->
+        <section id="buscador" aria-labelledby="buscar-titulo">
+            <h2 id="buscar-titulo" data-es="Buscar en la Biblioteca" data-en="Search the Library">Buscar en la Biblioteca</h2>
+            <div class="search-box">
+                <input type="text" id="search-input" 
+                data-es-ph="Buscar por título, autor o categoría..." 
+                data-en-ph="Search by title, author or category..."
+                placeholder="Buscar por título, autor o categoría..." 
+                aria-label="Buscar recursos">
+            </div>
+            <div class="filtros" role="group" aria-label="Filtros de búsqueda">
+                <button class="filtro-btn active" data-categoria="todos" aria-pressed="true" data-es="Todos" data-en="All">Todos</button>
+                <button class="filtro-btn" data-categoria="libros" aria-pressed="false" data-es="Libros Físicos" data-en="Physical Books">Libros Físicos</button>
+                <button class="filtro-btn" data-categoria="ebooks" aria-pressed="false" data-es="eBooks" data-en="eBooks">eBooks</button>
+                <button class="filtro-btn" data-categoria="gratis" aria-pressed="false" data-es="Gratuitos" data-en="Free">Gratuitos</button>
+                <button class="filtro-btn" data-categoria="recomendados" aria-pressed="false" data-es="Recomendados" data-en="Recommended">Recomendados</button>
+            </div>
+        </section>
+
+        <!-- Sección de recursos destacados -->
+        <section id="destacados" aria-labelledby="destacados-titulo">
+            <h2 id="destacados-titulo" data-es="Recursos Destacados" data-en="Featured Resources">Recursos Destacados</h2>
+            <div class="recursos-grid" role="list">
+                <!-- Los recursos destacados se cargarán con JavaScript -->
+            </div>
+        </section>
+
+        <!-- Sección de libros de ahorro -->
+        <section class="muestras-categoria" aria-labelledby="ahorro-titulo">
+            <div class="categoria-header">
+                <h2 id="ahorro-titulo" data-es="Libros de Ahorro" data-en="Savings Books">Libros de Ahorro</h2>
+                <a href="#" class="ver-mas" data-categoria="ahorro" data-es="Ver más" data-en="See more">Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="recursos-grid" role="list">
+                <article class="recurso-card" role="listitem">
+                    <div class="recurso-img">
+                        <span class="recurso-badge" data-badge="recomendado" data-es="Recomendado" data-en="Recomendado">Recomendado</span>
+                        <img src="babilonia.webp" alt="Portada del libro El hombre más rico de Babilonia" width="200" height="300" loading="lazy">
+                    </div>
+                    <div class="recurso-content">
+                        <span class="recurso-categoria" data-es="Ahorro" data-en="Saving">Ahorro</span>
+                        <h3 data-es="El hombre más rico de Babilonia" data-en="The richest man in Babylon">El hombre más rico de Babilonia</h3>
+                        <p class="recurso-autor" data-es="George S. Clason" data-en="George S. Clason">George S. Clason</p>
+                        <p data-es="Clásico atemporal que revela los secretos para adquirir, mantener y multiplicar el dinero." data-en="A timeless classic that reveals the secrets to acquiring, maintaining, and multiplying money.">Clásico atemporal que revela los secretos para adquirir, mantener y multiplicar el dinero.</p>
+                        <div class="recurso-acciones">
+                            <span class="recurso-precio">$12.99</span>
+                            <a href="#" aria-label="Ver libro El hombre más rico de Babilonia" data-es="Ver libro" data-en="See book">Ver libro</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="recurso-card" role="listitem">
+                    <div class="recurso-img">
+                        <img src="vida o dinero.webp" alt="Portada del libro Tu dinero o tu vida" width="200" height="300" loading="lazy">
+                    </div>
+                    <div class="recurso-content">
+                        <span class="recurso-categoria" data-es="Ahorro" data-en="Saving">Ahorro</span>
+                        <h3 data-es="Tu dinero o tu vida" data-en="Your money or your life">Tu dinero o tu vida</h3>
+                        <p class="recurso-autor" data-es="Vicki Robin" data-en="Vicki Robin">Vicki Robin</p>
+                        <p data-es="Transforma tu relación con el dinero y alcanza la independencia financiera." data-en="Transform your relationship with money and achieve financial independence.">Transforma tu relación con el dinero y alcanza la independencia financiera.</p>
+                        <div class="recurso-acciones">
+                            <span class="recurso-precio">$16.50</span>
+                            <a href="#" aria-label="Ver libro Tu dinero o tu vida" data-es="Ver libro" data-en="See book">Ver libro</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recurso-card" role="listitem">
+                    <div class="recurso-img">
+                        <img src="#" alt="Portada del libro Tu dinero o tu vida" width="200" height="300" loading="lazy">
+                    </div>
+                    <div class="recurso-content">
+                        <span class="recurso-categoria" data-es="Ahorro" data-en="Saving">Ahorro</span>
+                        <h3 data-es="Tu dinero o tu vida" data-en="Your money or your life">Tu dinero o tu vida</h3>
+                        <p class="recurso-autor" data-es="Vicki Robin" data-en="Vicki Robin">Vicki Robin</p>
+                        <p data-es="Todos" data-en="All">Transforma tu relación con el dinero y alcanza la independencia financiera.</p>
+                        <div class="recurso-acciones">
+                            <span class="recurso-precio">$16.50</span>
+                            <a href="#" aria-label="Ver libro Tu dinero o tu vida" data-es="Ver libro" data-en="See book">Ver libro</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección de eBooks de inversión -->
+        <section class="muestras-categoria" aria-labelledby="inversion-titulo">
+            <div class="categoria-header">
+                <h2 id="inversion-titulo" data-es="eBooks de Inversión" data-en="Investment eBooks">eBooks de Inversión</h2>
+                <a href="#" class="ver-mas" data-categoria="inversion" data-es="Ver más" data-en="See more">Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="recursos-grid" role="list">
+                <article class="recurso-card" role="listitem">
+                    <div class="recurso-img">
+                        <span class="recurso-badge" data-badge="gratis" data-es="Gratis" data-en="FREE">Gratis</span>
+                        <img src="ikaigi.webp" alt="Portada del eBook Inversión para principiantes" width="200" height="300" loading="lazy">
+                    </div>
+                    <div class="recurso-content">
+                        <span class="recurso-categoria" data-es="Inversión" data-en="Investment">Inversión</span>
+                        <h3 data-es="Inversión para Principiantes" data-en="Investing for Beginners">Inversión para Principiantes</h3>
+                        <p class="recurso-autor" data-es="Varios Autores" data-en="Various Authors">Varios Autores</p>
+                        <p data-es="Manual completo para dar tus primeros pasos en el mundo de las inversiones." data-en="Complete manual to help you take your first steps in the world of investing.">Manual completo para dar tus primeros pasos en el mundo de las inversiones.</p>
+                        <div class="recurso-acciones">
+                            <span class="recurso-gratis" data-es="GRATIS" data-en="FREE">GRATIS</span>
+                            <a href="#" aria-label="Descargar eBook Inversión para Principiantes" data-es="Descargar" data-en="Downloand">Descargar</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="recurso-card" role="listitem">
+                    <div class="recurso-img">
+                        <img src="inversor.webp" alt="Portada del eBook El inversor inteligente" width="200" height="300" loading="lazy">
+                    </div>
+                    <div class="recurso-content">
+                        <span class="recurso-categoria" data-es="Inversión" data-en="Investment">Inversión</span>
+                        <h3 data-es="El inversor inteligente" data-en="The smart investor">El inversor inteligente</h3>
+                        <p class="recurso-autor" data-es="Benjamin Graham" data-en="Benjamin Graham">Benjamin Graham</p>
+                        <p data-es="La biblia del inversor en valor con principios atemporales." data-en="The value investor's bible with timeless principles.">La biblia de los inversores de valor con principios atemporales.</p>
+                        <div class="recurso-acciones">
+                            <span class="recurso-precio">$14.99</span>
+                            <a href="#" aria-label="Descargar eBook El inversor inteligente" data-es="Descargar" data-en="Download">Descargar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recurso-card" role="listitem">
+                    <div class="recurso-img">
+                        <img src="#" alt="Portada del eBook El inversor inteligente" width="200" height="300" loading="lazy">
+                    </div>
+                    <div class="recurso-content">
+                        <span class="recurso-categoria" data-es="Inversión" data-en="Investment">Inversión</span>
+                        <h3 data-es="El inversor inteligente" data-en="The smart investor">El inversor inteligente</h3>
+                        <p class="recurso-autor" data-es="Benjamin Graham" data-en="Benjamin Graham">Benjamin Graham</p>
+                        <p data-es="La biblia del inversor en valor con principios atemporales." data-en="The value investor's bible with timeless principles.">La biblia de los inversores de valor con principios atemporales.</p>
+                        <div class="recurso-acciones">
+                            <span class="recurso-precio">$14.99</span>
+                            <a href="#" aria-label="Descargar eBook El inversor inteligente" data-es="Descargar" data-en="Download">Descargar</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección de guías de presupuesto -->
+        <section class="muestras-categoria" aria-labelledby="presupuesto-titulo">
+            <div class="categoria-header">
+                <h2 id="presupuesto-titulo" data-es="Todos" data-en="All">Guías de Presupuesto</h2>
+                <a href="#" class="ver-mas" data-categoria="presupuesto" data-es="Todos" data-en="All">Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="recursos-grid" role="list">
+                <article class="recurso-card" role="listitem">
+                    <div class="recurso-img">
+                        <img src="total money.webp" alt="Portada del libro El total money makeover" width="200" height="300" loading="lazy">
+                    </div>
+                    <div class="recurso-content">
+                        <span class="recurso-categoria" data-es="Presupuesto" data-en="Budget">Presupuesto</span>
+                        <h3 data-es="El Total Money Makeover" data-en="The Total Money Makeover">El Total Money Makeover</h3>
+                        <p class="recurso-autor" data-es="Dave Ramsey" data-en="Dave Ramsey">Dave Ramsey</p>
+                        <p data-es="Un plan probado para lograr el bienestar financiero." data-en="A proven plan to achieve financial well-being.">Un plan probado para lograr el bienestar financiero.</p>
+                        <div class="recurso-acciones">
+                            <span class="recurso-precio">$18.75</span>
+                            <a href="#" aria-label="Ver libro El Total Money Makeover" data-es="Ver libro" data-en="See book">Ver libro</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="recurso-card" role="listitem">
+                    <div class="recurso-img">
+                        <span class="recurso-badge" data-badge="nuevo" data-es="Nuevo" data-en="New">Nuevo</span>
+                        <img src="presupuestos.webp" alt="Portada del eBook Guía práctica de presupuestos" width="200" height="300" loading="lazy">
+                    </div>
+                    <div class="recurso-content">
+                        <span class="recurso-categoria"data-es="Presupuesto" data-en="Budget">Presupuesto</span>
+                        <h3 data-es="Guía Práctica de Presupuestos" data-en="Practical Budget Guide">Guía Práctica de Presupuestos</h3>
+                        <p class="recurso-autor" data-es="María López" data-en="María López">María López</p>
+                        <p data-es="Métodos sencillos para organizar tus finanzas personales." data-en="Simple methods to organize your personal finances.">Métodos sencillos para organizar tus finanzas personales.</p>
+                        <div class="recurso-acciones">
+                            <span class="recurso-precio">$9.99</span>
+                            <a href="#" aria-label="Descargar eBook Guía práctica de presupuestos" data-es="Descargar" data-en="Download">Descargar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recurso-card" role="listitem">
+                    <div class="recurso-img">
+                        <span class="recurso-badge" data-badge="nuevo" data-es="Nuevo" data-en="New">Nuevo</span>
+                        <img src="#" alt="Portada del eBook Guía práctica de presupuestos" width="200" height="300" loading="lazy">
+                    </div>
+                    <div class="recurso-content">
+                        <span class="recurso-categoria"data-es="Presupuesto" data-en="Budget">Presupuesto</span>
+                        <h3 data-es="Guía Práctica de Presupuestos" data-en="Practical Budget Guide">Guía Práctica de Presupuestos</h3>
+                        <p class="recurso-autor" data-es="María López" data-en="María López">María López</p>
+                        <p data-es="Métodos sencillos para organizar tus finanzas personales." data-en="Simple methods to organize your personal finances.">Métodos sencillos para organizar tus finanzas personales.</p>
+                        <div class="recurso-acciones">
+                            <span class="recurso-precio">$9.99</span>
+                            <a href="#" aria-label="Descargar eBook Guía práctica de presupuestos" data-es="Descargar" data-en="Download">Descargar</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección de categorías -->
+        <section id="categorias" aria-labelledby="categorias-titulo">
+            <h2 id="categorias-titulo" data-es="Explora por Categorías" data-en="Explore by Categories">Explora por Categorías</h2>
+            <div class="categorias-grid">
+                <article class="categoria-card" data-categoria="ahorro" tabindex="0">
+                    <i class="fas fa-piggy-bank" aria-hidden="true"></i>
+                    <h3 data-es="Ahorro" data-en="Saving">Ahorro</h3>
+                    <p data-es="Libros sobre cómo ahorrar eficientemente" data-en="Books on how to save efficiently">Libros sobre cómo ahorrar eficientemente</p>
+                </article>
+                <article class="categoria-card" data-categoria="inversion" tabindex="0">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    <h3 data-es="Inversión" data-en="Investment">Inversión</h3>
+                    <p data-es="Guías para comenzar a invertir" data-en="Guides to start investing">Guías para comenzar a invertir</p>
+                </article>
+                <article class="categoria-card" data-categoria="emprendimiento" tabindex="0">
+                    <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                    <h3 data-es="Emprendimiento" data-en="Entrepreneurship">Emprendimiento</h3>
+                    <p data-es="Finanzas para emprendedores" data-en="Finance for entrepreneurs">Finanzas para emprendedores</p>
+                </article>
+                <article class="categoria-card" data-categoria="psicologia" tabindex="0">
+                    <i class="fas fa-brain" aria-hidden="true"></i>
+                    <h3 data-es="Psicología Financiera" data-en="Financial Psychology">Psicología Financiera</h3>
+                    <p data-es="Relación mente y dinero" data-en="Mind and money relationship">Relación mente y dinero</p>
+                </article>
+                <article class="categoria-card" data-categoria="jubilacion" tabindex="0">
+                    <i class="fas fa-umbrella-beach" aria-hidden="true"></i>
+                    <h3 data-es="Jubilación" data-en="Retirement">Jubilación</h3>
+                    <p data-es="Planifica tu futuro financiero" data-en="Plan your financial future">Planifica tu futuro financiero</p>
+                </article>
+                <article class="categoria-card" data-categoria="economia" tabindex="0">
+                    <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                    <h3 data-es="Economía" data-en="Economy">Economía</h3>
+                    <p data-es="Libros sobre economía global" data-en="Books on global economy">Libros sobre economía global</p>
+                </article>
+                <article class="categoria-card" data-categoria="economia" tabindex="0">
+                    <i class="fas fa-credit-card" aria-hidden="true"></i>
+                    <h3 data-es="Control de Deudas" data-en="Debt Control">Control de Deudas</h3>
+                    <p data-es="Métodos para reducir y eliminar deudas" data-en="Methods to reduce and eliminate debt">Métodos para reducir y eliminar deudas</p>
+                </article>
+                <article class="categoria-card" data-categoria="economia" tabindex="0">
+                    <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
+                    <h3 data-es="Impuestos" data-en="Taxes">Impuestos</h3>
+                    <p data-es="Conoce tus obligaciones fiscales" data-en="Know your tax obligations">Conoce tus obligaciones fiscales</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <p class="copyright">&copy; <span id="ano">2023</span> <span data-es="Finova Educación Financiera. Todos los derechos reservados." data-en="Finova Financial Education. All rights reserved.">Finova Educación Financiera. Todos los derechos reservados.</span></p>
+    </footer>
+
+    <script src="scripts.js" defer></script>
+</body>
+</html>
