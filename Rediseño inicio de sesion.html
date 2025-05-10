@@ -1,119 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="triangulo.css">
-    <title>Login System</title>
+    <title>Finova - Educación Financiera para Todos</title>
+    <meta name="description" content="Plataforma de educación financiera con cursos y oportunidades laborales">
+    <meta property="og:title" content="Finanzas Pro - Aprende y Trabaja">
+    <link rel="stylesheet" href="inicio de sesion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="wrapper">
-        <!-- Formulario de Login -->
-        <div class="form-box login">
-            <form>
-                <h2>Login</h2>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-twitter"></i></a>
-                </div>
-                <span>or use your email</span>
-                
-                <div class="input-box">
-                    <input type="email" required>
-                    <label>Email</label>
-                    <i class="fas fa-envelope"></i>
-                </div>
-                
-                <div class="input-box">
-                    <input type="password" required>
-                    <label>Password</label>
-                    <i class="fas fa-lock"></i>
-                </div>
-                
-                <div class="remember-forgot">
-                    <label><input type="checkbox"> Remember me</label>
-                    <a href="#">Forgot password?</a>
-                </div>
-                
-                <button type="submit" class="btn">Login</button>
-                
-                <div class="register-link">
-                    <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
-                </div>
-            </form>
-        </div>
-
-        <!-- Formulario de Registro -->
-        <div class="form-box register">
-            <form>
-                <h2>Registration</h2>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-twitter"></i></a>
-                </div>
-                <span>or use your email</span>
-                
-                <div class="input-box">
-                    <input type="text" required>
-                    <label>Username</label>
-                    <i class="fas fa-user"></i>
-                </div>
-                
-                <div class="input-box">
-                    <input type="email" required>
-                    <label>Email</label>
-                    <i class="fas fa-envelope"></i>
-                </div>
-                
-                <div class="input-box">
-                    <input type="password" required>
-                    <label>Password</label>
-                    <i class="fas fa-lock"></i>
-                </div>
-                
-                <div class="terms">
-                    <label><input type="checkbox"> I agree to the terms</label>
-                </div>
-                
-                <button type="submit" class="btn">Register</button>
-                
-                <div class="login-link">
-                    <p>Already have an account? <a href="#" id="login-link">Login</a></p>
-                </div>
-            </form>
-        </div>
-
-        <!-- Panel Informativo -->
-        <div class="info-text login">
-            <h2>Welcome Back!</h2>
-            <p>Please login to access your account</p>
-        </div>
-
-        <div class="info-text register">
-            <h2>Hello, Friend!</h2>
-            <p>Enter your details and start your journey with us</p>
-        </div>
-
-        <!-- Elementos de fondo animados -->
-        <div class="bg-animate"></div>
-        <div class="bg-animate2"></div>
+    <!-- Banner de Cookies -->
+    <div class="banner-cookies" id="banner-cookies">
+        <p>Usamos cookies para mejorar tu experiencia.</p>
+        <button id="aceptar-cookies">Aceptar</button>
     </div>
 
-    <script>
-        const wrapper = document.querySelector('.wrapper');
-        const loginLink = document.querySelector('.register-link a');
-        const registerLink = document.querySelector('.login-link a');
-        
-        registerLink.addEventListener('click', () => {
-            wrapper.classList.add('active');
-        });
-        
-        loginLink.addEventListener('click', () => {
-            wrapper.classList.remove('active');
-        });
-    </script>
+    <div class="contenedor">
+        <!-- Botón de Tema -->
+        <div class="boton-tema" id="boton-tema">
+            <i class="fas fa-moon"></i>
+        </div>
+
+        <div class="selector-idioma">
+            <button class="boton-idioma" id="boton-idioma">
+                <i class="fas fa-globe"></i>
+                <span>ES</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="menu-idioma" id="menu-idioma">
+                <a href="#" data-lang="es">Español</a>
+                <a href="#" data-lang="en">English</a>
+            </div>
+        </div>
+
+        <!-- Encabezado -->
+        <div class="encabezado">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <h1>FINOVA</h1>
+            </div>
+            <p class="eslogan">Domina tu dinero, transforma tu futuro</p>
+            <div class="clima" id="clima">
+                <i class="fas fa-cloud-sun"></i> <span>Cargando...</span>
+            </div>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="contenido-principal">
+            <!-- Formulario de Login -->
+            <div class="formulario-login">
+                <h2><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</h2>
+                <form id="formulario-login">
+                    <!-- Campo oculto para spam -->
+                    <input type="text" name="campo-oculto" style="display:none;">
+                    
+                    <div class="grupo-input">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="correo" placeholder="Correo electrónico" required>
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="contraseña" placeholder="Contraseña" required minlength="8">
+                        <i class="fas fa-eye boton-mostrar-contraseña" id="boton-mostrar-contraseña"></i>
+                    </div>
+                    
+                    <!-- Barra de fortaleza de contraseña -->
+                    <div class="fortaleza-contraseña" id="fortaleza-contraseña">
+                        <div class="barra-fortaleza"></div>
+                        <span class="texto-fortaleza">Seguridad: baja</span>
+                    </div>
+                    
+                    <div class="opciones-formulario">
+                        <label class="recordar">
+                            <input type="checkbox" id="recordar"> Recordar sesión
+                        </label>
+                        <a href="#" class="olvidaste-contraseña">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    
+                    <button type="submit" class="boton-enviar" id="boton-enviar">
+                        <span id="texto-boton"><i class="fas fa-unlock-alt"></i> Acceder</span>
+                        <div class="cargador oculto" id="cargador"></div>
+                    </button>
+                    
+                    <div class="enlace-registro">
+                        ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
+                    </div>
+                </form>
+                
+                <div class="login-redes">
+                    <p>O inicia sesión con:</p>
+                    <div class="iconos-redes">
+                        <a href="#" class="boton-redes google"><i class="fab fa-google"></i></a>
+                        <a href="#" class="boton-redes facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="boton-redes linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Promoción de Empleo -->
+            <div class="promocion-empleo">
+                <div class="tarjeta-promocion">
+                    <i class="fas fa-users"></i>
+                    <h3>Únete a nuestro equipo</h3>
+                    <p>Buscamos profesionales apasionados por la educación financiera</p>
+                    <ul class="roles-empleo">
+                        <li><i class="fas fa-check-circle"></i> Expertos en Finanzas</li>
+                        <li><i class="fas fa-check-circle"></i> Desarrolladores Web</li>
+                        <li><i class="fas fa-check-circle"></i> Diseñadores UX/UI</li>
+                    </ul>
+                    <button class="boton-promocion" id="boton-empleo">
+                         Unete a nosotros
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="inicio de sesion.js"></script>
 </body>
 </html>
