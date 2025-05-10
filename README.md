@@ -23,3 +23,6 @@ Agenda sesiones uno a uno con nuestros expertos y recibe un plan financiero hech
 
 Biblioteca Financiera
 Explora nuestra biblioteca digital con una cuidada selección de libros sobre finanzas. Elige el que mejor se adapte a tu nivel y avanza a tu ritmo.
+
+Sección de Noticias
+Mantente informado con actualizaciones en tiempo real sobre el mundo de las finanzas, inversiones, criptomonedas y otros recursos valiosos. Todo en un solo lugar.
