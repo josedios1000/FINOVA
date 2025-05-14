@@ -3,86 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitud de Empleo | Finanzas Educativas</title>
+    <title>"Finova - Educación Financiera para Todos"</title>
     <link rel="stylesheet" href="empleo.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="application-container">
-        <div class="sidebar">
-            <div class="logo-container">
+    <div class="contenedor-aplicacion">
+        <div class="barra-lateral">
+            <div class="contenedor-logo">
                 <div class="logo">
                     <i class="fas fa-landmark"></i>
-                    <span>Finanzas<br>Educativas</span>
+                    <span>EDUCACIÓN<br>FINOVA</span>
+                </div>
+                <div class="selector-idioma">
+                    <select id="idioma" aria-label="Seleccionar idioma">
+                        <option value="es">Español</option>
+                        <option value="en">English</option>
+                    </select>
                 </div>
             </div>
-            <div class="progress-container">
-                <div class="progress-steps">
-                    <div class="step active" data-step="1">
-                        <div class="step-number">1</div>
-                        <div class="step-info">
-                            <div class="step-title">Información Personal</div>
-                            <div class="step-description">Datos básicos y contacto</div>
+            <div class="contenedor-progreso">
+                <div class="pasos-progreso">
+                    <div class="paso activo" data-paso="1" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4">
+                        <div class="numero-paso">1</div>
+                        <div class="info-paso">
+                            <div class="titulo-paso">Información Personal</div>
+                            <div class="descripcion-paso">Datos básicos y contacto</div>
                         </div>
                     </div>
-                    <div class="step" data-step="2">
-                        <div class="step-number">2</div>
-                        <div class="step-info">
-                            <div class="step-title">Experiencia Profesional</div>
-                            <div class="step-description">Trayectoria y habilidades</div>
+                    <div class="paso" data-paso="2" role="progressbar" aria-valuenow="0" aria-valuemin="1" aria-valuemax="4">
+                        <div class="numero-paso">2</div>
+                        <div class="info-paso">
+                            <div class="titulo-paso">Experiencia Profesional</div>
+                            <div class="descripcion-paso">Trayectoria y habilidades</div>
                         </div>
                     </div>
-                    <div class="step" data-step="3">
-                        <div class="step-number">3</div>
-                        <div class="step-info">
-                            <div class="step-title">Evaluación Técnica</div>
-                            <div class="step-description">Conocimientos financieros</div>
+                    <div class="paso" data-paso="3" role="progressbar" aria-valuenow="0" aria-valuemin="1" aria-valuemax="4">
+                        <div class="numero-paso">3</div>
+                        <div class="info-paso">
+                            <div class="titulo-paso">Evaluación Técnica</div>
+                            <div class="descripcion-paso">Conocimientos financieros</div>
                         </div>
                     </div>
-                    <div class="step" data-step="4">
-                        <div class="step-number">4</div>
-                        <div class="step-info">
-                            <div class="step-title">Documentación</div>
-                            <div class="step-description">Portafolio y referencias</div>
+                    <div class="paso" data-paso="4" role="progressbar" aria-valuenow="0" aria-valuemin="1" aria-valuemax="4">
+                        <div class="numero-paso">4</div>
+                        <div class="info-paso">
+                            <div class="titulo-paso">Documentación</div>
+                            <div class="descripcion-paso">Portafolio y referencias</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="sidebar-footer">
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> talento@finanzaseducativas.com</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            <div class="pie-barra-lateral">
+                <div class="info-contacto">
+                    <p><i class="fas fa-envelope"></i>educaciónfinanciera@finova.com</p>
+                    <p><i class="fas fa-phone"></i> +52 351-280-2398</p>
                 </div>
             </div>
         </div>
 
-        <div class="main-content">
-            <form id="applicationForm" class="form-steps">
+        <div class="contenido-principal">
+            <form id="formularioAplicacion" class="pasos-formulario" aria-live="polite">
                 <!-- Paso 1 - Información Personal -->
-                <div class="form-step active" data-step="1">
-                    <div class="form-header">
+                <div class="paso-formulario activo" data-paso="1">
+                    <div class="encabezado-formulario">
                         <h2>Información Personal</h2>
                         <p>Completa tus datos básicos para iniciar el proceso</p>
                     </div>
                     
-                    <div class="form-grid">
-                        <div class="input-group">
-                            <label for="nombre" class="required">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre" required>
+                    <div class="cuadricula-formulario">
+                        <div class="grupo-entrada">
+                            <label for="nombre" class="requerido">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required aria-required="true">
                         </div>
                         
-                        <div class="input-group">
-                            <label for="email" class="required">Correo electrónico</label>
-                            <input type="email" id="email" name="email" required>
+                        <div class="grupo-entrada">
+                            <label for="email" class="requerido">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required aria-required="true">
                         </div>
                         
-                        <div class="input-group">
+                        <div class="grupo-entrada">
                             <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono">
+                            <input type="tel" id="telefono" name="telefono" pattern="[0-9\s+-]+" aria-describedby="ayuda-telefono">
+                            <small id="ayuda-telefono" class="texto-ayuda">Formato: +XX XXX XXX XXX</small>
                         </div>
                         
-                        <div class="input-group">
+                        <div class="grupo-entrada">
                             <label for="pais">País de residencia</label>
                             <select id="pais" name="pais">
                                 <option value="">Seleccionar</option>
@@ -95,71 +102,72 @@
                         </div>
                     </div>
                     
-                    <div class="form-navigation">
-                        <button type="button" class="next-btn">Continuar <i class="fas fa-arrow-right"></i></button>
+                    <div class="navegacion-formulario">
+                        <button type="button" class="boton-siguiente">Continuar <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
 
                 <!-- Paso 2 - Experiencia Profesional -->
-                <div class="form-step" data-step="2">
-                    <div class="form-header">
+                <div class="paso-formulario" data-paso="2">
+                    <div class="encabezado-formulario">
                         <h2>Experiencia Profesional</h2>
                         <p>Detalla tu trayectoria en el sector financiero</p>
                     </div>
                     
-                    <div class="experience-section">
-                        <div class="section-title">
+                    <div class="seccion-experiencia">
+                        <div class="titulo-seccion">
                             <h3><i class="fas fa-briefcase"></i> Experiencia Laboral</h3>
-                            <button type="button" class="add-btn" id="addExperience"><i class="fas fa-plus"></i> Agregar</button>
+                            <button type="button" class="boton-agregar" id="agregarExperiencia" aria-label="Agregar experiencia"><i class="fas fa-plus"></i> Agregar</button>
                         </div>
                         
-                        <div class="experience-items" id="experienceItems">
+                        <div class="items-experiencia" id="itemsExperiencia">
                             <!-- Experiencias se agregarán dinámicamente aquí -->
                         </div>
                         
-                        <div class="skills-section">
+                        <div class="seccion-habilidades">
                             <h3><i class="fas fa-star"></i> Habilidades Especializadas</h3>
-                            <div class="skills-tags" id="skillsTags">
-                                <div class="tag-input-container">
-                                    <input type="text" id="skillInput" placeholder="Escribe y presiona Enter">
+                            <div class="etiquetas-habilidades" id="etiquetasHabilidades">
+                                <div class="contenedor-entrada-etiqueta">
+                                    <input type="text" id="entradaHabilidad" placeholder="Escribe y presiona Enter" aria-label="Añadir habilidad">
                                 </div>
-                                <!-- Tags se agregarán dinámicamente aquí -->
+                                <!-- Etiquetas se agregarán dinámicamente aquí -->
                             </div>
+                            <small class="texto-ayuda">Máximo 10 habilidades</small>
                         </div>
                     </div>
                     
-                    <div class="form-navigation">
-                        <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Anterior</button>
-                        <button type="button" class="next-btn">Continuar <i class="fas fa-arrow-right"></i></button>
+                    <div class="navegacion-formulario">
+                        <button type="button" class="boton-anterior"><i class="fas fa-arrow-left"></i> Anterior</button>
+                        <button type="button" class="boton-siguiente">Continuar <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
 
                 <!-- Paso 3 - Evaluación Técnica -->
-                <div class="form-step" data-step="3">
-                    <div class="form-header">
+                <div class="paso-formulario" data-paso="3">
+                    <div class="encabezado-formulario">
                         <h2>Evaluación Técnica</h2>
                         <p>Demuestra tu conocimiento en educación financiera</p>
                     </div>
                     
-                    <div class="assessment-section">
-                        <div class="case-study">
+                    <div class="seccion-evaluacion">
+                        <div class="caso-estudio">
                             <h3><i class="fas fa-file-alt"></i> Caso Práctico</h3>
                             <p>Describe cómo explicarías el concepto de "interés compuesto" a un grupo de jóvenes universitarios:</p>
-                            <textarea id="caseStudy" name="caseStudy" rows="6"></textarea>
+                            <textarea id="casoEstudio" name="casoEstudio" rows="6" aria-label="Respuesta al caso práctico"></textarea>
                         </div>
                         
-                        <div class="knowledge-test">
+                        <div class="prueba-conocimiento">
                             <h3><i class="fas fa-graduation-cap"></i> Autoevaluación</h3>
-                            <div class="test-questions">
-                                <div class="question">
+                            <div class="preguntas-prueba">
+                                <div class="pregunta">
                                     <p>¿Cómo calificarías tu conocimiento en planificación de inversiones?</p>
-                                    <div class="rating-scale">
-                                        <div class="scale-labels">
+                                    <div class="escala-calificacion">
+                                        <div class="etiquetas-escala">
                                             <span>Básico</span>
                                             <span>Avanzado</span>
                                         </div>
-                                        <input type="range" min="1" max="10" value="5" class="slider" id="investmentKnowledge">
-                                        <div class="scale-ticks">
+                                        <input type="range" min="1" max="10" value="5" class="deslizador" id="conocimientoInversiones" aria-label="Nivel de conocimiento en planificación de inversiones">
+                                        <div class="marcas-escala">
                                             <span>1</span>
                                             <span>2</span>
                                             <span>3</span>
@@ -177,71 +185,71 @@
                         </div>
                     </div>
                     
-                    <div class="form-navigation">
-                        <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Anterior</button>
-                        <button type="button" class="next-btn">Continuar <i class="fas fa-arrow-right"></i></button>
+                    <div class="navegacion-formulario">
+                        <button type="button" class="boton-anterior"><i class="fas fa-arrow-left"></i> Anterior</button>
+                        <button type="button" class="boton-siguiente">Continuar <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
 
                 <!-- Paso 4 - Documentación -->
-                <div class="form-step" data-step="4">
-                    <div class="form-header">
+                <div class="paso-formulario" data-paso="4">
+                    <div class="encabezado-formulario">
                         <h2>Documentación</h2>
                         <p>Adjunta los documentos que respalden tu solicitud</p>
                     </div>
                     
-                    <div class="documentation-section">
-                        <div class="document-upload">
+                    <div class="seccion-documentacion">
+                        <div class="carga-documentos">
                             <h3><i class="fas fa-file-upload"></i> Subir Documentos</h3>
-                            <div class="upload-cards">
-                                <div class="upload-card" id="cvUpload">
-                                    <div class="upload-icon">
+                            <div class="tarjetas-carga">
+                                <div class="tarjeta-carga" id="cargaCV">
+                                    <div class="icono-carga">
                                         <i class="fas fa-file-user"></i>
                                     </div>
                                     <h4>Curriculum Vitae</h4>
                                     <p>Formato PDF (Máx. 5MB)</p>
-                                    <input type="file" id="cv" name="cv" accept=".pdf">
-                                    <button type="button" class="upload-btn">Seleccionar Archivo</button>
-                                    <div class="file-info"></div>
+                                    <input type="file" id="cv" name="cv" accept=".pdf" aria-label="Subir curriculum vitae">
+                                    <button type="button" class="boton-carga">Seleccionar Archivo</button>
+                                    <div class="info-archivo"></div>
                                 </div>
                                 
-                                <div class="upload-card" id="portfolioUpload">
-                                    <div class="upload-icon">
+                                <div class="tarjeta-carga" id="cargaPortafolio">
+                                    <div class="icono-carga">
                                         <i class="fas fa-folder-open"></i>
                                     </div>
                                     <h4>Portafolio</h4>
                                     <p>PDF o enlace</p>
-                                    <input type="file" id="portfolio" name="portfolio" accept=".pdf">
-                                    <button type="button" class="upload-btn">Seleccionar Archivo</button>
-                                    <div class="file-info"></div>
+                                    <input type="file" id="portafolio" name="portafolio" accept=".pdf" aria-label="Subir portafolio">
+                                    <button type="button" class="boton-carga">Seleccionar Archivo</button>
+                                    <div class="info-archivo"></div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="availability-section">
+                        <div class="seccion-disponibilidad">
                             <h3><i class="fas fa-calendar-check"></i> Disponibilidad</h3>
-                            <div class="availability-options">
-                                <label class="option-card">
-                                    <input type="radio" name="availability" value="full-time" checked>
-                                    <div class="card-content">
+                            <div class="opciones-disponibilidad">
+                                <label class="tarjeta-opcion">
+                                    <input type="radio" name="disponibilidad" value="tiempo-completo" checked aria-checked="true">
+                                    <div class="contenido-tarjeta">
                                         <i class="fas fa-briefcase"></i>
                                         <h4>Tiempo Completo</h4>
                                         <p>40 horas semanales</p>
                                     </div>
                                 </label>
                                 
-                                <label class="option-card">
-                                    <input type="radio" name="availability" value="part-time">
-                                    <div class="card-content">
+                                <label class="tarjeta-opcion">
+                                    <input type="radio" name="disponibilidad" value="medio-tiempo" aria-checked="false">
+                                    <div class="contenido-tarjeta">
                                         <i class="fas fa-clock"></i>
                                         <h4>Medio Tiempo</h4>
                                         <p>20 horas semanales</p>
                                     </div>
                                 </label>
                                 
-                                <label class="option-card">
-                                    <input type="radio" name="availability" value="freelance">
-                                    <div class="card-content">
+                                <label class="tarjeta-opcion">
+                                    <input type="radio" name="disponibilidad" value="freelance" aria-checked="false">
+                                    <div class="contenido-tarjeta">
                                         <i class="fas fa-pen-fancy"></i>
                                         <h4>Freelance</h4>
                                         <p>Por proyecto</p>
@@ -251,9 +259,9 @@
                         </div>
                     </div>
                     
-                    <div class="form-navigation">
-                        <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Anterior</button>
-                        <button type="submit" class="submit-btn">Enviar Solicitud <i class="fas fa-paper-plane"></i></button>
+                    <div class="navegacion-formulario">
+                        <button type="button" class="boton-anterior"><i class="fas fa-arrow-left"></i> Anterior</button>
+                        <button type="submit" class="boton-enviar">Enviar Solicitud <i class="fas fa-paper-plane"></i></button>
                     </div>
                 </div>
             </form>
@@ -261,22 +269,22 @@
     </div>
 
     <!-- Modal de Confirmación -->
-    <div class="modal" id="confirmationModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Solicitud Completa</h3>
-                <button class="close-modal">&times;</button>
+    <div class="modal" id="modalConfirmacion" role="dialog" aria-modal="true" aria-labelledby="tituloModal" aria-describedby="descripcionModal">
+        <div class="contenido-modal">
+            <div class="encabezado-modal">
+                <h3 id="tituloModal">Solicitud Completa</h3>
+                <button class="cerrar-modal" aria-label="Cerrar modal">&times;</button>
             </div>
-            <div class="modal-body">
-                <div class="success-animation">
+            <div class="cuerpo-modal">
+                <div class="animacion-exito">
                     <i class="fas fa-check-circle"></i>
                 </div>
                 <h4>¡Gracias por tu solicitud!</h4>
-                <p>Hemos recibido tu información correctamente. Nuestro equipo de reclutamiento revisará tu perfil y se pondrá en contacto contigo en un plazo de 5-7 días hábiles.</p>
-                <p>Para cualquier consulta, puedes contactarnos a <strong>talento@finanzaseducativas.com</strong></p>
+                <p id="descripcionModal">Hemos recibido tu información correctamente. Nuestro equipo de reclutamiento revisará tu perfil y se pondrá en contacto contigo en un plazo de 5-7 días hábiles.</p>
+                <p>Para cualquier consulta, puedes contactarnos a <strong>educaciónfinanciera@finova.com</strong></p>
             </div>
-            <div class="modal-footer">
-                <button class="modal-btn" id="closeModalBtn">Cerrar</button>
+            <div class="pie-modal">
+                <button class="boton-modal" id="botonCerrarModal">Cerrar</button>
             </div>
         </div>
     </div>
