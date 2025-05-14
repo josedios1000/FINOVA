@@ -88,4 +88,4 @@ document.addEventListener("DOMContentLoaded", () => {
             contenedorBitacora.insertBefore(nuevaEntrada, formulario.parentElement);
         });
     }
-});  
+});
