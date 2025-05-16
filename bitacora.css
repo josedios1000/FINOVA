@@ -437,71 +437,7 @@ header {
     line-height: 1.3; /* Espaciado entre lineas */
   }
 
-    /* ==== Estilo del formulario de la bitacora ==== */
-  .formulario-bitacora {
-    background-color: var(--color-fondo-secundario); /* Fondo gris oscuro */
-    padding: 1.5rem; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
-    margin-top: 8rem; /* Espacio superior */
-    margin-bottom: 4rem; /* Espacio inferior */
-    color: var(--color-texto); /* Color del texto */
-    box-shadow: 10px 6px 6px rgba(0, 0, 0, 0.4); /* Sombra suave */
-    border: 3px solid var(--color-fondo); /* Borde del formulario */
-  }
-  
-  /* Estilo del formulario de la bitacora */
-  .formulario-bitacora h3 {
-    color: var(--color-principal); /* Color del título */
-    margin-bottom: 1rem; /* Espacio inferior */
-    font-size: 1.7rem; /* Tamaño del título */
-  }
-  
-    /* Estilo de los titulos campos del formulario */
-  .formulario-bitacora label {
-    display: block; /* Mostrar como bloque */
-    margin-top: 1rem; /* Espacio superior */
-    margin-bottom: 0.7rem; /* Espacio inferior */
-    font-size: 1.2rem; /* Tamaño de fuente */
-  }
-  
-  /* Estilo de los campos de entrada */
-  .formulario-bitacora input,
-  .formulario-bitacora textarea {
-    width: 100%; /* Ancho completo */
-    padding: 0.75rem; /* Espaciado interno */
-    border: none; /* Sin borde */
-    border-radius: 6px; /* Bordes redondeados */
-    background-color: #1f1f1f; /* Fondo gris oscuro */
-    color: var(--color-texto); /* Color del texto */
-    font-family: var(--fuente-principal); /* Fuente principal */
-    font-size: 1.3rem; /* Tamaño de fuente */
-  }
-  
-  /* Estilo de los campos de entrada al enfocar */
-  .formulario-bitacora input::placeholder,
-  .formulario-bitacora textarea::placeholder {
-    color: #aaaaaa; /* Color gris claro */
-  }
-  
-  /* Estilo de los campos de entrada al enfocar */
-  .formulario-bitacora button {
-    margin-top: 1.5rem; /* Espacio superior */
-    padding: 0.75rem 1.5rem; /* Espaciado interno */
-    background-color: var(--color-principal); /* Color de fondo */
-    color: black; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 6px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar cursor al pasar el mouse */
-    font-weight: bold;
-    transition: background-color 0.2s ease-in-out; /* Transición suave */
-  }
-  
-  /* Estilo del botón al pasar el mouse */
-  .formulario-bitacora button:hover {
-    background-color: #ff9e49; /* Color de fondo al pasar el mouse */
-  }
-
-/* Pie de página */
+  /* Pie de página */
 .pie-pagina {
     position: relative;
     width: 100%;
