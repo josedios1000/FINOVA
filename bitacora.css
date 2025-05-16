@@ -396,18 +396,71 @@ header {
     max-width: 800px; /* Ancho de los recuadros de las actualizaciones */
     margin: 0 auto; /* Centrar horizontalmente */
   }
+    /* Contenedor de la leyenda */
+.leyenda {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1F1F1F; /* fondo oscuro */
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Estilo de los puntos de la leyenda */
+.leyenda-punto {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+/* Colores del punto de cambio menor */
+.leyenda-punto.menor {
+  background-color: #7C7C7C; /* gris claro */
+}
+
+/* Colores del punto de cambio medio */
+.leyenda-punto.medio {
+  background-color: #F97316; /* naranja oscuro */
+}
+
+/* Colores del punto de cambio mayor */
+.leyenda-punto.mayor {
+  background-color: #DC2626; /* rojo vino */
+}
+
+/* Estilo del texto de la leyenda */
+.leyenda-texto {
+  font-size: 1.2rem;
+}
   
   /* Cada entrada de la bitacora */
   .reg-entrada {
     background-color: #fff; /* Fondo blanco para que contraste */
-    border-left: 5px solid #4CAF50; /* Linea lateral verde */
+    border-left: 10px solid #7C7C7C; /* Linea lateral verde */
     padding: 1rem 1.5rem; /* Espaciado interno */
     margin-bottom: 2rem; /* Espacio entre entradas */
     box-shadow: 0 2px 5px var(--light-color); /* Sombra suave para dar profundidad */
-    border-radius: 8px; /* Bordes redondeados */
+    border-radius: 5px; /* Bordes redondeados */
     transition: transform 0.3s ease; /* Transición suave al pasar el mouse */
   }
+  
+    /* Estilo del cambio medio */
+  .reg-entrada.medio{
+    border-left: 10px solid #F97316 !important; /* Linea lateral naranja */
+  }
 
+    /* Estilo del cambio mayor */
+    .reg-entrada.mayor{
+        border-left: 10px solid #DC2626 !important; /* Linea lateral roja */
+    }
   .reg-entrada:hover {
     transform: scale(1.02); /* Aumentar ligeramente al pasar el mouse */
   }
