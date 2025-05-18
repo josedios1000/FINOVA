@@ -1,0 +1,539 @@
+/* Variables */
+:root {
+    --color-primario: #2c3e50;
+    --color-secundario: #ff922d;
+    --color-terciario: #e74c3c;
+    --color-texto: #333;
+    --color-texto-claro: #fff;
+    --color-fondo: #f9f9f9;
+    --color-borde: #ddd;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
+}
+
+/* Reset y Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primario);
+    transition: var(--transicion);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+    border-radius: 5px;
+    font-weight: bold;
+    transition: var(--transicion);
+    border: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.seccion-titulo {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--color-primario);
+    position: relative;
+}
+
+.seccion-titulo::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-secundario);
+    margin: 15px auto;
+}
+
+/* Cabecera */
+.cabecera {
+    background-color: var(--color-texto-claro);
+    box-shadow: var(--sombra);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--color-primario);
+}
+
+.logo h1 span {
+    color: var(--color-secundario);
+}
+
+.logo p {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.navegacion ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navegacion a {
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+.navegacion a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-secundario);
+    transition: var(--transicion);
+}
+
+.navegacion a:hover::after,
+.navegacion a.activo::after {
+    width: 100%;
+}
+
+.menu-movil {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--color-texto-claro);
+    margin-top: 70px;
+}
+
+.hero-contenido {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Recursos */
+.recursos {
+    padding: 80px 0;
+}
+
+.recursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.recurso-card {
+    background-color: var(--color-texto-claro);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    text-align: center;
+    transition: var(--transicion);
+}
+
+.recurso-card:hover {
+    transform: translateY(-10px);
+}
+
+.recurso-card i {
+    font-size: 3rem;
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+}
+
+.recurso-card h3 {
+    margin-bottom: 15px;
+    color: var(--color-primario);
+}
+
+.recurso-card p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+        /* Estilos para la sección de educación financiera */
+        .finanza-section {
+            background: linear-gradient(135deg, #ff922d 0%, #ff682d 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .finanza-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .finanza-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .finanza-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Estilos para el botón */
+        .tuecoscan-btn {
+            display: inline-block;
+            background-color: #000000;
+            color: #757575;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tuecoscan-btn:hover {
+            background-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tuecoscan-btn:active {
+            transform: translateY(1px);
+        }
+        
+        /* Sección de clases */
+        .clases-section {
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .clases-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #1e3c72;
+        }
+        
+        .clases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .clase-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .clase-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .clase-card h4 {
+            color: #1e3c72;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .clase-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .finanza-section h2 {
+                font-size: 2rem;
+            }
+            
+            .finanza-section p {
+                font-size: 1rem;
+            }
+            
+            .tuecoscan-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+
+/* Boletín */
+.boletin {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--color-fondo);
+}
+
+.boletin h2 {
+    margin-bottom: 15px;
+}
+
+.boletin p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.formulario-boletin {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.formulario-boletin input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid var(--color-borde);
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+}
+
+.formulario-boletin button {
+    border-radius: 0 5px 5px 0;
+}
+
+/* Footer oscuro */
+.main-footer {
+    width: 100%;
+    background-color: #1a1a2e;
+    color: white;
+    padding-top: 4rem;
+    margin-top: auto;
+}
+
+.footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(90deg, var(--color-secundario), white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    color: #b8c2cc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--color-secundario);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    color: #ff922d;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-secundario);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #b8c2cc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--color-secundario);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-legal a {
+    color: #b8c2cc;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--color-secundario);
+}
+
+.footer-copyright {
+    text-align: center;
+    color: #b8c2cc;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .navegacion {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--color-texto-claro);
+        transition: var(--transicion);
+    }
+
+    .navegacion.mostrar {
+        left: 0;
+    }
+
+    .navegacion ul {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .menu-movil {
+        display: block;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+    }
+
+    .formulario-boletin {
+        flex-direction: column;
+    }
+
+    .formulario-boletin input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .formulario-boletin button {
+        border-radius: 5px;
+        width: 100%;
+    }
+}
