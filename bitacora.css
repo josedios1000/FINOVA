@@ -382,13 +382,25 @@ header {
     100% { transform: translateX(25%); }
 }
 
-  
+.contenedor-titulo {
+    background: var(--color-fondo);
+    border-radius: 10px;
+    padding: 20px;
+    padding-bottom: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    max-width: 700px;
+    text-align: center;
+}
+
   /* Estilo del titulo principal */
   h2 {
     text-align: center; /* Centrar el titulo */
     margin-bottom: 2rem; /* Espacio debajo del titulo */
-    color: var(--color-principal); /* Color del titulo */
-    font-size: 2.5rem; /* Tamaño del título */
+    color: var(--color-texto); /* Color del titulo */
+    font-size: 3rem; /* Tamaño del título */
+    font-weight: 700;
   }
   
   /* Contenedor general de la bitacora */
@@ -402,7 +414,7 @@ header {
   gap: 1.5rem;
   align-items: center;
   padding: 1rem;
-  background-color: #1F1F1F; /* fondo oscuro */
+  background-color: #292929; /* fondo oscuro */
   border-radius: 8px;
   color: #ffffff;
   font-family: sans-serif;
