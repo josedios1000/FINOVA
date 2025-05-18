@@ -124,47 +124,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let idiomaGuardado = localStorage.getItem("idioma") || "es";
     actualizarIdioma(idiomaGuardado);
 
-    // Menú móvil
-    const botonMenu = document.getElementById('boton-menu');
-    const barraLateral = document.getElementById('barra-lateral');
-
-    botonMenu.addEventListener('click', () => {
-        barraLateral.classList.toggle('activo');
-        botonMenu.innerHTML = barraLateral.classList.contains('activo') ? 
-            '<span class="material-symbols-outlined">close</span>' : 
-            '<span class="material-symbols-outlined">menu</span>';
-    });
-
     // Pantalla de carga
     setTimeout(() => {
         document.getElementById('pantalla-carga').style.display = 'none';
-        document.getElementById('contenido-principal').classList.remove('oculto');
+        document.getElementById('contenido-principal').classList.remove('oculto'); // Añade esta línea
     }, 5000);
 
     // Actualizar año del copyright
     document.getElementById('ano').textContent = new Date().getFullYear();
-
-    // Scroll suave
-    document.querySelectorAll('a[href^="#"]').forEach(enlace => {
-        enlace.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            if (barraLateral.classList.contains('activo')) {
-                barraLateral.classList.remove('activo');
-                botonMenu.innerHTML = '<span class="material-symbols-outlined">menu</span>';
-            }
-            
-            const idObjetivo = this.getAttribute('href');
-            if (idObjetivo === '#') return;
-            
-            const elementoObjetivo = document.querySelector(idObjetivo);
-            if (elementoObjetivo) {
-                elementoObjetivo.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
 
     // Efecto de aparición al hacer scroll
     const opcionesObservador = {
