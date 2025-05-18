@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Actualizar botón de idioma
         botonIdioma.innerHTML = idioma === "es" 
-            ? '<img src="Es.webp" alt="ES" class="bandera"> / <img src="En.webp" alt="EN" class="bandera">'
-            : '<img src="En.webp" alt="EN" class="bandera"> / <img src="Es.webp" alt="ES" class="bandera">';
+            ? '<img src="Recursos visuales/Es.webp" alt="ES" class="bandera"> / <img src="Recursos visuales/En.webp" alt="EN" class="bandera">'
+            : '<img src="Recursos visuales/En.webp" alt="EN" class="bandera"> / <img src="Recursos visuales/Es.webp" alt="ES" class="bandera">';
 
         // Reiniciar animación de texto con el nuevo idioma
         reiniciarAnimacionTexto(temasFinancieros[idioma]);
