@@ -9,7 +9,6 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
     <!-- Pantalla de carga -->
     <div id="pantalla-carga">
         <div class="fondo"></div>
@@ -32,100 +31,15 @@
         <div class="contenedor-header">
             <button id="cambiar-idioma" class="boton-header boton-idioma" data-current-lang="es">ES / EN</button>
     
-            <nav class="menu-header menu-izquierda">
-                <a href="biblioteca/biblioteca.html" class="boton-header">
-                    <span class="text-wrapper">
-                        <span class="text original" data-es="Biblioteca" data-en="Library">Biblioteca</span>
-                        <span class="text replacement" data-es="Biblioteca" data-en="Library">Biblioteca</span>
-                    </span>                    
-                </a>
-                <a href="sobre-nosotros.html" class="boton-header">
-                    <span class="text-wrapper">
-                        <span class="text original" data-es="Expertos" data-en="Experts">Expertos</span>
-                        <span class="text replacement" data-es="Expertos" data-en="Experts">Expertos</span>
-                    </span>
-                </a>
-                <a href="servicios.html" class="boton-header">
-                    <span class="text-wrapper">
-                        <span class="text original" data-es="Cursos" data-en="Courses">Cursos</span>
-                        <span class="text replacement" data-es="Cursos" data-en="Courses">Cursos</span>
-                    </span>
-                </a>
-            </nav>
-    
-            <div class="logo">
+            <div class="logo-2">
+                <a href="about.html" id="logo-link">
                     <h1 id="logo-text">FINOVA</h1>
+                </a>
             </div>
     
-            <nav class="menu-header menu-derecha">
-                <a href="index.html" class="boton-header">
-                    <span class="text-wrapper">
-                        <span class="text original" data-es="Inicio" data-en="Home">Inicio</span>
-                        <span class="text replacement" data-es="Inicio" data-en="Home">Inicio</span>
-                    </span>
-                </a>
-                <a href="#contacto" class="boton-header">
-                    <span class="text-wrapper">
-                        <span class="text original" data-es="Contacto" data-en="Contact">Contacto</span>
-                        <span class="text replacement" data-es="Contacto" data-en="Contact">Contacto</span>
-                    </span>
-                </a>
-                <a href="faq.html" class="boton-header">
-                    <span class="text-wrapper">
-                        <span class="text original" data-es="Recursos" data-en="Resources">Recursos</span>
-                        <span class="text replacement" data-es="Recursos" data-en="Resources">Recursos</span>
-                    </span>
-                </a>
-            </nav>
-    
-            <button class="boton-menu" id="boton-menu">
-                <span class="material-symbols-outlined" data-es="menu" data-en="menu">menu</span>
-            </button>
+            <a href="inicio de sesion.html" class="btn-unete"><i class='bx bxs-user-plus'></i>Únete a Nosotros</a>
         </div>
     </header>
-
-    <!-- Barra lateral accesible -->
-        <aside class="barra-lateral" id="barra-lateral" aria-labelledby="boton-menu">
-            <div class="contenido-desplazable">
-                <ul class="enlaces-barra">
-                    <li>
-                        <h4><span data-es="Menú Principal" data-en="Main Menu">Menú Principal</span></h4>
-                        <div class="separador-menu"></div>
-                    </li>
-                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">home</span><span data-es="Inicio" data-en="Home">Inicio</span></a></li>
-                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">download</span><span data-es="Descargas" data-en="Downloads">Descargas</span></a></li>
-                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">notifications</span><span data-es="Notificaciones" data-en="Notifications">Notificaciones</span></a></li>
-                    
-                    <li>
-                        <h4><span data-es="Recursos Destacados" data-en="Featured Resources">Recursos Destacados</span></h4>
-                        <div class="separador-menu"></div>
-                    </li>
-                    <li><a href="biblioteca/biblioteca.html"><span class="material-symbols-outlined" aria-hidden="true">library_books</span><span data-es="Biblioteca" data-en="Library">Biblioteca</span></a></li>
-                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">calculate</span><span data-es="Calculadoras" data-en="Calculators">Calculadoras</span></a></li>
-                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">forum</span><span data-es="Comunidad" data-en="Community">Comunidad</span></a></li>
-                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">groups</span><span data-es="Asesores" data-en="advisors">Asesores</span></a></li>
-                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">description</span><span data-es="Reportes" data-en="Reports">Reportes</span></a></li>
-                    
-                    <li>
-                        <h4><span data-es="Cuenta" data-en="Account">Cuenta</span></h4>
-                        <div class="separador-menu"></div>
-                    </li>
-                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">person</span><span data-es="Perfil" data-en="Profile">Perfil</span></a></li>
-                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">settings</span><span data-es="Configuración" data-en="Settings">Configuración</span></a></li>
-                    <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">logout</span><span data-es="Cerrar Sesión" data-en="Logout">Cerrar Sesión</span></a></li>
-                </ul>
-                
-                <div class="cuenta-usuario">
-                    <div class="perfil-usuario">
-                        <img src="Copia-de-luis.webp" alt="Foto de perfil del usuario" width="42" height="42" loading="lazy">
-                        <div class="detalles-usuario">
-                            <h3>Usuario Finova</h3>
-                            <span data-es="Miembro Premium" data-en="Premium Member">Miembro Premium</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
 
     <!-- Contenido principal -->
     <main id="contenido-principal" class="seccion-principal">
@@ -146,7 +60,7 @@
                 </div>
 
                 <div class="grupo-botones">
-                    <a href="inicio sesion/inicio de sesion.html" class="boton" data-es="Empieza Ahora" data-en="Start Now">Empieza Ahora</a>
+                    <a href="inicio de sesion.html" class="boton" data-es="Empieza Ahora" data-en="Start Now">Empieza Ahora</a>
                     <a href="#contacto" class="boton" data-es="Contáctanos" data-en="Contact Us">Contáctanos</a>
                 </div>
             </div>
