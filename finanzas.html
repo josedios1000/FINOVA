@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-es="Finova - Educación Financiera para Todos" data-en="Finova - Financial Education for Everyone">Finanzas - Finova - Educación Financiera para Todos</title>
+    <link rel="stylesheet" href="finanzas.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+    <!-- Pantalla de carga -->
+    <div id="pantalla-carga" aria-hidden="true">
+        <div class="fondo"></div>
+        <div class="fondo fondo2"></div>
+        <div class="fondo fondo3"></div>
+    </div>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="contenedor-header">
+            <!-- Botón de idioma accesible -->
+            <button id="cambiar-idioma" class="boton-header boton-idioma" aria-label="Cambiar idioma" data-current-lang="es">
+                <span aria-hidden="true">ES / EN</span>
+            </button>
+    
+            <!-- Navegación principal izquierda -->
+            <nav class="menu-header menu-izquierda" aria-label="Navegación principal">
+                <a href="acerca-finanza.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Nuestra Misión" data-en="Our Mission">Nuestra Misión</span>
+                        <span class="text replacement" data-es="Nuestra Misión" data-en="Our Mission">Nuestra Misión</span>
+                    </span>                    
+                </a>
+                <a href="sobre-nosotros.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Expertos" data-en="Experts">Expertos</span>
+                        <span class="text replacement" data-es="Expertos" data-en="Experts">Expertos</span>
+                    </span>
+                </a>
+                <a href="servicios.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Cursos" data-en="Courses">Cursos</span>
+                        <span class="text replacement" data-es="Cursos" data-en="Courses">Cursos</span>
+                    </span>
+                </a>
+            </nav>
+    
+            <!-- Logo con enlace a inicio -->
+            <div class="logo">
+                <a href="pagina principal\index.html" id="logo-link" aria-label="Inicio">
+                    <h1 id="logo-text">FINOVA</h1>
+                </a>
+            </div>
+    
+            <!-- Navegación principal derecha -->
+            <nav class="menu-header menu-derecha" aria-label="Navegación secundaria">
+                <a href=".html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Inicio" data-en="Home">Inicio</span>
+                        <span class="text replacement" data-es="Inicio" data-en="Home">Inicio</span>
+                    </span>
+                </a>
+                <a href="#contacto" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Contacto" data-en="Contact">Contacto</span>
+                        <span class="text replacement" data-es="Contacto" data-en="Contact">Contacto</span>
+                    </span>
+                </a>
+                <a href="faq.html" class="boton-header">
+                    <span class="text-wrapper">
+                        <span class="text original" data-es="Recursos" data-en="Resources">Recursos</span>
+                        <span class="text replacement" data-es="Recursos" data-en="Resources">Recursos</span>
+                    </span>
+                </a>
+            </nav>
+    
+            <button class="boton-menu" id="boton-menu" aria-label="Menú" aria-expanded="false" aria-controls="barra-lateral">
+                <span class="material-symbols-outlined" data-es="menu" data-en="menu">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Barra lateral accesible -->
+    <aside class="barra-lateral" id="barra-lateral" aria-labelledby="boton-menu">
+        <div class="contenido-desplazable">
+            <ul class="enlaces-barra">
+                <li>
+                    <h4><span data-es="Menú Principal" data-en="Main Menu">Menú Principal</span></h4>
+                    <div class="separador-menu"></div>
+                </li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">home</span><span data-es="Inicio" data-en="Home">Inicio</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">download</span><span data-es="Descargas" data-en="Downloads">Descargas</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">notifications</span><span data-es="Notificaciones" data-en="Notifications">Notificaciones</span></a></li>
+                
+                <li>
+                    <h4><span data-es="Recursos Destacados" data-en="Featured Resources">Recursos Destacados</span></h4>
+                    <div class="separador-menu"></div>
+                </li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">library_books</span><span data-es="Biblioteca" data-en="Library">Biblioteca</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">calculate</span><span data-es="Calculadoras" data-en="Calculators">Calculadoras</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">forum</span><span data-es="Comunidad" data-en="Community">Comunidad</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">groups</span><span data-es="Asesores" data-en="advisors">Asesores</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">description</span><span data-es="Reportes" data-en="Reports">Reportes</span></a></li>
+                
+                <li>
+                    <h4><span data-es="Cuenta" data-en="Account">Cuenta</span></h4>
+                    <div class="separador-menu"></div>
+                </li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">person</span><span data-es="Perfil" data-en="Profile">Perfil</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">settings</span><span data-es="Configuración" data-en="Settings">Configuración</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">logout</span><span data-es="Cerrar Sesión" data-en="Logout">Cerrar Sesión</span></a></li>
+            </ul>
+            
+            <div class="cuenta-usuario">
+                <div class="perfil-usuario">
+                    <img src="Copia-de-luis.webp" alt="Foto de perfil del usuario" width="42" height="42" loading="lazy">
+                    <div class="detalles-usuario">
+                        <h3>Usuario Finova</h3>
+                        <span data-es="Miembro Premium" data-en="Premium Member">Miembro Premium</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main>
+        <section class="cuadro-entrada">
+            <h1> CREDITOS Y DEUDAS</h1>
+            <p>En esta sección encontrarás información sobre créditos, deudas y finanzas personales. Aprenderás a gestionar tus finanzas de manera efectiva, a entender los diferentes tipos de créditos y cómo manejarlos, así como a evitar caer en deudas innecesarias.</p>
+        </section>
+
+        <div class="separador">
+            <p>Para empezar, vamos a aclarar cada concepto</p>
+        </div>
+
+            <div class="tarjetas-explicativas">
+                <div class="tarjeta">
+                    <div class="tarjeta-imagen" style="background-color: #ff922d;">
+                        <img src="images/creditcards.webp" alt="Imagen de tarjeta de crédito">
+                    </div>
+                    <div class="tarjeta-contenido">
+                        <h2>Tipos de Crédito</h2>
+                        <p>Infórmate sobre las distintas modalidades de crédito que existen y descubre cuál podría ajustarse mejor a tus necesidades:</p>
+                        <ul>
+                            <li><b>Créditos personales:</b> utilizados generalmente para gastos personales o emergencias.</li>
+                            <li><b>Tarjetas de crédito:</b> permiten realizar compras con pagos diferidos o a plazos.</li>
+                            <li><b>Hipotecas:</b> destinadas a la adquisición o remodelación de bienes inmuebles.</li>
+                            <li><b>Créditos empresariales o para PyMEs:</b> orientados al financiamiento de negocios, expansión o necesidades operativas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <div class="tarjeta-imagen" style="background-color: #ff922d;">
+                        <img src="images/manejofinanzas.webp" alt="Imagen de tarjeta de crédito">
+                    </div>
+                    <div class="tarjeta-contenido">
+                        <h2>Manejo de Deudas</h2>
+                        <p>Conoce estrategias prácticas y eficaces para reducir tus deudas de forma organizada e inteligente:</p>
+                        <ul>
+                            <li><b>Presupuesto 50/30/20:</b> Distribuye tus ingresos: 50% a necesidades, 30% a deseos y 20% a ahorro o pago de deudas. Facilita el control financiero.</li>
+                            <li><b>Método bola de nieve:</b> enfócate en saldar primero las deudas más pequeñas para generar impulso.</li>
+                            <li><b>Método avalancha:</b> prioriza las deudas con mayores tasas de interés para ahorrar más a largo plazo.</li>
+                            <li><b>Negociación con acreedores:</b> acuerda nuevas condiciones de pago que se adapten mejor a tu situación financiera.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <div class="tarjeta-imagen" style="background-color: #ff922d;">
+                        <img src="images/arboldinero.webp" alt="Imagen de tarjeta de crédito">
+                    </div>
+                    <div class="tarjeta-contenido">
+                        <h2>Consejos Financieros</h2>
+                        <p>Aplica estos consejos prácticos para fortalecer tu salud financiera, administrar mejor tus recursos y evitar el sobreendeudamiento:</p>
+                        <ul>
+                            <li><b>Presupuesto mensual:</b> planifica tus ingresos y egresos para mantener el control de tus finanzas.</li>
+                            <li><b>Ahorro para emergencias:</b> destina una parte de tus ingresos a imprevistos y evita recurrir a créditos en situaciones urgentes.</li>
+                            <li><b>Uso responsable del crédito:</b> utiliza el crédito con moderación y cumple puntualmente con tus pagos.</li>
+                            <li><b>Evitar gastos innecesarios:</b> identifica y elimina compras impulsivas o poco prioritarias.</li>
+                        </ul>
+                    </div>
+
+
+
+            </div>
+
+
+    </main>
+
+
+
+
+
+
+
+</html>
