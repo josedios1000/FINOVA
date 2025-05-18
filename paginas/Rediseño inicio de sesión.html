@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finova - Educación Financiera para Todos</title>
+    <meta name="description" content="Plataforma de educación financiera con cursos y oportunidades laborales">
+    <meta property="og:title" content="Finanzas Pro - Aprende y Trabaja">
+    <link rel="stylesheet" href="inicio de sesion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Banner de Cookies -->
+    <div class="banner-cookies" id="banner-cookies">
+        <p>Usamos cookies para mejorar tu experiencia.</p>
+        <button id="aceptar-cookies">Aceptar</button>
+    </div>
+
+    <div class="contenedor">
+        <!-- Botón de Tema -->
+        <div class="boton-tema" id="boton-tema">
+            <i class="fas fa-moon"></i>
+        </div>
+
+        <div class="selector-idioma">
+            <button class="boton-idioma" id="boton-idioma">
+                <i class="fas fa-globe"></i>
+                <span>ES</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="menu-idioma" id="menu-idioma">
+                <a href="#" data-lang="es">Español</a>
+                <a href="#" data-lang="en">English</a>
+            </div>
+        </div>
+
+        <!-- Encabezado -->
+        <div class="encabezado">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <h1>FINOVA</h1>
+            </div>
+            <p class="eslogan">Domina tu dinero, transforma tu futuro</p>
+            <div class="clima" id="clima">
+                <i class="fas fa-cloud-sun"></i> <span>Cargando...</span>
+            </div>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="contenido-principal">
+            <!-- Formulario de Login -->
+            <div class="formulario-login">
+                <h2><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</h2>
+                <form id="formulario-login">
+                    <!-- Campo oculto para spam -->
+                    <input type="text" name="campo-oculto" style="display:none;">
+                    
+                    <div class="grupo-input">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="correo" placeholder="Correo electrónico" required>
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="contraseña" placeholder="Contraseña" required minlength="8">
+                        <i class="fas fa-eye boton-mostrar-contraseña" id="boton-mostrar-contraseña"></i>
+                    </div>
+                    
+                    <!-- Barra de fortaleza de contraseña -->
+                    <div class="fortaleza-contraseña" id="fortaleza-contraseña">
+                        <div class="barra-fortaleza"></div>
+                        <span class="texto-fortaleza">Seguridad: baja</span>
+                    </div>
+                    
+                    <div class="opciones-formulario">
+                        <label class="recordar">
+                            <input type="checkbox" id="recordar"> Recordar sesión
+                        </label>
+                        <a href="#" class="olvidaste-contraseña">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    
+                    <button type="submit" class="boton-enviar" id="boton-enviar">
+                        <span id="texto-boton"><i class="fas fa-unlock-alt"></i> Acceder</span>
+                        <div class="cargador oculto" id="cargador"></div>
+                    </button>
+                    
+                    <div class="enlace-registro">
+                        ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
+                    </div>
+                </form>
+                
+                <div class="login-redes">
+                    <p>O inicia sesión con:</p>
+                    <div class="iconos-redes">
+                        <a href="#" class="boton-redes google"><i class="fab fa-google"></i></a>
+                        <a href="#" class="boton-redes facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="boton-redes linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Promoción de Empleo -->
+            <div class="promocion-empleo">
+                <div class="tarjeta-promocion">
+                    <i class="fas fa-users"></i>
+                    <h3>Únete a nuestro equipo</h3>
+                    <p>Buscamos profesionales apasionados por la educación financiera</p>
+                    <ul class="roles-empleo">
+                        <li><i class="fas fa-check-circle"></i> Asesor financiero</li>
+                        <li><i class="fas fa-check-circle"></i> Planificador financiero</li>
+                        <li><i class="fas fa-check-circle"></i> Asesor de inversiones</li>
+                        <li><i class="fas fa-check-circle"></i> Especialista en deudas</li>
+                        <li><i class="fas fa-check-circle"></i> Contador fiscal</li>
+                        <li>y mas...</li>
+                    </ul>
+                    <button class="boton-promocion" id="boton-empleo">
+                         Unete a nosotros
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="inicio de sesion.js"></script>
+</body>
+</html>
+
+    <script src="inicio de sesion.js"></script>
+</body>
+</html>
