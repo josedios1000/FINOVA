@@ -86,23 +86,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Simular envío (en producción sería una llamada AJAX)
         setTimeout(() => {
             // Ocultar cargador y restaurar botón
-            textoBoton.textContent = 'Acceso concedido';
             cargador.classList.remove('activo');
             botonEnviar.disabled = false;
             
-            // Redirigir después de 1 segundo
-            setTimeout(() => {
-                alert('¡Inicio de sesión exitoso! (simulación)');
-                textoBoton.innerHTML = '<i class="fas fa-unlock-alt"></i> Acceder';
-            }, 1000);
+            // Redirigir después de la validación
+            window.location.href = '../paginas/principal.html'; // Cambia a tu página de destino
         }, 2000);
     });
-    
-    // 6. Botón de empleo
+
+    // 6. Botón de empleo 
     botonEmpleo.addEventListener('click', function(e) {
         e.preventDefault();
-        alert('Redirigiendo a la página de oportunidades laborales');
-        // window.location.href = 'empleo.html';
+        window.location.href = '../paginas/fomulario empleo.html'; // Cambia a tu página de destino
     });
     
     // 7. Obtener datos del clima (simulado)
