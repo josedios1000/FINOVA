@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadro Interactivo con Imagen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .cuadro {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .imagen {
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .capa {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(74, 111, 165, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .titulo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .descripcion {
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            margin-top: 0;
+        }
+        
+        .cuadro:hover {
+            transform: scale(1.05);
+        }
+        
+        .cuadro:hover .capa {
+            background-color: rgba(74, 111, 165, 0.3);
+        }
+        
+        .cuadro:hover .descripcion {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cuadro">
+        <div class="imagen"></div>
+        <div class="capa">
+            <div class="titulo">Crédito</div>
+            <div class="descripcion">
+                Nuestros créditos ofrecen tasas competitivas y plazos flexibles para ayudarte a alcanzar tus metas financieras.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
