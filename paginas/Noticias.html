@@ -9,34 +9,32 @@
     <link rel="stylesheet" href="../css/estilos noticias.css">
 </head>
 <body>
+
+    <header class="cabecera">
+        <div class="contenedor">
+            <div class="logo">
+                <h1>Finanzas<span>Inovadoras</span></h1>
+                <p>Tu guía hacia la libertad financiera</p>
+            </div>
+            <nav class="navegacion">
+                <ul>
+                    <li><a href="../paginas/principal.html" class="activo">Inicio</a></li>
+                    <li><a href="../paginas/Noticias.html">Noticias</a></li>
+                    <li><a href="../paginas/simuladores.html">Simuladores</a></li>
+                    <li><a href="../paginas/credito.html">Creditos y Deudas</a></li>
+                    <li><a href="../paginas/bitacora.html">Bitacora</a></li>
+                </ul>
+            </nav>
+            <button class="menu-movil" id="menuMovil">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
     <!-- Barra de Mercado en Tiempo Real -->
     <div class="market-ticker">
         <div class="ticker-container" id="ticker-container"></div>
     </div>
-
-    <!-- Header con Búsqueda Inteligente -->
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-container">
-                <h1 class="logo">FINOVA</h1>
-                <p class="slogan">Inteligencia financiera en tiempo real</p>
-            </div>
-            
-            <div class="search-container">
-                <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="Buscar acciones, criptos, noticias...">
-                    <button id="search-btn"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="search-suggestions" id="search-suggestions"></div>
-            </div>
-            
-            <div class="user-actions">
-                <button class="btn-alerts"><i class="fas fa-bell"></i> Alertas</button>
-                <button class="btn-login">Acceder</button>
-                <button class="btn-premium">Premium</button>
-            </div>
-        </div>
-    </header>
 
     <!-- Navegación por Sectores -->
     <nav class="sector-nav">
