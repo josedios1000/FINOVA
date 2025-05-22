@@ -1,0 +1,66 @@
+/* Estilos de la grafica de prestamo */
+body {
+  background-color: #f0f0f0;         /* Fondo claro */
+  font-family: Arial, sans-serif;
+  color: #333;                      /* Texto oscuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+}
+
+h1 {
+  background: linear-gradient(45deg, #273848, #5e6c7b);
+  padding: 20px;
+  border-radius: 8px;              /* Bordes redondeados */
+  font-size: 2rem;                  /* Tamaño de fuente grande */
+  margin-bottom: 20px;
+  color: #fff;                      /* Texto oscuro */
+}
+/* Contenedor principal de la grafica */
+#container {
+  width: 800px;                   /* Ancho aumentado para mejor visualización */
+  height: 500px;                  /* Alto ajustado */
+  background-color: #fff;         /* Fondo blanco */
+  border: 1px solid #ddd;         /* Borde sutil */
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efecto elevado */
+  border-radius: 8px;            /* Bordes redondeados */
+}
+
+/* Estilos para el boton */
+#play-btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  background-color: #ff922d;      /* boton naranja */
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Efecto hover para el boton */
+#play-btn:hover {
+  background-color: #ff922d;
+  color: #1e293b;
+}
+
+/* Estilos para el texto explicativo de la grafica */
+.info-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 15px;
+  max-width: 800px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para el texto dentro de la info-box */
+.info-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
