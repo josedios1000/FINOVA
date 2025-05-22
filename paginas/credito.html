@@ -95,6 +95,19 @@
         </div>
     </main>
 
+<section class="separador">
+    <div class="contenedorgrafica">
+                <p>Usa esta información para tomar el control. Un crédito bien elegido puede ayudarte, pero uno mal elegido puede endeudarte por años.</p>
+      <h1>Compara dos créditos con diferentes tasas</h1>
+      <div id="container"></div>
+        <button id="play-btn">▶ Simular Comparación</button>
+            <div class="info-box">
+                <h3>¿Cómo funciona?</h3>
+                <p>Esta gráfica muestra el <strong>total acumulado</strong> que pagarías por un préstamo de $10,000 MXN a 12 meses, comparando una tasa del 20% vs una del 60% anual.</p>
+            </div>
+    </div>
+</section>
+
     <script>
         // Menú móvil
         document.getElementById('menuMovil').addEventListener('click', function() {
@@ -102,6 +115,9 @@
             nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
         });
     </script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="../experimentos/scriptsgrafica.js"></script>
 </body>
 </html>
 

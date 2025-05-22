@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
     plotOptions: {
       line: {
         marker: { enabled: false },
-        lineWidth: 3
+        lineWidth: 2,
       }
     },
     series: [{  // Serie 1: Vacía inicialmente
