@@ -391,6 +391,9 @@ body {
   min-width: 300px;
   min-height: 300px;
   margin: 0 auto;
+  border-radius: 8px;            /* Bordes redondeados */
+  border: 1px solid #ddd;         /* Borde sutil */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efecto elevado */
 }
 
 /* Mejoras responsive */
