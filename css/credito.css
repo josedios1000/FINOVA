@@ -171,6 +171,7 @@ body {
 
 /* ===== CONTENIDO ===== */
 
+/* titulo del texto "credito y deudas" */
 .cuadro-entrada{
     background: linear-gradient(45deg, #273848, #5e6c7b);
     border-radius: 10px;
@@ -198,6 +199,86 @@ body {
 
 }
 
+/*cuadros de explicacion de credito y deudas */
+.cuadros-descripcion {
+    display: flex;
+    justify-content: center;
+    gap: 32px;         /* Espacio entre los cuadros */
+    margin: 32px 0;
+}
+
+.cuadro {
+    width: 450px;
+    height: 250px;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;     /* Centra horizontalmente */
+    text-align: center;
+}
+
+.capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #4676a0, #577494);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.capa.deudas {
+    background: linear-gradient(45deg, #FF6F61, #FF3D00);
+}
+
+.titulo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.descripcion {
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    margin-top: 0;
+}
+
+.cuadro:hover {
+    transform: scale(1.05);
+}
+
+.cuadro:hover .capa {
+    background-color: rgba(129, 124, 118, 0.3);
+}
+
+.cuadro:hover .descripcion {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+/* Separador entre secciones */
 .separador {
     display: flex;
     justify-content: center;
@@ -206,6 +287,7 @@ body {
     text-align: center;
 }
 
+/* Estilo del texto dentro del separador */
 .separador p{
     font-family: var(--fuente-principal);
     font-size: 2.3rem;
@@ -218,6 +300,7 @@ body {
 
 }
 
+/* estructura de las tarjetas explicativas */
 .tarjetas-explicativas{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -229,6 +312,7 @@ body {
 
 }
 
+/* Estilo de las tarjetas */
 .tarjeta {
     background-color: white;
     border-radius: 8px;
@@ -239,11 +323,13 @@ body {
     margin-right: 10px;
 }
 
+/* Efecto de sombra y elevación al pasar el mouse por las tarjetas */
 .tarjeta:hover {
     transform: translateY(-5px);
 }
 
-.tarjeta-imgagen {
+/* Estilo del recuadro donde va la imagen dentro de la tarjeta */
+.tarjeta-imagen {
     height: 180px;
     background-color: #3498db;
     display: flex;
@@ -253,16 +339,19 @@ body {
     font-size: 2rem;
 }
 
+/* Estilo de la imagen dentro de la tarjeta */
 .tarjeta-imagen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* Estilo del contenido dentro de la tarjeta */
 .tarjeta-contenido {
     padding: 25px;
 }
 
+/* Estilo del texto dentro de la tarjeta */
 .tarjeta-contenido h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -272,6 +361,7 @@ body {
     font-weight: bold;
 }
 
+/* Estilo del texto dentro de la tarjeta */
 .tarjeta-contenido p {
     font-size: 1.7rem;
     color: #5d6464;
@@ -279,14 +369,13 @@ body {
     margin-bottom: 10px;
 }
 
+/* Estilo de la lista dentro de la tarjeta */
 .tarjeta-contenido ul {
     margin-left: 20px;
     margin-bottom: 15px;
     font-size: 1.5rem;
     line-height: 2.5rem;
 }
-
-/* Añadir al final del archivo */
 
 /* Mejoras para las tarjetas */
 .tarjeta-imagen {
@@ -311,16 +400,17 @@ body {
 
 /* Contenedor principal de la grafica */
 .contenedorgrafica {
-  width: 100%;                   /* Ancho aumentado para mejor visualización */
-  max-width: 1200px;            /* Ancho máximo */                /* Alto ajustado */
-  margin-bottom: 20px;
-  border-radius: 8px;            /* Bordes redondeados */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;                  /* Ancho aumentado para mejor visualización */
+  max-width: 1200px;            /* Ancho máximo */
+  margin-bottom: 20px;          /* Espacio inferior */
+  border-radius: 8px;           /* Bordes redondeados */
+  display: flex;                /* Flex para centrar contenido */
+  flex-direction: column;       /* Columna para apilar elementos */
+  align-items: center;          /* Centrar elementos */
+  justify-content: center;      /* Centrar contenido */
 }
 
+/* Estilo del título dentro del contenedor de la gráfica */
 .contenedorgrafica h1 {
   background: linear-gradient(45deg, #273848, #5e6c7b);
   padding: 20px;
@@ -332,7 +422,7 @@ body {
 }
 
 /* Estilos para el boton */
-#play-btn {
+#boton-simular {
   padding: 12px 24px;
   margin-top: 24px;
   font-size: 18px;
@@ -341,14 +431,15 @@ body {
   color: white;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 
 }
 
 /* Efecto hover para el boton */
-#play-btn:hover {
+#boton-simular:hover {
   background-color: #ff922d;
   color: #1e293b;
+  transform: scale(1.05);
 }
 
 /* Estilos para el texto explicativo de la grafica */
@@ -382,14 +473,14 @@ body {
 
 /* Ajusta el tamaño del div donde se dibuja la gráfica */
 #container {
-  width: 800px;
-  height: 500px;
-  min-width: 300px;
-  min-height: 300px;
-  margin: 0 auto;
-  border-radius: 8px;            /* Bordes redondeados */
-  border: 1px solid #ddd;         /* Borde sutil */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efecto elevado */
+  width: 800px;                                 /* Ancho aumentado para mejor visualización */
+  height: 500px;                                /* Alto aumentado para mejor visualización */
+  min-width: 300px;                             /* Ancho mínimo */
+  min-height: 300px;                            /* Alto mínimo */
+  margin: 0 auto;                               /* Centrar el contenedor */
+  border-radius: 8px;                           /* Bordes redondeados */
+  border: 1px solid #ddd;                     /* Borde sutil */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    /* Sombra para efecto elevado */
 }
 
 /* Mejoras responsive */

@@ -38,15 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     title: {
       text: 'Comparación de Créditos: 20% vs 60% de Interés Anual',
-      style: { color: '#333', fontSize: '25px' }
+      style: { color: '#333', fontSize: '2rem' }
     },
     xAxis: {
       title: { text: 'Mes', style: { color: '#333' } },
-      labels: { style: { color: '#666', fontSize: '25px'} },
+      labels: { style: { color: '#666', fontSize: '1.2rem'} },
       tickInterval: 1
     },
     yAxis: {
-      title: { text: 'Total Pagado (MXN)', style: { color: '#333', fontSize: '25px'} },
+      title: { text: 'Total Pagado (MXN)', style: { color: '#333', fontSize: '1.3rem'} },
       labels: { 
         style: { color: '#666' },
         formatter: function () {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
       pointFormat: '{series.name}: <b>${point.y:,.2f} MXN</b>',
       backgroundColor: '#fff',
       borderColor: '#ddd',
-      style: { color: '#333' }
+      style: { color: '#333', fontSize: '1.2rem' },
     },
     plotOptions: {
       line: {
@@ -76,7 +76,13 @@ document.addEventListener('DOMContentLoaded', function () {
       data: [],
       color: '#e74c3c'
     }],
-    credits: { enabled: false }
+    credits: { enabled: false },
+    legend: {
+      itemStyle: {
+        fontSize: '1.4rem',
+        color: '#333'
+      }
+    }
   });
 
   // Función para animar las series
@@ -95,5 +101,5 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Asignar la animación al botón
-  document.getElementById('play-btn').addEventListener('click', animarGrafica);
+  document.getElementById('boton-simular').addEventListener('click', animarGrafica);
 });
