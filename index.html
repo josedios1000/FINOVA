@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finova - Ahorro Inteligente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #000000;
+      --secondary-color: #FF7F00;
+      --accent-color: #FFA500;
+      --light-color: #FFF4E6;
+      --dark-color: #1A1A1A;
+      --success-color: #27ae60;
+      --warning-color: #e74c3c;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #FFA500 0%, #FF7F00 100%);
+      color: var(--primary-color);
+      line-height: 1.8;
+      padding-top: 80px;
+    }
+
+    .header-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.9);
+      border-bottom: 3px solid var(--secondary-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 80px;
+    }
+
+    .logo {
+      font-family: 'Abril Fatface', cursive;
+      font-size: 2.2rem;
+      color: var(--secondary-color);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: var(--secondary-color);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Abril Fatface', cursive;
+      font-size: 3.5rem;
+      margin: 0 0 1rem 0;
+      color: var(--secondary-color);
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .btn-hero {
+      padding: 1rem 2rem;
+      background-color: var(--secondary-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-hero:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    .contenido-principal {
+      padding: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      border: 2px solid var(--secondary-color);
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Estilos para el simulador interactivo */
+    .simulador-container {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border: 2px solid var(--secondary-color);
+    }
+
+    .configuracion-simulador {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-group label {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .input-simulador {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .input-simulador:focus {
+      border-color: var(--secondary-color);
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(255,127,0,0.2);
+    }
+
+    .btn-simular {
+      padding: 0.8rem 1.5rem;
+      background-color: var(--secondary-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    .btn-simular:hover {
+      background-color: var(--primary-color);
+    }
+
+    .resultado-simulacion {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .barra-progreso-container {
+      height: 25px;
+      background: #f0f0f0;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .barra-progreso {
+      height: 100%;
+      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      border-radius: 12px;
+      width: 0%;
+      transition: width 0.7s ease;
+    }
+
+    .progreso-texto {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-shadow: 0 0 2px rgba(0,0,0,0.3);
+    }
+
+    .estadisticas-simulacion {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .estadistica {
+      text-align: center;
+      padding: 1.2rem;
+      background: var(--light-color);
+      border-radius: 8px;
+    }
+
+    .estadistica-valor {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 0.3rem;
+    }
+
+    .estadistica-label {
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      opacity: 0.8;
+    }
+
+    .controles-simulacion {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-control {
+      padding: 0.7rem 1.3rem;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-control:hover {
+      background-color: var(--secondary-color);
+    }
+
+    /* Estilos para consejos de ahorro */
+    .consejos-ahorro {
+      margin: 3rem 0;
+    }
+
+    .categoria-consejos {
+      margin-bottom: 2.5rem;
+    }
+
+    .categoria-consejos h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--secondary-color);
+      font-size: 1.8rem;
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .lista-consejos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .consejo-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      border-left: 4px solid var(--secondary-color);
+      transition: all 0.3s ease;
+    }
+
+    .consejo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .consejo-card h4 {
+      margin-top: 0;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+    }
+
+    .consejo-card p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    .consejo-impacto {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.3rem 0.8rem;
+      background-color: var(--light-color);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: 70px;
+      }
+      
+      .header-content {
+        height: 70px;
+        padding: 0 15px;
+      }
+      
+      .logo {
+        font-size: 1.8rem;
+      }
+      
+      .nav-menu {
+        gap: 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .contenido-principal {
+        padding: 1.5rem;
+        margin: 1.5rem;
+      }
+      
+      .configuracion-simulador {
+        grid-template-columns: 1fr;
+      }
+      
+      .controles-simulacion {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <div class="header-content">
+      <h1 class="logo">Finova</h1>
+      <nav class="nav-menu">
+        <a href="#simulador">Simulador</a>
+        <a href="#consejos">Consejos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="hero">
+    <h1>Domina el Arte de Ahorrar</h1>
+    <p>Descubre estrategias comprobadas y simula tu progreso hacia la libertad financiera</p>
+    <button class="btn-hero" onclick="document.getElementById('simulador').scrollIntoView({behavior: 'smooth'})">Comenzar Simulación</button>
+  </section>
+
+  <main class="contenido-principal">
+    <!-- Simulador Interactivo de Ahorro -->
+    <section id="simulador" class="simulador-container">
+      <h2>Simulador de Progreso de Ahorro</h2>
+      <p>Personaliza tu meta y observa cómo pequeños hábitos pueden generar grandes resultados.</p>
+      
+      <div class="configuracion-simulador">
+        <div class="input-group">
+          <label for="meta-ahorro">Meta de ahorro ($)</label>
+          <input type="number" id="meta-ahorro" class="input-simulador" min="100" value="5000">
+        </div>
+        
+        <div class="input-group">
+          <label for="periodo-ahorro">Período (días)</label>
+          <input type="number" id="periodo-ahorro" class="input-simulador" min="7" max="365" value="30">
+        </div>
+        
+        <div class="input-group">
+          <label for="ahorro-inicial">Ahorro inicial ($)</label>
+          <input type="number" id="ahorro-inicial" class="input-simulador" min="0" value="0">
+        </div>
+      </div>
+      
+      <button id="btn-iniciar" class="btn-simular">Iniciar Simulación</button>
+      
+      <div id="resultado-simulacion" class="resultado-simulacion">
+        <div class="barra-progreso-container">
+          <div class="barra-progreso" id="barra-progreso"></div>
+          <div class="progreso-texto" id="progreso-texto">0%</div>
+        </div>
+        
+        <div class="estadisticas-simulacion">
+          <div class="estadistica">
+            <div class="estadistica-valor" id="ahorro-actual">$0</div>
+            <div class="estadistica-label">Ahorrado</div>
+          </div>
+          <div class="estadistica">
+            <div class="estadistica-valor" id="dias-transcurridos">0</div>
+            <div class="estadistica-label">Días</div>
+          </div>
+          <div class="estadistica">
+            <div class="estadistica-valor" id="ahorro-diario">$0</div>
+            <div class="estadistica-label">Promedio/día</div>
+          </div>
+          <div class="estadistica">
+            <div class="estadistica-valor" id="proyeccion-final">$0</div>
+            <div class="estadistica-label">Proyección</div>
+          </div>
+        </div>
+        
+        <div class="controles-simulacion">
+          <button id="btn-pausar" class="btn-control">⏸ Pausar</button>
+          <button id="btn-reiniciar" class="btn-control">↻ Reiniciar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consejos de Ahorro Diario -->
+    <section id="consejos" class="consejos-ahorro">
+      <h2>Consejos para Ahorrar Día a Día</h2>
+      <p>Pequeños cambios en tus hábitos diarios pueden generar grandes resultados financieros.</p>
+      
+      <div class="categoria-consejos">
+        <h3>Compras Inteligentes</h3>
+        <div class="lista-consejos">
+          <div class="consejo-card">
+            <h4>Regla de las 24 horas</h4>
+            <p>Antes de comprar algo no esencial, espera 24 horas. Muchas veces el deseo desaparece.</p>
+            <span class="consejo-impacto">Ahorro potencial: $100-$500/mes</span>
+          </div>
+          
+          <div class="consejo-card">
+            <h4>Lista de compras estricta</h4>
+            <p>Haz una lista antes de ir al supermercado y cíñete a ella. Evita compras por impulso.</p>
+            <span class="consejo-impacto">Ahorro potencial: 15-30% en supermercado</span>
+          </div>
+          
+          <div class="consejo-card">
+            <h4>Compara precios</h4>
+            <p>Usa aplicaciones para comparar precios entre establecimientos antes de comprar.</p>
+            <span class="consejo-impacto">Ahorro potencial: 10-25% por compra</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="categoria-consejos">
+        <h3>Hábitos Cotidianos</h3>
+        <div class="lista-consejos">
+          <div class="consejo-card">
+            <h4>Prepara tu comida</h4>
+            <p>Llevar comida al trabajo puede ahorrarte entre $50-$150 por semana.</p>
+            <span class="consejo-impacto">Ahorro potencial: $200-$600/mes</span>
+          </div>
+          
+          <div class="consejo-card">
+            <h4>Transporte eficiente</h4>
+            <p>Usa transporte público, bicicleta o comparte coche para ahorrar en gasolina y mantenimiento.</p>
+            <span class="consejo-impacto">Ahorro potencial: $100-$300/mes</span>
+          </div>
+          
+          <div class="consejo-card">
+            <h4>Energía en casa</h4>
+            <p>Apaga luces y desconecta aparatos que no uses. Considera bombillas LED.</p>
+            <span class="consejo-impacto">Ahorro potencial: 10-20% en servicios</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="categoria-consejos">
+        <h3>Mentalidad Financiera</h3>
+        <div class="lista-consejos">
+          <div class="consejo-card">
+            <h4>Ahorro automático</h4>
+            <p>Configura transferencias automáticas a una cuenta de ahorros el día que recibes tu pago.</p>
+            <span class="consejo-impacto">Puede aumentar ahorros en 50-100%</span>
+          </div>
+          
+          <div class="consejo-card">
+            <h4>Metas específicas</h4>
+            <p>Define metas SMART (Específicas, Medibles, Alcanzables, Relevantes, con Tiempo).</p>
+            <span class="consejo-impacto">Triplica probabilidad de éxito</span>
+          </div>
+          
+          <div class="consejo-card">
+            <h4>Revisión semanal</h4>
+            <p>Dedica 15 minutos cada semana a revisar tus gastos y progreso de ahorro.</p>
+            <span class="consejo-impacto">Mejora consistencia en 70%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <p>&copy; 2023 Finova - Transformando tu relación con el dinero</p>
+  </footer>
+
+  <script>
+    // Variables de estado para la simulación
+    let simulacionActiva = false;
+    let intervaloSimulacion;
+    let diaActual = 0;
+    let ahorroAcumulado = 0;
+    let metaPersonal = 0;
+    let plazoPersonal = 0;
+    let historialAhorro = [];
+    
+    // Elementos del DOM
+    const btnIniciar = document.getElementById('btn-iniciar');
+    const btnPausar = document.getElementById('btn-pausar');
+    const btnReiniciar = document.getElementById('btn-reiniciar');
+    const inputMeta = document.getElementById('meta-ahorro');
+    const inputPlazo = document.getElementById('periodo-ahorro');
+    const inputInicial = document.getElementById('ahorro-inicial');
+    const panelResultados = document.getElementById('resultado-simulacion');
+    const barraProgreso = document.getElementById('barra-progreso');
+    const textoProgreso = document.getElementById('progreso-texto');
+    const elementoAhorro = document.getElementById('ahorro-actual');
+    const elementoDias = document.getElementById('dias-transcurridos');
+    const elementoPromedio = document.getElementById('ahorro-diario');
+    const elementoProyeccion = document.getElementById('proyeccion-final');
+    
+    // Iniciar simulación
+    btnIniciar.addEventListener('click', function() {
+      if (simulacionActiva) return;
+      
+      metaPersonal = parseInt(inputMeta.value);
+      plazoPersonal = parseInt(inputPlazo.value);
+      ahorroAcumulado = parseInt(inputInicial.value) || 0;
+      
+      if (metaPersonal < 100 || plazoPersonal < 7) {
+        alert('Por favor ingresa valores válidos (Meta mínima: $100, Período mínimo: 7 días)');
+        return;
+      }
+      
+      // Configurar simulación
+      diaActual = 0;
+      historialAhorro = [ahorroAcumulado];
+      
+      // Mostrar panel de resultados
+      panelResultados.style.display = 'block';
+      actualizarUI();
+      simulacionActiva = true;
+      
+      // Iniciar simulación
+      iniciarSimulacion();
+    });
+    
+    // Pausar/continuar simulación
+    btnPausar.addEventListener('click', function() {
+      if (!simulacionActiva) return;
+      
+      if (btnPausar.textContent.includes('Pausar')) {
+        clearInterval(intervaloSimulacion);
+        btnPausar.textContent = '▶ Continuar';
+      } else {
+        iniciarSimulacion();
+        btnPausar.textContent = '⏸ Pausar';
+      }
+    });
+    
+    // Reiniciar simulación
+    btnReiniciar.addEventListener('click', function() {
+      clearInterval(intervaloSimulacion);
+      simulacionActiva = false;
+      btnPausar.textContent = '⏸ Pausar';
+      btnIniciar.click();
+    });
+    
+    // Función para iniciar la simulación
+    function iniciarSimulacion() {
+      clearInterval(intervaloSimulacion);
+      
+      intervaloSimulacion = setInterval(function() {
+        if (diaActual >= plazoPersonal || ahorroAcumulado >= metaPersonal) {
+          clearInterval(intervaloSimulacion);
+          simulacionActiva = false;
+          btnPausar.textContent = '⏸ Pausar';
+          
+          if (ahorroAcumulado >= metaPersonal) {
+            textoProgreso.textContent = '¡Meta alcanzada!';
+          }
+          return;
+        }
+        
+        // Avanzar un día
+        diaActual++;
+        
+        // Calcular ahorro del día (con variabilidad realista)
+        const baseDiaria = (metaPersonal - ahorroAcumulado) / (plazoPersonal - diaActual + 1);
+        const variabilidad = 0.3 + Math.random() * 0.4; // Entre 30% y 70% de variabilidad
+        const ahorroDia = Math.floor(baseDiaria * variabilidad);
+        
+        ahorroAcumulado = Math.min(ahorroAcumulado + ahorroDia, metaPersonal);
+        historialAhorro.push(ahorroAcumulado);
+        
+        // Actualizar interfaz
+        actualizarUI();
+      }, 1000); // Actualizar cada segundo
+    }
+    
+    // Función para actualizar la interfaz
+    function actualizarUI() {
+      const porcentaje = Math.floor((ahorroAcumulado / metaPersonal) * 100);
+      const promedioDiario = ahorroAcumulado / (diaActual || 1);
+      const proyeccion = Math.floor(promedioDiario * plazoPersonal);
+      
+      // Actualizar elementos visuales
+      barraProgreso.style.width = `${porcentaje}%`;
+      textoProgreso.textContent = `${porcentaje}%`;
+      elementoAhorro.textContent = `$${ahorroAcumulado.toLocaleString()}`;
+      elementoDias.textContent = diaActual;
+      elementoPromedio.textContent = `$${Math.floor(promedioDiario).toLocaleString()}`;
+      elementoProyeccion.textContent = `$${proyeccion.toLocaleString()}`;
+    }
+    
+    // Navegación suave
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

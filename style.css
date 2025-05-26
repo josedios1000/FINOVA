@@ -1,0 +1,55 @@
+/* Estilos generales para toda la página */
+body {
+  font-family: Arial, sans-serif; /* Fuente del texto */
+  margin: 0; /* Quitar márgenes por defecto */
+  padding: 0; /* Quitar padding por defecto */
+  background-color: #f4f4f4; /* Color de fondo claro */
+}
+
+/* Estilo del encabezado */
+header {
+  background-color: #333; /* Color de fondo oscuro */
+  color: #fff; /* Texto en blanco */
+  padding: 1rem; /* Espaciado interior */
+  text-align: center; /* Centrar texto */
+}
+
+/* Estilo del contenido principal */
+main {
+  padding: 2rem; /* Espaciado interior */
+}
+
+/* Estilo para los botones */
+button {
+  padding: 0.5rem 1rem; /* Tamaño del botón */
+  background-color: #0066cc; /* Color de fondo azul */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Manito al pasar el mouse */
+}
+
+/* Estilo para las secciones */
+section {
+  background-color: white; /* Fondo blanco para las secciones */
+  padding: 1.5rem; /* Espaciado interior */
+  border-radius: 10px; /* Bordes redondeados */
+  margin-bottom: 2rem; /* Espaciado inferior entre secciones */
+}
+
+/* Estilo para la sección Día a Día */
+#diaadia {
+  background-color: #e0f7fa; /* Color de fondo suave */
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+#diaadia h2 {
+  color: #00796b; /* Color del título */
+}
+
+#diaadia ul {
+  list-style-type: square; /* Estilo de lista con cuadrados */
+  padding-left: 1.2rem; /* Espaciado a la izquierda */
+}
