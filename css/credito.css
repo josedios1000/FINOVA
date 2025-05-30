@@ -38,7 +38,7 @@ html {
 
 body {
     font-family: var(--fuente-principal);
-    background-color: #d3d3d3;
+    background-color: #1e293b;
     color: var(--color-fondo);
     margin: 0;
     padding: 0;
@@ -310,7 +310,7 @@ body {
     font-size: 2.3rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--color-texto);
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
@@ -349,12 +349,11 @@ body {
 /* Estilo del recuadro donde va la imagen dentro de la tarjeta */
 .tarjeta-imagen {
     height: 180px;
-    background-color: #3498db;
+    overflow: hidden;
+    background-color:#2c3e50 ;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 2rem;
 }
 
 /* Estilo de la imagen dentro de la tarjeta */
@@ -393,16 +392,6 @@ body {
     margin-bottom: 15px;
     font-size: 1.5rem;
     line-height: 2.5rem;
-}
-
-/* Mejoras para las tarjetas */
-.tarjeta-imagen {
-    height: 180px;
-    overflow: hidden;
-    background-color: var(--secondary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .tarjeta-imagen img {
@@ -483,6 +472,7 @@ body {
 .info-box p {
   font-size: 1.8rem;
   margin-bottom: 10px;
+  color: #1e293b;
 }
 
 .info-box h1 {
