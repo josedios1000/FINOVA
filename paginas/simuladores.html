@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-es="Finova - Educación Financiera para Todos" data-en="Finova - Financial Education for Everyone">Finova - Educación Financiera para Todos</title>
+    <title>Finova - Educación Financiera para Todos</title>
     <link rel="stylesheet" href="../css/simuladores.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="cabecera">
-        <div class="contenedor">
+        <div class="contenedor-cabecera">
             <div class="logo">
-                <h1>Finanzas<span>Inovadoras</span></h1>
-                <p>Tu guía hacia la libertad financiera</p>
+                <h1>Finova</h1>
+                <p>Tu futuro financiero comienza aquí</p>
             </div>
             <nav class="navegacion">
                 <ul>
@@ -24,159 +24,189 @@
                     <li><a href="../paginas/Noticias.html">Noticias</a></li>
                     <li><a href="../paginas/">Biblioteca</a></li>
                     <li><a href="../paginas/simuladores.html">Simuladores</a></li>
-                    <li><a href="../paginas/credito.html">Creditos y Deudas</a></li>
-                    <li><a href="../paginas/bitacora.html">Bitacora</a></li>
+                    <li><a href="../paginas/credito.html">Créditos</a></li>
+                    <li><a href="../paginas/bitacora.html">Bitácora</a></li>
                 </ul>
             </nav>
-            <button class="menu-movil" id="menuMovil">
+            <button class="boton-menu-movil" id="menuMovil">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <div class="container">
-        <header>
-            <div class="logo-container">
-                <i class="fas fa-chart-line logo-icon"></i>
-                <h1 id="titulo-principal">Simuladores Financieros</h1>
-                <p id="texto-intro">Explora nuestros simuladores financieros y toma el control de tu futuro económico. Cada herramienta está diseñada para ayudarte a comprender y planificar diferentes aspectos de tus finanzas personales.</p>
+    <div class="contenedor-principal">
+        <section class="hero">
+            <div class="contenido-hero">
+                <div class="texto-hero">
+                    <h1>Simuladores Financieros</h1>
+                    <p class="subtitulo">Domina tus finanzas con nuestras herramientas interactivas</p>
+                    <p class="descripcion">Explora nuestros simuladores diseñados para ayudarte a tomar decisiones financieras inteligentes y planificar tu futuro económico con confianza.</p>
+                </div>
+                <div class="ilustracion-hero">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Ilustración financiera">
+                </div>
             </div>
-            <button id="cambiar-idioma" class="btn-idioma" aria-label="Cambiar idioma">
-                <i class="fas fa-language"></i> <span id="texto-idioma">English</span>
-            </button>
-        </header>
+        </section>
 
-        <main>
-            <div class="simuladores-grid">
+        <main class="contenido-principal">
+            <div class="filtros">
+                <button class="boton-filtro activo">Todos</button>
+                <button class="boton-filtro">Ahorro</button>
+                <button class="boton-filtro">Préstamos</button>
+                <button class="boton-filtro">Inversiones</button>
+                <button class="boton-filtro">Planificación</button>
+            </div>
+
+            <div class="grid-simuladores">
                 <!-- Simulador 1 -->
-                <article class="simulador-card">
-                    <div class="simulador-icono">
+                <article class="tarjeta-simulador">
+                    <div class="icono-simulador">
+                        <i class="fas fa-piggy-bank"></i>
                     </div>
-                    <h2 id="titulo-simulador-1">Simulador de Ahorros</h2>
-                    <p id="descripcion-simulador-1">Calcula cuánto puedes ahorrar en un período determinado considerando diferentes tasas de interés. Ideal para planificar metas financieras a corto y largo plazo.</p>
-                    <button class="btn-simulador" onclick="window.location.href='simulador-ahorros.html'" aria-label="Probar simulador de ahorros">
-                        <span id="texto-boton-1">Probar Simulador</span> <i class="fas fa-arrow-right"></i>
+                    <h2>Simulador de Ahorros</h2>
+                    <p>Calcula cuánto puedes ahorrar considerando diferentes tasas de interés. Ideal para planificar metas a corto y largo plazo.</p>
+                    <button class="boton-primario" onclick="window.location.href='simulador-ahorros.html'">
+                        Probar Simulador <i class="fas fa-arrow-right"></i>
                     </button>
                 </article>
 
                 <!-- Simulador 2 -->
-                <article class="simulador-card">
-                    <div class="simulador-icono">
+                <article class="tarjeta-simulador">
+                    <div class="icono-simulador">
+                        <i class="fas fa-hand-holding-usd"></i>
                     </div>
-                    <h2 id="titulo-simulador-2">Simulador de Préstamos</h2>
-                    <p id="descripcion-simulador-2">Compara diferentes opciones de préstamos, calcula cuotas mensuales y el costo total del crédito. Toma decisiones informadas antes de endeudarte.</p>
-                    <button class="btn-simulador" onclick="window.location.href='simulador-prestamos.html'" aria-label="Probar simulador de préstamos">
-                        <span id="texto-boton-2">Probar Simulador</span> <i class="fas fa-arrow-right"></i>
+                    <h2>Simulador de Préstamos</h2>
+                    <p>Compara opciones de préstamos, calcula cuotas mensuales y el costo total. Toma decisiones informadas antes de endeudarte.</p>
+                    <button class="boton-primario" onclick="window.location.href='simulador-prestamos.html'">
+                        Probar Simulador <i class="fas fa-arrow-right"></i>
                     </button>
                 </article>
 
                 <!-- Simulador 3 -->
-                <article class="simulador-card">
-                    <div class="simulador-icono">
+                <article class="tarjeta-simulador destacado">
+                    <div class="icono-simulador">
+                        <i class="fas fa-home"></i>
                     </div>
-                    <h2 id="titulo-simulador-3">Simulador de Hipotecas</h2>
-                    <p id="descripcion-simulador-3">Planifica la compra de tu vivienda calculando pagos mensuales, plazo del préstamo y costo total. Evalúa diferentes escenarios para tu hipoteca.</p>
-                    <button class="btn-simulador" onclick="window.location.href='simulador-hipotecas.html'" aria-label="Probar simulador de hipotecas">
-                        <span id="texto-boton-3">Probar Simulador</span> <i class="fas fa-arrow-right"></i>
+                    <h2>Simulador de Hipotecas</h2>
+                    <p>Planifica la compra de tu vivienda calculando pagos mensuales, plazo del préstamo y costo total. Evalúa diferentes escenarios.</p>
+                    <button class="boton-primario" onclick="window.location.href='simulador-hipotecas.html'">
+                        Probar Simulador <i class="fas fa-arrow-right"></i>
                     </button>
                 </article>
 
                 <!-- Simulador 4 -->
-                <article class="simulador-card">
-                    <div class="simulador-icono">
+                <article class="tarjeta-simulador">
+                    <div class="icono-simulador">
+                        <i class="fas fa-umbrella-beach"></i>
                     </div>
-                    <h2 id="titulo-simulador-4">Simulador de Jubilación</h2>
-                    <p id="descripcion-simulador-4">Proyecta cuánto necesitarás para tu jubilación y si tus ahorros actuales son suficientes. Ajusta contribuciones y rendimientos esperados.</p>
-                    <button class="btn-simulador" onclick="window.location.href='simulador-jubilacion.html'" aria-label="Probar simulador de jubilación">
-                        <span id="texto-boton-4">Probar Simulador</span> <i class="fas fa-arrow-right"></i>
+                    <h2>Simulador de Jubilación</h2>
+                    <p>Proyecta cuánto necesitarás para tu jubilación y si tus ahorros actuales son suficientes. Ajusta contribuciones y rendimientos.</p>
+                    <button class="boton-primario" onclick="window.location.href='simulador-jubilacion.html'">
+                        Probar Simulador <i class="fas fa-arrow-right"></i>
                     </button>
                 </article>
 
                 <!-- Simulador 5 -->
-                <article class="simulador-card">
-                    <div class="simulador-icono">
+                <article class="tarjeta-simulador">
+                    <div class="icono-simulador">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h2 id="titulo-simulador-5">Simulador de Educación</h2>
-                    <p id="descripcion-simulador-5">Calcula el costo de la educación universitaria y planifica cómo financiarla. Compara opciones de ahorro y préstamos estudiantiles.</p>
-                    <button class="btn-simulador" onclick="window.location.href='simulador-educacion.html'" aria-label="Probar simulador de educación">
-                        <span id="texto-boton-5">Probar Simulador</span> <i class="fas fa-arrow-right"></i>
+                    <h2>Simulador de Educación</h2>
+                    <p>Calcula el costo de la educación universitaria y planifica cómo financiarla. Compara opciones de ahorro y préstamos.</p>
+                    <button class="boton-primario" onclick="window.location.href='simulador-educacion.html'">
+                        Probar Simulador <i class="fas fa-arrow-right"></i>
                     </button>
                 </article>
 
                 <!-- Simulador 6 -->
-                <article class="simulador-card">
-                    <div class="simulador-icono">
+                <article class="tarjeta-simulador">
+                    <div class="icono-simulador">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h2 id="titulo-simulador-6">Simulador de Inversiones</h2>
-                    <p id="descripcion-simulador-6">Proyecta el crecimiento de tus inversiones bajo diferentes escenarios de riesgo y rendimiento. Entiende el poder del interés compuesto.</p>
-                    <button class="btn-simulador" onclick="window.location.href='simulador-inversiones.html'" aria-label="Probar simulador de inversiones">
-                        <span id="texto-boton-6">Probar Simulador</span> <i class="fas fa-arrow-right"></i>
+                    <h2>Simulador de Inversiones</h2>
+                    <p>Proyecta el crecimiento de tus inversiones bajo diferentes escenarios. Entiende el poder del interés compuesto.</p>
+                    <button class="boton-primario" onclick="window.location.href='simulador-inversiones.html'">
+                        Probar Simulador <i class="fas fa-arrow-right"></i>
                     </button>
                 </article>
             </div>
         </main>
 
-        <!-- Footer Completo -->
-        <footer class="main-footer">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h4 class="footer-logo" id="footer-logo">FINOVA</h4>
-                    <p class="footer-description" id="footer-description">Plataforma líder en información financiera y análisis de mercados.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h5 class="footer-title" id="footer-mercados">Mercados</h5>
-                    <ul>
-                        <li><a href="#" id="footer-acciones">Acciones</a></li>
-                        <li><a href="#" id="footer-bonos">Bonos</a></li>
-                        <li><a href="#" id="footer-divisas">Divisas</a></li>
-                        <li><a href="#" id="footer-materias-primas">Materias Primas</a></li>
-                        <li><a href="#" id="footer-criptomonedas">Criptomonedas</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h5 class="footer-title" id="footer-herramientas">Herramientas</h5>
-                    <ul>
-                        <li><a href="#" id="footer-calculadoras">Calculadoras</a></li>
-                        <li><a href="#" id="footer-graficos">Gráficos</a></li>
-                        <li><a href="#" id="footer-calendario">Calendario Económico</a></li>
-                        <li><a href="#" id="footer-screener">Screener</a></li>
-                        <li><a href="#" id="footer-portafolio">Portafolio</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h5 class="footer-title" id="footer-empresa">Empresa</h5>
-                    <ul>
-                        <li><a href="#" id="footer-nosotros">Sobre Nosotros</a></li>
-                        <li><a href="#" id="footer-equipo">Equipo</a></li>
-                        <li><a href="#" id="footer-contacto">Contacto</a></li>
-                        <li><a href="#" id="footer-trabajo">Trabaja con Nosotros</a></li>
-                        <li><a href="#" id="footer-transparencia">Transparencia</a></li>
-                    </ul>
+        <section class="cta">
+            <div class="contenido-cta">
+                <h2>¿Necesitas ayuda para elegir el simulador adecuado?</h2>
+                <p>Nuestros expertos financieros pueden guiarte para seleccionar la mejor herramienta según tus necesidades.</p>
+                <button class="boton-secundario">Hablar con un asesor</button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="pie-pagina">
+        <div class="contenedor-pie">
+            <div class="marca-pie">
+                <h3 class="logo-pie">Finova</h3>
+                <p class="eslogan-pie">Transformando tu educación financiera</p>
+                <div class="redes-sociales">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <div class="footer-legal">
-                    <a href="#" id="footer-terminos">Términos de Uso</a>
-                    <a href="#" id="footer-privacidad">Política de Privacidad</a>
-                    <a href="#" id="footer-cookies">Cookies</a>
-                    <a href="#" id="footer-descargo">Descargo de Responsabilidad</a>
-                </div>
-                <div class="footer-copyright">
-                    <p id="footer-copyright">© 2025 FINOVA. Todos los derechos reservados.</p>
+            <div class="enlaces-pie">
+                <h4>Simuladores</h4>
+                <ul>
+                    <li><a href="#">Ahorros</a></li>
+                    <li><a href="#">Préstamos</a></li>
+                    <li><a href="#">Hipotecas</a></li>
+                    <li><a href="#">Jubilación</a></li>
+                    <li><a href="#">Inversiones</a></li>
+                </ul>
+            </div>
+            
+            <div class="enlaces-pie">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Guías</a></li>
+                    <li><a href="#">Calculadoras</a></li>
+                    <li><a href="#">Glosario</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            
+            <div class="enlaces-pie">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Equipo</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                    <li><a href="#">Transparencia</a></li>
+                </ul>
+            </div>
+            
+            <div class="boletin-pie">
+                <h4>Suscríbete a nuestro boletín</h4>
+                <form class="formulario-boletin">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="boton-boletin">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="pie-inferior">
+            <div class="contenedor-pie-inferior">
+                <p class="copyright">© 2025 Finova. Todos los derechos reservados.</p>
+                <div class="enlaces-legales">
+                    <a href="#">Términos de uso</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Cookies</a>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <script src="../js/simuladores.js"></script>
 </body>
