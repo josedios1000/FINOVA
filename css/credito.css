@@ -496,39 +496,42 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    /* Sombra para efecto elevado */
 }
 
+/*recuadro de conceptos */
 .cuadro-conceptos {
-    background-color: var(--dark-blue);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 1200px;
-    font-family: var(--fuente-principal);
+    background-color: var(--dark-blue);             /* Fondo oscuro */
+    border-radius: 10px;                            /* Bordes redondeados */
+    padding: 20px;                                  /* Espaciado interno */
+    margin: 20px auto;                              /* Margen automático para centrar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);     /* Sombra suave */
+    max-width: 1200px;                              /* Ancho máximo */
+    font-family: var(--fuente-principal);           /* Fuente principal */
 }
 
+/* Título dentro del cuadro de conceptos */
 .cuadro-conceptos h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-align: center;
-    background: linear-gradient(45deg, #ff922d, #ff5e2d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    font-size: 3rem;                                              /* Tamaño de fuente grande */
+    font-weight: 700;                                             /* Peso de la fuente */
+    margin-bottom: 10px;                                          /* Espacio inferior */
+    text-align: center;                                           /* Alineación centrada */
+    background: linear-gradient(45deg, #ff922d, #ff5e2d);     /* Degradado de color */
+    -webkit-background-clip: text;                                /* Clip del fondo al texto */
+    -webkit-text-fill-color: transparent;                         /* Relleno del texto transparente */
+    background-clip: text;                                        /* Clip del fondo al texto */
+    color: transparent;                                           /* Color transparente para el texto */
 }
 
+/* Estilo de cada recuadro de concepto dentro del cuadro de conceptos */
   .concepto {
-    background-color: #fff; /* Fondo blanco para que contraste */
-    border-left: 10px solid #ff922d; /* Linea lateral verde */
-    padding: 1rem 1.5rem; /* Espaciado interno */
-    margin-bottom: 2rem; /* Espacio entre entradas */
-    box-shadow: 0 2px 5px var(--light-color); /* Sombra suave para dar profundidad */
-    border-radius: 5px; /* Bordes redondeados */
-    text-align: left; /* Alineación del texto a la izquierda */
-    font-family: var(--fuente-principal);
-    font-size: 1.6rem; /* Tamaño de fuente */
-    color: var(--color-fondo); /* Color del texto */
+    background-color: #fff;                    /* Fondo blanco para que contraste */
+    border-left: 10px solid #ff922d;           /* Linea lateral verde */
+    padding: 1rem 1.5rem;                        /* Espaciado interno */
+    margin-bottom: 2rem;                         /* Espacio entre entradas */
+    box-shadow: 0 2px 5px var(--light-color);    /* Sombra suave para dar profundidad */
+    border-radius: 5px;                          /* Bordes redondeados */
+    text-align: left;                            /* Alineación del texto a la izquierda */
+    font-family: var(--fuente-principal);        /* Fuente principal */
+    font-size: 1.6rem;                           /* Tamaño de fuente */
+    color: var(--color-fondo);                   /* Color del texto */
   }
 
 /* Mejoras responsive */
