@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINOVA | Simulador de Ahorros Inteligente</title>
+    <link rel="stylesheet" href="ahorro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="logo-container">
+                <i class="fas fa-piggy-bank logo-icon"></i>
+                <h1>Finova<span>Wealth</span></h1>
+            </div>
+            <p class="tagline">Simulación financiera avanzada</p>
+        </header>
+
+        <main class="dashboard">
+            <section class="control-panel glassmorphism">
+                <h2><i class="fas fa-sliders-h"></i> Parámetros de Simulación</h2>
+                
+                <div class="input-group">
+                    <label for="ahorro-inicial">
+                        <i class="fas fa-wallet"></i> Ahorro inicial ($)
+                    </label>
+                    <input type="number" id="ahorro-inicial" value="10000" min="0">
+                </div>
+                
+                <div class="input-group">
+                    <label for="aporte-mensual">
+                        <i class="fas fa-calendar-plus"></i> Aporte mensual ($)
+                    </label>
+                    <input type="number" id="aporte-mensual" value="500" min="0">
+                </div>
+                
+                <div class="input-group">
+                    <label for="rendimiento">
+                        <i class="fas fa-chart-line"></i> Rendimiento anual (%)
+                    </label>
+                    <input type="number" id="rendimiento" value="8" step="0.1" min="0">
+                </div>
+                
+                <div class="input-group">
+                    <label for="periodo">
+                        <i class="fas fa-clock"></i> Período (años)
+                    </label>
+                    <input type="number" id="periodo" value="5" min="1" max="30">
+                </div>
+                
+                <div class="input-group">
+                    <label for="inflacion">
+                        <i class="fas fa-money-bill-wave"></i> Inflación anual (%)
+                    </label>
+                    <input type="number" id="inflacion" value="3" step="0.1" min="0">
+                </div>
+                
+                <button id="simular-btn" class="btn-primary">
+                    <i class="fas fa-rocket"></i> Simular Proyección
+                </button>
+                
+                <button id="reiniciar-btn" class="btn-secondary">
+                    <i class="fas fa-redo"></i> Reiniciar
+                </button>
+            </section>
+
+            <section class="results-panel glassmorphism">
+                <h2><i class="fas fa-chart-pie"></i> Resultados de la Simulación</h2>
+                
+                <div class="kpi-container">
+                    <div class="kpi-box">
+                        <div class="kpi-value" id="total-acumulado">$0</div>
+                        <div class="kpi-label">Total acumulado</div>
+                        <div class="kpi-trend up"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+                    
+                    <div class="kpi-box">
+                        <div class="kpi-value" id="total-aportes">$0</div>
+                        <div class="kpi-label">Total aportado</div>
+                        <div class="kpi-trend steady"><i class="fas fa-equals"></i></div>
+                    </div>
+                    
+                    <div class="kpi-box">
+                        <div class="kpi-value" id="ganancia-inversion">$0</div>
+                        <div class="kpi-label">Ganancias</div>
+                        <div class="kpi-trend up"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="proyeccionChart"></canvas>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="tab-detalles">
+                        <i class="fas fa-table"></i> Detalles
+                    </button>
+                    <button class="tab-btn" data-tab="tab-analisis">
+                        <i class="fas fa-chart-bar"></i> Análisis
+                    </button>
+                    <button class="tab-btn" data-tab="tab-exportar">
+                        <i class="fas fa-file-export"></i> Exportar
+                    </button>
+                </div>
+                
+                <div class="tab-content active" id="tab-detalles">
+                    <div class="table-container">
+                        <table id="resultados-table">
+                            <thead>
+                                <tr>
+                                    <th>Año</th>
+                                    <th>Aportes</th>
+                                    <th>Intereses</th>
+                                    <th>Balance</th>
+                                    <th>Balance (aj. inflación)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Datos se llenarán con JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab-analisis">
+                    <div class="analisis-container">
+                        <p>Análisis avanzado de tu proyección de ahorros...</p>
+                        <!-- Más contenido de análisis -->
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab-exportar">
+                    <div class="exportar-container">
+                        <button class="btn-exportar">
+                            <i class="fas fa-file-pdf"></i> Exportar a PDF
+                        </button>
+                        <button class="btn-exportar">
+                            <i class="fas fa-file-csv"></i> Exportar a CSV
+                        </button>
+                        <button class="btn-exportar">
+                            <i class="fas fa-file-excel"></i> Exportar a Excel
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="app-footer">
+            <p>© 2025 FINOVA | Simulador de Ahorros Avanzado</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
+                <a href="#"><i class="fas fa-shield-alt"></i> Privacidad</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="simulador.js"></script>
+    <script src="grafica.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
