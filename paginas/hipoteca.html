@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINOVA | Simulador de Hipoteca Inteligente</title>
+    <link rel="stylesheet" href="../css/hipoteca.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="logo-container">
+                <i class="fas fa-home logo-icon"></i>
+                <h1>Finova<span>Mortgage</span></h1>
+            </div>
+            <p class="tagline">Simulación hipotecaria avanzada</p>
+        </header>
+
+        <main class="dashboard">
+            <!-- Panel de Control -->
+            <section class="control-panel glassmorphism">
+                <h2><i class="fas fa-sliders-h"></i> Parámetros del Préstamo</h2>
+                
+                <div class="input-group">
+                    <label for="valor-propiedad">
+                        <i class="fas fa-dollar-sign"></i> Valor de la propiedad ($)
+                    </label>
+                    <input type="number" id="valor-propiedad" value="500000" min="100000" step="10000">
+                </div>
+                
+                <div class="input-group">
+                    <label for="enganche">
+                        <i class="fas fa-hand-holding-usd"></i> Enganche (%)
+                    </label>
+                    <input type="number" id="enganche" value="20" min="5" max="50" step="1">
+                </div>
+                
+                <div class="input-group">
+                    <label for="monto-prestamo">
+                        <i class="fas fa-money-bill-wave"></i> Monto del préstamo ($)
+                    </label>
+                    <input type="number" id="monto-prestamo" readonly>
+                </div>
+                
+                <div class="input-group">
+                    <label for="plazo">
+                        <i class="fas fa-calendar-alt"></i> Plazo (años)
+                    </label>
+                    <input type="number" id="plazo" value="20" min="5" max="30">
+                </div>
+                
+                <div class="input-group">
+                    <label for="tasa-interes">
+                        <i class="fas fa-percentage"></i> Tasa de interés anual (%)
+                    </label>
+                    <input type="number" id="tasa-interes" value="7.5" step="0.1" min="0">
+                </div>
+                
+                <div class="input-group">
+                    <label for="tipo-interes">
+                        <i class="fas fa-random"></i> Tipo de interés
+                    </label>
+                    <select id="tipo-interes">
+                        <option value="fijo">Fijo</option>
+                        <option value="variable">Variable</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="seguro-hogar">
+                        <i class="fas fa-shield-alt"></i> Seguro del hogar anual ($)
+                    </label>
+                    <input type="number" id="seguro-hogar" value="1200" min="0">
+                </div>
+                
+                <button id="simular-btn" class="btn-primary">
+                    <i class="fas fa-calculator"></i> Calcular Hipoteca
+                </button>
+                
+                <button id="reiniciar-btn" class="btn-secondary">
+                    <i class="fas fa-redo"></i> Reiniciar
+                </button>
+            </section>
+
+            <!-- Panel de Resultados -->
+            <section class="results-panel glassmorphism">
+                <h2><i class="fas fa-chart-pie"></i> Resultados de la Simulación</h2>
+                
+                <div class="kpi-container">
+                    <div class="kpi-box">
+                        <div class="kpi-value" id="pago-mensual">$0</div>
+                        <div class="kpi-label">Pago mensual</div>
+                        <div class="kpi-trend up"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+                    
+                    <div class="kpi-box">
+                        <div class="kpi-value" id="total-intereses">$0</div>
+                        <div class="kpi-label">Total intereses</div>
+                        <div class="kpi-trend up"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+                    
+                    <div class="kpi-box">
+                        <div class="kpi-value" id="costo-total">$0</div>
+                        <div class="kpi-label">Costo total</div>
+                        <div class="kpi-trend up"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="hipotecaChart"></canvas>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="tab-amortizacion">
+                        <i class="fas fa-table"></i> Amortización
+                    </button>
+                    <button class="tab-btn" data-tab="tab-resumen">
+                        <i class="fas fa-info-circle"></i> Resumen
+                    </button>
+                    <button class="tab-btn" data-tab="tab-comparar">
+                        <i class="fas fa-balance-scale"></i> Comparar
+                    </button>
+                </div>
+                
+                <div class="tab-content active" id="tab-amortizacion">
+                    <div class="table-container">
+                        <table id="amortizacion-table">
+                            <thead>
+                                <tr>
+                                    <th>Año</th>
+                                    <th>Pago anual</th>
+                                    <th>Capital</th>
+                                    <th>Interés</th>
+                                    <th>Saldo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Datos se llenarán con JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab-resumen">
+                    <div class="resumen-container">
+                        <div class="resumen-card">
+                            <h3><i class="fas fa-home"></i> Detalles de la Propiedad</h3>
+                            <div class="resumen-item">
+                                <span>Valor de la propiedad:</span>
+                                <span id="res-valor">$0</span>
+                            </div>
+                            <div class="resumen-item">
+                                <span>Enganche:</span>
+                                <span id="res-enganche">$0 (0%)</span>
+                            </div>
+                            <div class="resumen-item">
+                                <span>Monto prestado:</span>
+                                <span id="res-monto">$0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="resumen-card">
+                            <h3><i class="fas fa-file-invoice-dollar"></i> Detalles del Préstamo</h3>
+                            <div class="resumen-item">
+                                <span>Plazo:</span>
+                                <span id="res-plazo">0 años</span>
+                            </div>
+                            <div class="resumen-item">
+                                <span>Tasa de interés:</span>
+                                <span id="res-tasa">0% (Fijo)</span>
+                            </div>
+                            <div class="resumen-item">
+                                <span>Pago mensual:</span>
+                                <span id="res-pago">$0</span>
+                            </div>
+                            <div class="resumen-item">
+                                <span>Seguro del hogar:</span>
+                                <span id="res-seguro">$0/año</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab-comparar">
+                    <div class="comparar-container">
+                        <div class="comparar-card">
+                            <h3><i class="fas fa-exchange-alt"></i> Comparar con otro escenario</h3>
+                            <div class="input-group">
+                                <label for="comparar-enganche">Enganche (%)</label>
+                                <input type="number" id="comparar-enganche" value="20" min="5" max="50">
+                            </div>
+                            <div class="input-group">
+                                <label for="comparar-plazo">Plazo (años)</label>
+                                <input type="number" id="comparar-plazo" value="20" min="5" max="30">
+                            </div>
+                            <div class="input-group">
+                                <label for="comparar-tasa">Tasa de interés (%)</label>
+                                <input type="number" id="comparar-tasa" value="7.5" step="0.1">
+                            </div>
+                            <button id="comparar-btn" class="btn-secondary">
+                                <i class="fas fa-balance-scale"></i> Comparar
+                            </button>
+                        </div>
+                        <div class="comparacion-resultados" id="comparacion-resultados">
+                            <!-- Resultados de comparación -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="app-footer">
+            <p>© 2023 NexusMortgage | Simulador de Hipotecas Avanzado</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
+                <a href="#"><i class="fas fa-shield-alt"></i> Privacidad</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/hipoteca.js"></script>
+    <script src="../js/grafica-hipo.js"></script>
+    <script src="../js/main-hipo.js"></script>
+</body>
+</html>
