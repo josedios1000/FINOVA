@@ -94,10 +94,32 @@ class Aplicacion {
         this.menuMovil = new MenuMovil();
         this.formularioBoletin = new FormularioBoletin();
         this.testimonioSlider = new TestimonioSlider();
-        
+
+        this.mostrarFraseMotivacional(); // Mostrar frase motivacional al iniciar
         this.iniciarEventosGlobales();
     }
-    
+
+    // Método para mostrar una frase motivacional aleatoria
+    mostrarFraseMotivacional() {
+        const frases = [
+            '"La libertad no se hereda, se construye. Día a día, peso a peso."',
+            '"El dinero no duerme, y la deuda tampoco. Aprende o paga el precio."',
+            '"No estás cansado. Estás cómodo. Y la comodidad es cara."',
+            '"Invertir en ti no es motivación. Es obligación."',
+            '"Tus finanzas reflejan tus decisiones, no tu suerte."',
+            '"Cada peso que gastas sin pensar es un voto en contra de tu futuro."',
+            '"El conocimiento es caro, pero la ignorancia es impagable."',
+            '"Hay errores que solo comete quien no estudia."',
+            '"El mejor momento para empezar a mejorar tus finanzas es ahora."',
+            '"Educarte no es una opción. Es tu única defensa."',
+        ];
+        const frase = frases[Math.floor(Math.random() * frases.length)];
+        const blockquote = document.getElementById('frase-motivacional');
+        if (blockquote) {
+            blockquote.textContent = frase;
+        }
+    }
+
     iniciarEventosGlobales() {
         // Smooth scrolling para enlaces internos
         document.querySelectorAll('a[href^="#"]').forEach(enlace => {
