@@ -595,3 +595,33 @@ body {
 .boton-tema {
     right: 20px;
 }
+
+/* Estilos para mensajes de error */
+.mensaje-error {
+    color: var(--error) !important;
+    font-size: 0.8rem !important;
+    margin-top: 5px !important;
+    animation: aparecer 0.3s ease-out;
+}
+
+/* Estilo para correo válido */
+.correo-valido {
+    border-color: var(--secundario) !important;
+}
+
+/* Estilo para correo inválido */
+.correo-invalido {
+    border-color: var(--error) !important;
+}
+
+/* Animación para el icono de éxito */
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.fa-check-circle {
+    animation: latido 0.5s ease-in-out;
+    color: var(--secundario);
+}
