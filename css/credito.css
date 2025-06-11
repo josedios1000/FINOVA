@@ -1,25 +1,34 @@
 /* ===== VARIABLES Y ESTILOS BASE ===== */
 :root {
-    /* Colores */
-    --color-fondo: #0000006d;
-    --color-fondo-secundario: #131313;
-    --color-texto: white;
-    --color-principal: #ff922d;
-    --primary-color: #2c3e50;
-    --secondary-color: #ff922d;
-    --accent-color: #e74c3c;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --success-color: #27ae60;
-    --warning-color: #f39c12;
-    --dark-blue: #1a1a2e;
+    /* Colores principales */
+    --color-primario: #2c3e50;
+    --color-secundario: #ff6b35;
+    --color-accento: #e74c3c;
+    --color-fondo: #f8f9fa;
+    --color-texto: #333333;
+    --color-texto-claro: #ffffff;
+    --color-borde: #e0e0e0;
+    
+    /* Degradados */
+    --degradado-naranja: linear-gradient(135deg, #ff6b35, #ff922d);
+    --degradado-azul: linear-gradient(135deg, #2c3e50, #4a6491);
+    
+    /* Sombras */
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 8px 15px rgba(0, 0, 0, 0.1);
+    --sombra-intensa: 0 10px 25px rgba(0, 0, 0, 0.15);
     
     /* Tipografía */
-    --fuente-principal: 'Inter', sans-serif;
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-texto: 'Poppins', sans-serif;
     
-    /* Tamaños */
-    --header-height: 80px;
-    --sidebar-width: 250px;
+    /* Bordes */
+    --radio-borde: 12px;
+    --radio-borde-pequeno: 8px;
+    
+    /* Transiciones */
+    --transicion-rapida: all 0.3s ease;
+    --transicion-media: all 0.5s ease;
 }
 
 /* ===== RESET Y ESTILOS GLOBALES ===== */
@@ -27,103 +36,78 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--fuente-principal);
 }
 
 html {
     scroll-behavior: smooth;
-    font-size: 63%;
-    height: 100%;
+    font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
-    font-family: var(--fuente-principal);
-    background-color: #1e293b;
-    color: var(--color-fondo);
-    margin: 0;
-    padding: 0;
-    padding-top: 100px; /* Espacio para la barra de navegación fija */
+    font-family: var(--fuente-texto);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
     line-height: 1.6;
+    padding-top: 8rem;
 }
 
-
-
-/* ===== ESTRUCTURA PRINCIPAL ===== */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    flex: 1;
-    padding-bottom: 40px;
-}
-
-/* ===== CABECERA MEJORADA ===== */
+/* ===== CABECERA ===== */
 .cabecera {
-    background-color: var(--dark-blue);
-    color: var(--light-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: var(--degradado-azul);
+    color: var(--color-texto-claro);
+    box-shadow: var(--sombra-media);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    padding: 15px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: all 0.3s ease;
+    padding: 1.5rem 0;
+    transition: var(--transicion-rapida);
 }
 
-.cabecera-contenido {
+.contenedor {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-
-.logo {
-    display: flex;
     align-items: center;
-    gap: 10px;
 }
 
 .logo h1 {
+    font-family: var(--fuente-titulos);
     font-size: 2.4rem;
-    color: var(--light-color);
     font-weight: 700;
-    margin: 0;
+    margin-bottom: 0.5rem;
 }
 
 .logo h1 span {
-    color: var(--secondary-color);
+    color: var(--color-secundario);
+    font-weight: 600;
 }
 
 .logo p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.8;
 }
 
 .navegacion ul {
     display: flex;
-    gap: 30px;
     list-style: none;
+    gap: 3rem;
 }
 
 .navegacion a {
-    color: var(--light-color);
+    color: var(--color-texto-claro);
     text-decoration: none;
-    font-weight: 600;
     font-size: 1.6rem;
-    padding: 8px 0;
+    font-weight: 500;
+    padding: 0.5rem 0;
     position: relative;
-    transition: color 0.3s ease;
+    transition: var(--transicion-rapida);
 }
 
 .navegacion a:hover {
-    color: var(--secondary-color);
+    color: var(--color-secundario);
 }
 
 .navegacion a::after {
@@ -133,8 +117,8 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--secondary-color);
-    transition: width 0.3s ease;
+    background: var(--color-secundario);
+    transition: var(--transicion-rapida);
 }
 
 .navegacion a:hover::after,
@@ -146,425 +130,441 @@ body {
     display: none;
     background: none;
     border: none;
+    color: var(--color-texto-claro);
     font-size: 2.5rem;
-    color: var(--light-color);
     cursor: pointer;
 }
 
-/* Responsive */
+/* ===== CONTENIDO PRINCIPAL ===== */
+.contenedor-principal {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0 6rem;
+}
+
+/* Sección Hero */
+.seccion-hero {
+    background: var(--degradado-azul);
+    color: var(--color-texto-claro);
+    padding: 6rem 4rem;
+    border-radius: var(--radio-borde);
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.seccion-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    transform: rotate(30deg);
+}
+
+.seccion-hero h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.seccion-hero p {
+    font-size: 1.8rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.icono-desplazamiento {
+    font-size: 3rem;
+    color: var(--color-texto-claro);
+    cursor: pointer;
+    animation: flotar 2s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* Separador */
+.separador {
+    text-align: center;
+    margin: 4rem 0;
+    position: relative;
+}
+
+.separador p {
+    font-family: var(--fuente-titulos);
+    font-size: 2.2rem;
+    color: var(--color-primario);
+    display: inline-block;
+    padding: 0 2rem;
+    background-color: var(--color-fondo);
+    position: relative;
+    z-index: 1;
+}
+
+.separador::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--color-borde);
+    z-index: 0;
+}
+
+/* Tarjetas de Conceptos */
+.tarjetas-conceptos {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 4rem 0;
+    flex-wrap: wrap;
+}
+
+.tarjeta-concepto {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    perspective: 1000px;
+}
+
+.contenido-tarjeta {
+    background: white;
+    border-radius: var(--radio-borde);
+    padding: 3rem;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion-media);
+    transform-style: preserve-3d;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-concepto:hover .contenido-tarjeta {
+    transform: translateY(-10px);
+    box-shadow: var(--sombra-intensa);
+}
+
+.encabezado-tarjeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.encabezado-tarjeta h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.4rem;
+    color: var(--color-primario);
+}
+
+.encabezado-tarjeta .icono {
+    font-size: 3rem;
+    color: var(--color-secundario);
+}
+
+.descripcion-tarjeta {
+    font-size: 1.6rem;
+    color: var(--color-texto);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.efecto-hover {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: var(--degradado-naranja);
+    color: white;
+    padding: 2rem;
+    border-radius: 0 0 var(--radio-borde) var(--radio-borde);
+    transition: var(--transicion-media);
+    opacity: 0;
+}
+
+.tarjeta-concepto:hover .efecto-hover {
+    bottom: 0;
+    opacity: 1;
+}
+
+/* Tarjetas Informativas */
+.tarjetas-informativas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin: 4rem 0;
+}
+
+.tarjeta-informativa {
+    background: white;
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion-media);
+}
+
+.tarjeta-informativa:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--sombra-intensa);
+}
+
+.imagen-tarjeta {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.imagen-tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transicion-media);
+}
+
+.filtro-imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: var(--transicion-media);
+}
+
+.tarjeta-informativa:hover .filtro-imagen {
+    background: rgba(44, 62, 80, 0.5);
+}
+
+.contenido-informativo {
+    padding: 2.5rem;
+}
+
+.contenido-informativo h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.2rem;
+    color: var(--color-primario);
+    margin-bottom: 1.5rem;
+}
+
+.contenido-informativo p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.contenido-informativo ul {
+    list-style: none;
+}
+
+.contenido-informativo li {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contenido-informativo li i {
+    color: var(--color-secundario);
+    font-size: 1.8rem;
+    margin-top: 0.3rem;
+}
+
+/* Sección Gráfica */
+.seccion-grafica {
+    background: white;
+    border-radius: var(--radio-borde);
+    padding: 4rem;
+    margin: 6rem 0;
+    box-shadow: var(--sombra-suave);
+}
+
+.contenedor-grafica {
+    text-align: center;
+}
+
+.contenedor-grafica h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.8rem;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.contenedor-grafica p {
+    font-size: 1.6rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+#grafica-comparativa {
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: var(--radio-borde-pequeno);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+}
+
+.boton-primario {
+    background: var(--degradado-naranja);
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: var(--radio-borde-pequeno);
+    cursor: pointer;
+    transition: var(--transicion-rapida);
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.boton-primario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+}
+
+.boton-primario i {
+    font-size: 2rem;
+}
+
+.informacion-grafica {
+    background: #f5f7fa;
+    border-radius: var(--radio-borde-pequeno);
+    padding: 2.5rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.informacion-grafica h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 2rem;
+    color: var(--color-primario);
+    margin-bottom: 1.5rem;
+}
+
+.informacion-grafica p {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Glosario de Términos */
+.glosario-terminos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.termino {
+    background: white;
+    border-radius: var(--radio-borde-pequeno);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion-rapida);
+}
+
+.termino:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+}
+
+.icono-termino {
+    font-size: 3rem;
+    color: var(--color-secundario);
+    margin-bottom: 1.5rem;
+}
+
+.termino h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.termino p {
+    font-size: 1.4rem;
+    color: #666;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .navegacion {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-primario);
+        padding: 2rem;
+        box-shadow: var(--sombra-media);
+    }
+    
+    .navegacion.mostrar {
+        display: block;
+    }
+    
+    .navegacion ul {
+        flex-direction: column;
+        gap: 1.5rem;
     }
     
     .menu-movil {
         display: block;
     }
     
-    .cabecera {
-        padding: 10px 0;
+    .seccion-hero h1 {
+        font-size: 3.5rem;
     }
     
-    .logo h1 {
-        font-size: 2rem;
-    }
-}
-
-/* ===== CONTENIDO ===== */
-
-/* titulo del texto "credito y deudas" */
-.cuadro-entrada{
-    background: var(--dark-blue);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    max-width: 1200px;
-    font-family: var(--fuente-principal);
-}
-.cuadro-entrada h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-align: center;
-    background: linear-gradient(45deg, #ff922d, #ff5e2d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-}
-
-.cuadro-entrada p{
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--color-texto);
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-
-}
-
-/*cuadros de explicacion de credito y deudas */
-.cuadros-descripcion {
-    display: flex;
-    justify-content: center;
-    gap: 32px;         /* Espacio entre los cuadros */
-    margin: 32px 0;
-}
-
-/* Estilo de los cuadros */
-.cuadro {
-    width: 450px;
-    height: 250px;
-    padding: 15px;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center;     /* Centra horizontalmente */
-    text-align: center;
-    font-family: var(--fuente-principal);
-}
-
-/* Estilo de la capa que cubre el cuadro */
-.capa {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--dark-blue);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Estilo del título dentro de la capa */
-.capa h2{
-    color:#ff5e2d;
-}
-
-/* Estilo del título dentro del cuadro */
-.titulo {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
-}
-
-/* Estilo de la descripción dentro del cuadro */
-.descripcion {
-    color: white;
-    font-size: 1.3rem;
-    text-align: center;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.3s ease;
-    margin-top: 0;
-}
-
-/* Efecto hover para los cuadros, agrandarlos */
-.cuadro:hover {
-    transform: scale(1.05);
-}
-
-/* Efecto hover para la capa, cambiar el color del fondo a uno mas claro*/
-.cuadro:hover .capa {
-    background:#26294a;
-}
-
-/* Efecto hover para el título dentro de la capa, cambiar el color */
-.cuadro:hover .capa h2{
-    color: var(--color-principal);
-}
-
-/* Efecto hover para mostrar la descripción */
-.cuadro:hover .descripcion {
-    max-height: 100px;
-    opacity: 1;
-    margin-top: 15px;
-}
-
-/* Separador entre secciones */
-.separador {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    font-family: var(--fuente-principal);
-}
-
-/* Estilo del texto dentro del separador */
-.separador p{
-    font-family: var(--fuente-principal);
-    font-size: 2.3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--color-texto);
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-
-}
-
-/* estructura de las tarjetas explicativas */
-.tarjetas-explicativas{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-
-}
-
-/* Estilo de las tarjetas */
-.tarjeta {
-    background-color: white;                    /* Color de fondo */
-    border-radius: 8px;                           /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   /* Sombra sutil */
-    overflow: hidden;                             /* Oculta el desbordamiento */
-    transition: transform 0.3s ease;              /* Transición suave para el efecto hover */
-    margin-left: 10px;                            /* Margen izquierdo para separación */
-    margin-right: 10px;                           /* Margen derecho para separación */
-    font-family: var(--fuente-principal);         /* Fuente principal */
-}
-
-/* Efecto de sombra y elevación al pasar el mouse por las tarjetas */
-.tarjeta:hover {
-    transform: translateY(-5px);       /* Eleva la tarjeta al pasar el mouse */
-}
-
-/* Estilo del recuadro donde va la imagen dentro de la tarjeta */
-.tarjeta-imagen {
-    height: 180px;                     /* Altura fija para la imagen */
-    overflow: hidden;                  /* Oculta el desbordamiento */
-    background-color:#2c3e50 ;       /* Color de fondo */
-    display: flex;                     /* Flexbox para centrar la imagen */
-    align-items: center;               /* Centra verticalmente */
-    justify-content: center;           /* Centra horizontalmente */
-}
-
-/* Estilo de la imagen dentro de la tarjeta */
-.tarjeta-imagen img {
-    width: 100%;                      /* Ancho completo */
-    height: 100%;                     /* Alto completo */
-    object-fit: cover;                /* Mantiene la proporción de la imagen */
-}
-
-/* Estilo del contenido dentro de la tarjeta */
-.tarjeta-contenido {
-    padding: 25px;                   /* Espaciado interno */
-}
-
-/* Estilo del texto dentro de la tarjeta */
-.tarjeta-contenido h2 {
-    font-size: 2.5rem;               /* Tamaño de fuente */
-    margin-bottom: 20px;             /* Espacio inferior */
-    color: #2c3e50;                /* Color del texto */
-    font-weight: 700;                /* Peso de la fuente */
-    text-align: center;              /* Alineación del texto */
-    font-weight: bold;               /* Negrita */
-}
-
-/* Estilo del texto dentro de la tarjeta */
-.tarjeta-contenido p {
-    font-size: 1.7rem;              /* Tamaño de fuente */
-    color: #5d6464;               /* Color del texto */
-    line-height: 2.3rem;            /* Espacio entre líneas */
-    margin-bottom: 10px;            /* Espacio inferior */
-}
-
-/* Estilo de la lista dentro de la tarjeta */
-.tarjeta-contenido ul {
-    margin-left: 20px;             /* Sangría para la lista */
-    margin-bottom: 15px;           /* Espacio inferior */
-    font-size: 1.5rem;             /* Tamaño de fuente */
-    line-height: 2.5rem;           /* Espacio entre líneas */
-}
-
-.tarjeta-imagen img {
-    width: 100%;                     /* Ancho completo */
-    height: 100%;                    /* Alto completo */
-    object-fit: cover;               /* Mantiene la proporción de la imagen */
-    transition: transform 0.3s ease; /* Transición suave para el efecto de zoom */
-}
-
-.tarjeta:hover .tarjeta-imagen img {
-    transform: scale(1.05);             /* Efecto de zoom al pasar el mouse */
-}
-
-/* Contenedor principal de la grafica */
-.contenedorgrafica {
-  width: 100%;                  /* Ancho aumentado para mejor visualización */
-  max-width: 1200px;            /* Ancho máximo */
-  margin-bottom: 20px;          /* Espacio inferior */
-  border-radius: 8px;           /* Bordes redondeados */
-  display: flex;                /* Flex para centrar contenido */
-  flex-direction: column;       /* Columna para apilar elementos */
-  align-items: center;          /* Centrar elementos */
-  justify-content: center;      /* Centrar contenido */
-  font-family: var(--fuente-principal);
-}
-
-/* Estilo del título dentro del contenedor de la gráfica */
-.contenedorgrafica h1 {
-  background:var(--dark-blue);
-  color:var(--accent-color);
-  padding: 20px;
-  border-radius: 8px;              /* Bordes redondeados */
-  font-size: 3rem;                  /* Tamaño de fuente grande */
-  margin-bottom: 20px;
-  margin-top: 50px;
-}
-
-/* Estilos para el boton */
-#boton-simular {
-  padding: 12px 24px;                                   /* Espaciado interno */
-  margin-top: 24px;                                     /* Espacio superior */
-  font-size: 18px;                                      /* Tamaño de fuente */
-  border: none;                                         /* Sin borde */
-  background-color: #ff922d;                          /* boton naranja */
-  color: white;                                       /* Color del texto */
-  border-radius: 6px;                                   /* Bordes redondeados */
-  cursor: pointer;                                      /* Cambia el cursor al pasar por encima */
-  transition: background-color 0.3s, transform 0.3s;    /* Transiciones suaves */
-
-}
-
-/* Efecto hover para el boton */
-#boton-simular:hover {
-  background-color: #ff922d;     /* Color de fondo al pasar el mouse */
-  color: #1e293b;                /* Color del texto al pasar el mouse */
-  transform: scale(1.05);          /* Efecto de escala al pasar el mouse */
-}
-
-/* Estilos para el texto explicativo de la grafica */
-.info-box {
-  background-color: #fff;                  /* Fondo blanco */
-  border: 1px solid #ddd;                  /* Borde sutil */
-  text-align: center;                        /* Centrar texto */
-  padding: 15px;                             /* Espaciado interno */
-  max-width: 800px;                          /* Ancho máximo */
-  margin-top: 20px;                          /* Espacio superior */
-  border-radius: 8px;                        /* Bordes redondeados */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05); /* Sombra sutil */
-  margin-bottom: 20px;                        /* Espacio inferior */
-}
-
-/* Estilos para el texto dentro de la info-box */
-.info-box h3 {
-  font-size: 2.3rem;                    /* Tamaño de fuente grande */
-  margin-bottom: 10px;                  /* Espacio inferior */
-    color: #1e293b;                   /* Color del texto */
-}
-
-.info-box p {
-  font-size: 1.8rem;               /* Tamaño de fuente */
-  margin-bottom: 10px;             /* Espacio inferior */
-  color: #1e293b;                /* Color del texto */
-}
-
-.info-box h1 {
-  font-size: 2.5rem;              /* Tamaño de fuente grande */
-  margin-bottom: 10px;            /* Espacio inferior */
-}
-
-/* Ajusta el tamaño del div donde se dibuja la gráfica */
-#container {
-  width: 800px;                                 /* Ancho aumentado para mejor visualización */
-  height: 500px;                                /* Alto aumentado para mejor visualización */
-  min-width: 300px;                             /* Ancho mínimo */
-  min-height: 300px;                            /* Alto mínimo */
-  margin: 0 auto;                               /* Centrar el contenedor */
-  border-radius: 8px;                           /* Bordes redondeados */
-  border: 1px solid #ddd;                     /* Borde sutil */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    /* Sombra para efecto elevado */
-}
-
-/*recuadro de conceptos */
-.cuadro-conceptos {
-    background-color: var(--dark-blue);             /* Fondo oscuro */
-    border-radius: 10px;                            /* Bordes redondeados */
-    padding: 20px;                                  /* Espaciado interno */
-    margin: 20px auto;                              /* Margen automático para centrar */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);     /* Sombra suave */
-    max-width: 1200px;                              /* Ancho máximo */
-    font-family: var(--fuente-principal);           /* Fuente principal */
-}
-
-/* Título dentro del cuadro de conceptos */
-.cuadro-conceptos h2 {
-    font-size: 3rem;                                              /* Tamaño de fuente grande */
-    font-weight: 700;                                             /* Peso de la fuente */
-    margin-bottom: 10px;                                          /* Espacio inferior */
-    text-align: center;                                           /* Alineación centrada */
-    background: linear-gradient(45deg, #ff922d, #ff5e2d);     /* Degradado de color */
-    -webkit-background-clip: text;                                /* Clip del fondo al texto */
-    -webkit-text-fill-color: transparent;                         /* Relleno del texto transparente */
-    background-clip: text;                                        /* Clip del fondo al texto */
-    color: transparent;                                           /* Color transparente para el texto */
-}
-
-/* Estilo de cada recuadro de concepto dentro del cuadro de conceptos */
-  .concepto {
-    background-color: #fff;                    /* Fondo blanco para que contraste */
-    border-left: 10px solid #ff922d;           /* Linea lateral verde */
-    padding: 1rem 1.5rem;                        /* Espaciado interno */
-    margin-bottom: 2rem;                         /* Espacio entre entradas */
-    box-shadow: 0 2px 5px var(--light-color);    /* Sombra suave para dar profundidad */
-    border-radius: 5px;                          /* Bordes redondeados */
-    text-align: left;                            /* Alineación del texto a la izquierda */
-    font-family: var(--fuente-principal);        /* Fuente principal */
-    font-size: 1.6rem;                           /* Tamaño de fuente */
-    color: var(--color-fondo);                   /* Color del texto */
-  }
-
-/* Mejoras responsive */
-@media (max-width: 768px) {
-    .cuadro-entrada h1 {
-        font-size: 3rem;
+    .tarjetas-conceptos {
+        flex-direction: column;
+        align-items: center;
     }
     
-    .cuadro-entrada p,
-    .separador p {
-        font-size: 1.6rem;
+    .tarjeta-concepto {
+        width: 100%;
     }
     
-    .tarjetas-explicativas {
-        grid-template-columns: 1fr;
-    }
-    
-    .tarjeta {
-        margin: 0 0 20px 0;
+    .seccion-grafica {
+        padding: 2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .cuadro-entrada h1 {
-        font-size: 2.5rem;
+    .seccion-hero h1 {
+        font-size: 2.8rem;
     }
     
-    .tarjeta-contenido h2 {
+    .seccion-hero p {
+        font-size: 1.6rem;
+    }
+    
+    .separador p {
+        font-size: 1.8rem;
+    }
+    
+    .contenido-informativo h2 {
         font-size: 2rem;
-    }
-    
-    .tarjeta-contenido p,
-    .tarjeta-contenido li {
-        font-size: 1.5rem;
     }
 }
