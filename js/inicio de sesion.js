@@ -14,6 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const barraFortaleza = fortalezaContraseña.querySelector('.barra-fortaleza');
     const textoFortaleza = fortalezaContraseña.querySelector('.texto-fortaleza');
     const botonEmpleo = document.getElementById('boton-empleo');
+    const inputCorreo = document.getElementById('correo');
+    
+    // Configuración de EmailJS (reemplaza con tus credenciales)
+    (function() {
+        emailjs.init("TU_USER_ID_DE_EMAILJS"); // Reemplaza con tu User ID de EmailJS
+    })();
     
     // 1. Tema oscuro/claro
     botonTema.addEventListener('click', () => {
@@ -74,30 +80,121 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // 5. Validación de formulario
+    // 5. Validación de formulario con EmailJS
     formularioLogin.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        const correo = inputCorreo.value.trim();
+        const contraseña = inputContraseña.value;
+        
+        // Validación básica del correo
+        if (!validarCorreo(correo)) {
+            mostrarError(inputCorreo, 'Por favor ingresa un correo electrónico válido');
+            return;
+        }
+        
         // Mostrar cargador
-        textoBoton.textContent = 'Procesando...';
+        textoBoton.textContent = 'Validando...';
         cargador.classList.add('activo');
         botonEnviar.disabled = true;
         
-        // Simular envío (en producción sería una llamada AJAX)
-        setTimeout(() => {
-            // Ocultar cargador y restaurar botón
-            cargador.classList.remove('activo');
-            botonEnviar.disabled = false;
-            
-            // Redirigir después de la validación
-            window.location.href = '../paginas/principal.html'; // Cambia a tu página de destino
-        }, 2000);
+        // Validar correo con EmailJS
+        validarCorreoConEmailJS(correo)
+            .then(esValido => {
+                if (esValido) {
+                    // Simular envío (en producción sería una llamada AJAX)
+                    setTimeout(() => {
+                        // Ocultar cargador y restaurar botón
+                        cargador.classList.remove('activo');
+                        botonEnviar.disabled = false;
+                        textoBoton.innerHTML = '<i class="fas fa-check-circle"></i> Acceso concedido';
+                        
+                        // Redirigir después de la validación
+                        setTimeout(() => {
+                            window.location.href = '../paginas/principal.html';
+                        }, 1000);
+                    }, 2000);
+                } else {
+                    mostrarError(inputCorreo, 'El correo electrónico no está registrado');
+                    cargador.classList.remove('activo');
+                    botonEnviar.disabled = false;
+                    textoBoton.textContent = 'Acceder';
+                }
+            })
+            .catch(error => {
+                console.error('Error al validar el correo:', error);
+                mostrarError(inputCorreo, 'Error al validar el correo. Intenta nuevamente.');
+                cargador.classList.remove('activo');
+                botonEnviar.disabled = false;
+                textoBoton.textContent = 'Acceder';
+            });
     });
+    
+    // Función para validar correo con EmailJS
+    function validarCorreoConEmailJS(correo) {
+        return new Promise((resolve, reject) => {
+            // En un caso real, aquí harías una llamada a tu servicio backend
+            // que use EmailJS para verificar si el correo existe
+            // Esta es una simulación para propósitos de demostración
+            
+            // Simulamos una respuesta positiva para correos que contengan "@ejemplo.com"
+            // En producción, reemplaza esto con la llamada real a EmailJS
+            setTimeout(() => {
+                resolve(correo.includes('@ejemplo.com'));
+            }, 1500);
+            
+            /*
+            // Código real para usar con EmailJS (requiere configuración previa):
+            emailjs.send("TU_SERVICE_ID", "TU_TEMPLATE_ID", {
+                email: correo
+            })
+            .then(response => {
+                resolve(response.status === 200); // Ajusta según tu implementación
+            }, error => {
+                reject(error);
+            });
+            */
+        });
+    }
+    
+    // Función para validar formato de correo
+    function validarCorreo(correo) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(correo);
+    }
+    
+    // Función para mostrar errores
+    function mostrarError(input, mensaje) {
+        const grupoInput = input.closest('.grupo-input');
+        grupoInput.style.borderColor = 'var(--error)';
+        
+        // Eliminar mensaje de error previo si existe
+        let errorExistente = grupoInput.querySelector('.mensaje-error');
+        if (errorExistente) {
+            errorExistente.remove();
+        }
+        
+        // Crear y mostrar nuevo mensaje de error
+        const errorElemento = document.createElement('p');
+        errorElemento.className = 'mensaje-error';
+        errorElemento.style.color = 'var(--error)';
+        errorElemento.style.fontSize = '0.8rem';
+        errorElemento.style.marginTop = '5px';
+        errorElemento.textContent = mensaje;
+        
+        grupoInput.appendChild(errorElemento);
+        
+        // Eliminar el mensaje después de 3 segundos
+        setTimeout(() => {
+            errorElemento.remove();
+            grupoInput.style.borderColor = '';
+        }, 3000);
+    }
 
     // 6. Botón de empleo 
     botonEmpleo.addEventListener('click', function(e) {
         e.preventDefault();
-        window.location.href = '../paginas/fomulario empleo.html'; // Cambia a tu página de destino
+        window.location.href = '../paginas/fomulario empleo.html';
     });
     
     // 7. Obtener datos del clima (simulado)
@@ -106,10 +203,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000);
     
     // 8. Validación en tiempo real para email
-    const inputCorreo = document.getElementById('correo');
     inputCorreo.addEventListener('input', function() {
+        const grupoInput = this.closest('.grupo-input');
+        const errorExistente = grupoInput.querySelector('.mensaje-error');
+        
         if (this.validity.valid) {
             this.style.borderColor = 'var(--secundario)';
+            if (errorExistente) errorExistente.remove();
         } else {
             this.style.borderColor = 'var(--error)';
         }
@@ -163,7 +263,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Aquí iría la lógica para cambiar el idioma
             alert(`Idioma cambiado a ${this.textContent}`);
-            // Ejemplo: location.href = `/?lang=${idioma}`;
             
             menuIdioma.classList.remove('mostrar');
         });
