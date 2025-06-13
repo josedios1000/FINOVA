@@ -154,7 +154,7 @@ img {
 }
 
 .hero-contenido {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -167,7 +167,7 @@ blockquote {
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
