@@ -38,6 +38,7 @@
     box-sizing: border-box;
 }
 
+/*estilo del html y body*/ 
 html {
     scroll-behavior: smooth;
     font-size: 62.5%; /* 1rem = 10px */
@@ -53,459 +54,513 @@ body {
 
 /* ===== CABECERA ===== */
 .cabecera {
-    background: var(--degradado-azul);
-    color: var(--color-texto-claro);
-    box-shadow: var(--sombra-media);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    padding: 1.5rem 0;
-    transition: var(--transicion-rapida);
+    background: var(--degradado-azul);      /* Degradado azul */
+    color: var(--color-texto-claro);        /* Texto claro */
+    box-shadow: var(--sombra-media);        /* Sombra media */
+    position: fixed;                        /* Fija en la parte superior */
+    width: 100%;                            /* Ancho completo */
+    top: 0;                                 /* Parte superior */
+    z-index: 1000;                          /* Asegura que esté por encima de otros elementos */
+    padding: 1.5rem 0;                      /* Espaciado vertical */
+    transition: var(--transicion-rapida);   /* Transición suave */
 }
 
+/* Contenedor de la cabecera */
 .contenedor {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 90%;                         /* Ancho del contenedor */
+    max-width: 1200px;                  /* Ancho máximo */
+    margin: 0 auto;                     /* Centrado automático */
+    display: flex;                      /* Flexbox para alinear elementos */
+    justify-content: space-between;     /* Espacio entre elementos */
+    align-items: center;                /* Alineación vertical */
 }
 
+/* Logo */
 .logo h1 {
-    font-family: var(--fuente-titulos);
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-family: var(--fuente-titulos);   /* Fuente para el título */
+    font-size: 2.4rem;                    /* Tamaño del título */
+    font-weight: 700;                     /* Peso del título */
+    margin-bottom: 0.5rem;                /* Margen inferior */
 }
 
+/* Logo - parte resaltada */
 .logo h1 span {
-    color: var(--color-secundario);
-    font-weight: 600;
+    color: var(--color-secundario);    /* Color naranja para resaltar */
+    font-weight: 600;                  /* Peso del texto resaltado */
 }
 
+/* Logo - subtítulo */
 .logo p {
-    font-size: 1.2rem;
-    opacity: 0.8;
+    font-size: 1.2rem;              /* Tamaño del subtítulo */
+    opacity: 0.8;                   /* Opacidad del subtítulo */
 }
 
+/* Menu de navegación */
 .navegacion ul {
-    display: flex;
-    list-style: none;
-    gap: 3rem;
+    display: flex;              /* Flexbox para alinear horizontalmente */
+    list-style: none;           /* Sin viñetas */        
+    gap: 3rem;                  /* Espacio entre los enlaces */
 }
 
+/* Elementos de navegación */
 .navegacion a {
-    color: var(--color-texto-claro);
-    text-decoration: none;
-    font-size: 1.6rem;
-    font-weight: 500;
-    padding: 0.5rem 0;
-    position: relative;
-    transition: var(--transicion-rapida);
+    color: var(--color-texto-claro);           /* Color del texto blanco */
+    text-decoration: none;                     /* Sin subrayado */
+    font-size: 1.6rem;                         /* Tamaño del texto */
+    font-weight: 500;                          /* Peso del texto */
+    padding: 0.5rem 0;                         /* Espaciado vertical */
+    position: relative;                        /* Posición relativa para el efecto hover */
+    transition: var(--transicion-rapida);      /* Transición suave */
 }
 
+/* Efecto hover en los enlaces de navegación */
 .navegacion a:hover {
-    color: var(--color-secundario);
+    color: var(--color-secundario);           /* Cambia el color a naranja al pasar el mouse */
 }
 
+/* Enlace activo */
 .navegacion a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-secundario);
-    transition: var(--transicion-rapida);
+    content: '';                               /* Pseudo-elemento para el efecto de subrayado */
+    position: absolute;                        /* Posición absoluta */
+    bottom: 0;                                 /* Parte inferior */
+    left: 0;                                   /* Alineado a la izquierda */
+    width: 0;                                  /* Ancho inicial 0 */
+    height: 2px;                               /* Altura del subrayado */
+    background: var(--color-secundario);       /* Color del subrayado */
+    transition: var(--transicion-rapida);      /* Transición suave */
 }
 
+/* Efecto hover y activo en los enlaces de navegación */
 .navegacion a:hover::after,
 .navegacion a.activo::after {
-    width: 100%;
+    width: 100%;                  /* Ancho completo al pasar el mouse o estar activo */
 }
 
+/* Botón de menú móvil */
 .menu-movil {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--color-texto-claro);
-    font-size: 2.5rem;
-    cursor: pointer;
+    display: none;                      /* Oculto por defecto */
+    background: none;                   /* Sin fondo */
+    border: none;                       /* Sin borde */
+    color: var(--color-texto-claro);    /* Color del icono */
+    font-size: 2.5rem;                  /* Tamaño del icono */
+    cursor: pointer;                    /* Cambia el cursor al pasar por encima */
 }
 
 /* ===== CONTENIDO PRINCIPAL ===== */
+
+/* Define el ancho máximo y centra el contenido principal de la página */
 .contenedor-principal {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0 6rem;
+    width: 90%;               /* Ancho del contenedor */
+    max-width: 1200px;        /* Ancho máximo */
+    margin: 0 auto;           /* Centrado automático */
+    padding: 2rem 0 6rem;     /* Espaciado superior e inferior */
 }
 
 /* Sección Hero */
 .seccion-hero {
-    background: var(--degradado-azul);
-    color: var(--color-texto-claro);
-    padding: 6rem 4rem;
-    border-radius: var(--radio-borde);
-    text-align: center;
-    margin-bottom: 4rem;
-    position: relative;
-    overflow: hidden;
+    background: var(--degradado-azul);    /* Degradado azul */
+    color: var(--color-texto-claro);      /* Texto claro */
+    padding: 6rem 4rem;                   /* Espaciado interno */
+    border-radius: var(--radio-borde);    /* Bordes redondeados */
+    text-align: center;                   /* Alineación centrada */
+    margin-bottom: 4rem;                  /* Margen inferior */
+    position: relative;                   /* Posición relativa para el efecto de fondo */
+    overflow: hidden;                     /* Oculta el desbordamiento */
 }
 
+/* Efecto de fondo radial */
 .seccion-hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-    transform: rotate(30deg);
+    content: '';                    /* Pseudo-elemento para el efecto de fondo */
+    position: absolute;             /* Posición absoluta */
+    top: -50%;                      /* Parte superior */
+    right: -50%;                    /* Parte derecha */
+    width: 100%;                    /* Ancho completo */
+    height: 200%;                   /* Altura al doble del contenedor */
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);    /* Degradado radial */
+    transform: rotate(30deg);       /* Rotación para el efecto */
 }
 
+/* Título y párrafo de la sección Hero */
 .seccion-hero h1 {
-    font-family: var(--fuente-titulos);
-    font-size: 4.5rem;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 1;
+    font-family: var(--fuente-titulos);     /* Fuente para el título */
+    font-size: 4.5rem;                      /* Tamaño del título */
+    margin-bottom: 2rem;                    /* Margen inferior */
+    position: relative;                     /* Posición relativa para el efecto de fondo */
+    z-index: 1;                             /* Asegura que el título esté por encima del efecto de fondo */
 }
 
 .seccion-hero p {
-    font-size: 1.8rem;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    position: relative;
-    z-index: 1;
+    font-size: 1.8rem;                      /* Tamaño del párrafo */
+    max-width: 800px;                       /* Ancho máximo del párrafo */
+    margin: 0 auto 3rem;                    /* Centrado automático y margen inferior */
+    position: relative;                     /* Posición relativa para el efecto de fondo */
+    z-index: 1;                             /* Asegura que el párrafo esté por encima del efecto de fondo */
 }
 
+/* Icono de desplazamiento */
 .icono-desplazamiento {
-    font-size: 3rem;
-    color: var(--color-texto-claro);
-    cursor: pointer;
-    animation: flotar 2s ease-in-out infinite;
-    position: relative;
-    z-index: 1;
+    font-size: 3rem;                             /* Tamaño del icono */
+    color: var(--color-texto-claro);             /* Color del icono */
+    cursor: pointer;                             /* Cambia el cursor al pasar por encima */
+    animation: flotar 2s ease-in-out infinite;   /* Animación de flotación */
+    position: relative;                          /* Posición relativa para el efecto de fondo */
+    z-index: 1;                                  /* Asegura que el icono esté por encima del efecto de fondo */
 }
 
+/* Animación de flotación */
 @keyframes flotar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
+    0%, 100% { transform: translateY(0); }    /* Inicio y fin en posición original */
+    50% { transform: translateY(10px); }      /* Mitad de la animación, desplazado hacia abajo */
 }
 
 /* Separador */
 .separador {
-    text-align: center;
-    margin: 4rem 0;
-    position: relative;
+    text-align: center;                /* Alineación centrada */
+    margin: 4rem 0;                    /* Margen superior e inferior */
+    position: relative;                /* Posición relativa para el efecto de fondo */
 }
 
+/* Estilo del texto del separador */
 .separador p {
-    font-family: var(--fuente-titulos);
-    font-size: 2.2rem;
-    color: var(--color-primario);
-    display: inline-block;
-    padding: 0 2rem;
-    background-color: var(--color-fondo);
-    position: relative;
-    z-index: 1;
+    font-family: var(--fuente-titulos);      /* Fuente para el texto */
+    font-size: 2.2rem;                       /* Tamaño del texto */
+    color: var(--color-primario);            /* Color del texto */
+    display: inline-block;                   /* Bloque en línea para centrar */
+    padding: 0 2rem;                         /* Espaciado horizontal */
+    background-color: var(--color-fondo);    /* Fondo blanco */
+    position: relative;                      /* Posición relativa para el efecto de fondo */
+    z-index: 1;                              /* Asegura que el texto esté por encima del efecto de fondo */
 }
 
+/* Línea del separador */
 .separador::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: var(--color-borde);
-    z-index: 0;
+    content: '';                            /* Pseudo-elemento para la línea */
+    position: absolute;                     /* Posición absoluta */
+    top: 50%;                               /* Parte media */
+    left: 0;                                /* Alineado a la izquierda */
+    right: 0;                               /* Alineado a la derecha */
+    height: 1px;                            /* Altura de la línea */
+    background-color: var(--color-borde);   /* Color del borde */
+    z-index: 0;                             /* Asegura que la línea esté por debajo del texto */
 }
 
-/* Tarjetas de Conceptos */
+/* Contenedor general que agrupa todas las tarjetas de conceptos */
 .tarjetas-conceptos {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin: 4rem 0;
-    flex-wrap: wrap;
+    display: flex;                /* Flexbox para alinear tarjetas */
+    justify-content: center;      /* Centra las tarjetas horizontalmente */
+    gap: 3rem;                    /* Espacio entre tarjetas */
+    margin: 4rem 0;               /* Espacio arriba y abajo del bloque de tarjetas */
+    flex-wrap: wrap;              /* Permite que las tarjetas se bajen si no hay espacio */
 }
 
+/* Estilo individual para cada tarjeta */
 .tarjeta-concepto {
-    flex: 1;
-    min-width: 300px;
-    max-width: 450px;
-    perspective: 1000px;
+    flex: 1;                 /* Ocupa el mismo espacio disponible */
+    min-width: 300px;        /* Ancho mínimo de la tarjeta */
+    max-width: 450px;        /* Ancho máximo de la tarjeta */
+    perspective: 1000px;     /* Perspectiva para el efecto 3D */
 }
 
+/* Contenido principal de cada tarjeta */
 .contenido-tarjeta {
-    background: white;
-    border-radius: var(--radio-borde);
-    padding: 3rem;
-    box-shadow: var(--sombra-suave);
-    transition: var(--transicion-media);
-    transform-style: preserve-3d;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+    background: white;                      /* Fondo blanco */
+    border-radius: var(--radio-borde);        /* Bordes redondeados */
+    padding: 3rem;                            /* Espaciado interno */
+    box-shadow: var(--sombra-suave);          /* Sombra suave */
+    transition: var(--transicion-media);      /* Transición suave */
+    transform-style: preserve-3d;             /* Preserva el estilo 3D */
+    height: 100%;                             /* Altura completa de la tarjeta */
+    position: relative;                       /* Posición relativa para el efecto de fondo */
+    overflow: hidden;                         /* Oculta el desbordamiento */
 }
 
+/* Estilo cuando el usuario pasa el mouse sobre la tarjeta */
 .tarjeta-concepto:hover .contenido-tarjeta {
-    transform: translateY(-10px);
-    box-shadow: var(--sombra-intensa);
+    transform: translateY(-10px);                /* Desplaza la tarjeta hacia arriba */
+    box-shadow: var(--sombra-intensa);           /* Sombra intensa al pasar el mouse */
 }
 
+/* Encabezado dentro de la tarjeta */
 .encabezado-tarjeta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+    display: flex;                             /* Flexbox para alinear elementos */
+    justify-content: space-between;            /* Espacio entre título e icono */
+    align-items: center;                       /* Alineación vertical */
+    margin-bottom: 2rem;                       /* Margen inferior */
 }
 
+/* Título y icono del encabezado */
 .encabezado-tarjeta h2 {
-    font-family: var(--fuente-titulos);
-    font-size: 2.4rem;
-    color: var(--color-primario);
+    font-family: var(--fuente-titulos);       /* Fuente para el título */
+    font-size: 2.4rem;                        /* Tamaño del título */
+    color: var(--color-primario);             /* Color del título */
 }
 
+/* Icono del encabezado */
 .encabezado-tarjeta .icono {
-    font-size: 3rem;
-    color: var(--color-secundario);
+    font-size: 3rem;                       /* Tamaño del icono */
+    color: var(--color-secundario);        /* Color naranja para el icono */
 }
 
+/* Imagen de la tarjeta */
 .descripcion-tarjeta {
-    font-size: 1.6rem;
-    color: var(--color-texto);
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 1;
+    font-size: 1.6rem;                    /* Tamaño del texto de descripción */
+    color: var(--color-texto);            /* Color del texto */
+    margin-bottom: 2rem;                  /* Margen inferior */
+    position: relative;                   /* Posición relativa para el efecto de fondo */
+    z-index: 1;                           /* Asegura que la descripción esté por encima del efecto de fondo */
 }
 
+/* Imagen de fondo de la tarjeta */
 .efecto-hover {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    right: 0;
-    background: var(--degradado-naranja);
-    color: white;
-    padding: 2rem;
-    border-radius: 0 0 var(--radio-borde) var(--radio-borde);
-    transition: var(--transicion-media);
-    opacity: 0;
+    position: absolute;                                           /* Posición absoluta para el efecto de fondo */
+    bottom: -100%;                                                /* Parte inferior fuera del contenedor */
+    left: 0;                                                      /* Alineado a la izquierda */
+    right: 0;                                                     /* Alineado a los lados */
+    background: var(--degradado-naranja);                         /* Degradado naranja */
+    color: white;                                               /* Texto blanco */
+    padding: 2rem;                                                /* Espaciado interno */
+    border-radius: 0 0 var(--radio-borde) var(--radio-borde);     /* Bordes redondeados en la parte inferior */
+    transition: var(--transicion-media);                          /* Transición suave */
+    opacity: 0;                                                   /* Opacidad inicial 0 */
 }
 
+/* Efecto cuando se pasa el mouse sobre la tarjeta */
 .tarjeta-concepto:hover .efecto-hover {
-    bottom: 0;
-    opacity: 1;
+    bottom: 0;                                              /* Desplaza el efecto hacia arriba */
+    opacity: 1;                                             /* Opacidad completa al pasar el mouse */
 }
 
-/* Tarjetas Informativas */
+/* Contenedor general de las tarjetas informativas */
 .tarjetas-informativas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    margin: 4rem 0;
+    display: grid;                                                    /* grid que se adapta automáticamente al tamaño del contenedor */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));      /* Columnas automáticas con un ancho mínimo */
+    gap: 3rem;                                                        /* Espacio entre tarjetas */
+    margin: 4rem 0;                                                   /* Espacio arriba y abajo del bloque de tarjetas */
 }
 
+/* Estilo base de cada tarjeta informativa */
 .tarjeta-informativa {
-    background: white;
-    border-radius: var(--radio-borde);
-    overflow: hidden;
-    box-shadow: var(--sombra-suave);
-    transition: var(--transicion-media);
+    background: white;                            /* Fondo blanco */
+    border-radius: var(--radio-borde);              /* Bordes redondeados */
+    overflow: hidden;                               /* Oculta el desbordamiento */
+    box-shadow: var(--sombra-suave);                /* Sombra suave */
+    transition: var(--transicion-media);            /* Transición suave */
 }
 
+/* Efecto al pasar el mouse sobre la tarjeta informativa */
 .tarjeta-informativa:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--sombra-intensa);
+    transform: translateY(-10px);                 /* Desplaza la tarjeta hacia arriba */
+    box-shadow: var(--sombra-intensa);            /* Sombra intensa al pasar el mouse */
 }
 
+/* Contenedor de la imagen dentro de la tarjeta */
 .imagen-tarjeta {
-    height: 200px;
-    position: relative;
-    overflow: hidden;
+    height: 200px;                                /* Altura fija para la imagen */
+    position: relative;                           /* Posición relativa para el efecto de fondo */
+    overflow: hidden;                             /* Oculta el desbordamiento */
 }
 
+/* Imagen en sí dentro de la tarjeta informativa */
 .imagen-tarjeta img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transicion-media);
+    width: 100%;                                    /* Ancho completo de la tarjeta */
+    height: 100%;                                   /* Altura completa de la tarjeta */
+    object-fit: cover;                              /* Cubre el área de la tarjeta */
+    transition: var(--transicion-media);            /* Transición suave para el efecto hover */
 }
 
+/* Imagen en sí dentro de la tarjeta informativa */
 .filtro-imagen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-    transition: var(--transicion-media);
+    position: absolute;                            /* Posición absoluta para el filtro */
+    top: 0;                                        /* Parte superior */
+    left: 0;                                       /* Alineado a la izquierda */
+    right: 0;                                      /* Alineado a los lados */
+    bottom: 0;                                     /* Parte inferior */
+    background: rgba(0, 0, 0, 0.2);              /* Filtro oscuro con opacidad */
+    transition: var(--transicion-media);           /* Transición suave para el efecto hover */
 }
 
+/* Efecto al pasar el mouse sobre la tarjeta */
 .tarjeta-informativa:hover .filtro-imagen {
-    background: rgba(44, 62, 80, 0.5);
+    background: rgba(44, 62, 80, 0.5);           /* Filtro oscuro más intenso al pasar el mouse */
 }
 
+/* Contenido de la tarjeta informativa */
 .contenido-informativo {
-    padding: 2.5rem;
+    padding: 2.5rem;                              /* Espaciado interno uniforme */
 }
 
+/* Título de la tarjeta informativa */
 .contenido-informativo h2 {
-    font-family: var(--fuente-titulos);
-    font-size: 2.2rem;
-    color: var(--color-primario);
-    margin-bottom: 1.5rem;
+    font-family: var(--fuente-titulos);           /* Tipografía para títulos */
+    font-size: 2.2rem;                            /* Tamaño grande para el título */
+    color: var(--color-primario);                 /* Color principal del diseño */
+    margin-bottom: 1.5rem;                        /* Margen inferior del título */
 }
 
+/* Párrafos y listas dentro de la tarjeta informativa */
 .contenido-informativo p {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #666;
+    font-size: 1.5rem;                              /* Tamaño de fuente para cuerpo de texto */
+    margin-bottom: 1.5rem;                          /* Espacio entre párrafos */
+    color: #666;                                  /* Color gris para el texto */
 }
 
+/* Listas dentro de la tarjeta informativa */
 .contenido-informativo ul {
-    list-style: none;
+    list-style: none;                             /* Elimina los puntos de lista por defecto */
 }
 
+/* Elementos de lista dentro de la tarjeta informativa */
 .contenido-informativo li {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    font-size: 1.4rem;                            /* Tamaño de fuente ligeramente menor */
+    margin-bottom: 1rem;                          /* Espacio entre ítems */
+    display: flex;                                /* Alinea ícono y texto en fila */
+    align-items: flex-start;                      /* Alinea los ítems arriba */
+    gap: 1rem;                                    /* Espacio entre ícono y texto */
 }
 
+/* Iconos dentro de los elementos de lista */
 .contenido-informativo li i {
-    color: var(--color-secundario);
-    font-size: 1.8rem;
-    margin-top: 0.3rem;
+    color: var(--color-secundario);               /* Color secundario para el ícono */
+    font-size: 1.8rem;                            /* Ícono ligeramente más grande */
+    margin-top: 0.3rem;                           /* Ajuste para alinear con el texto */
 }
 
 /* Sección Gráfica */
 .seccion-grafica {
-    background: white;
-    border-radius: var(--radio-borde);
-    padding: 4rem;
-    margin: 6rem 0;
-    box-shadow: var(--sombra-suave);
+    background: white;                            /* Fondo blanco para resaltar la sección */
+    border-radius: var(--radio-borde);            /* Bordes redondeados personalizados */
+    padding: 4rem;                                 /* Espaciado interno amplio */
+    margin: 6rem 0;                                /* Separación vertical con otras secciones */
+    box-shadow: var(--sombra-suave);              /* Sombra suave para profundidad */
 }
 
+/* Contenedor de la gráfica */
 .contenedor-grafica {
-    text-align: center;
+    text-align: center;                           /* Centra el contenido horizontalmente */
 }
 
+/* Título y párrafo de la gráfica */
 .contenedor-grafica h2 {
-    font-family: var(--fuente-titulos);
-    font-size: 2.8rem;
-    color: var(--color-primario);
-    margin-bottom: 1rem;
+    font-family: var(--fuente-titulos);            /* Tipografía para el título */
+    font-size: 2.8rem;                             /* Tamaño grande para destacar */
+    color: var(--color-primario);                  /* Color principal del título */
+    margin-bottom: 1rem;                           /* Espacio debajo del título */
 }
 
 .contenedor-grafica p {
-    font-size: 1.6rem;
-    color: #666;
-    margin-bottom: 3rem;
+    font-size: 1.6rem;                             /* Tamaño para el texto */
+    color: #666;                                 /* Color gris suave para el texto */
+    margin-bottom: 3rem;                           /* Separación con la gráfica */
 }
 
+/* Estilo del gráfico comparativo */
 #grafica-comparativa {
-    width: 100%;
-    height: 500px;
-    margin: 0 auto;
-    border-radius: var(--radio-borde-pequeno);
-    overflow: hidden;
-    box-shadow: var(--sombra-suave);
+    width: 100%;                                   /* Ocupa todo el ancho disponible */
+    height: 500px;                                 /* Altura fija para la gráfica */
+    margin: 0 auto;                                /* Centrado horizontal */
+    border-radius: var(--radio-borde-pequeno);     /* Bordes redondeados más suaves */
+    overflow: hidden;                              /* Oculta cualquier desbordamiento */
+    box-shadow: var(--sombra-suave);               /* Sombra para destacar el gráfico */
 }
 
+
+/* Estilo del botón simular */
 .boton-primario {
-    background: var(--degradado-naranja);
-    color: white;
-    border: none;
-    padding: 1.2rem 2.5rem;
-    font-size: 1.6rem;
-    font-weight: 600;
-    border-radius: var(--radio-borde-pequeno);
-    cursor: pointer;
-    transition: var(--transicion-rapida);
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 3rem;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    background: var(--degradado-naranja);             /* Fondo con degradado naranja */
+    color: white;                                   /* Texto blanco para contraste */
+    border: none;                                     /* Elimina el borde predeterminado */
+    padding: 1.2rem 2.5rem;                           /* Espaciado interno vertical y horizontal */
+    font-size: 1.6rem;                                /* Tamaño de fuente */
+    font-weight: 600;                                 /* Peso de fuente seminegrita */
+    border-radius: var(--radio-borde-pequeno);        /* Bordes suavemente redondeados */
+    cursor: pointer;                                  /* Cambia el cursor a mano al pasar el mouse */
+    transition: var(--transicion-rapida);             /* Transición suave para efectos al hacer hover */
+    display: inline-flex;                             /* Permite alinear contenido e íconos en línea */
+    align-items: center;                              /* Centra verticalmente el contenido */
+    gap: 1rem;                                        /* Espacio entre el icono y el texto */
+    margin-top: 3rem;                                 /* Separación superior con otros elementos */
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3); /* Sombra suave naranja para profundidad */
 }
 
+/* Efecto hover en el botón simular */
 .boton-primario:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+    transform: translateY(-3px);                   /* Eleva ligeramente el botón al hacer hover */
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4); /* Sombra más intensa para destacar */
 }
 
+/* Icono dentro del botón simular */
 .boton-primario i {
-    font-size: 2rem;
+    font-size: 2rem;                               /* Tamaño más grande para el icono */
 }
 
+
+/* Contenedor de la información de la gráfica */
 .informacion-grafica {
-    background: #f5f7fa;
-    border-radius: var(--radio-borde-pequeno);
-    padding: 2.5rem;
-    margin-top: 3rem;
-    text-align: left;
+    background: #f5f7fa;                          /* Fondo gris claro para diferenciar la sección */
+    border-radius: var(--radio-borde-pequeno);      /* Bordes suavemente redondeados */
+    padding: 2.5rem;                                /* Espaciado interno */
+    margin-top: 3rem;                               /* Separación superior a otros elementos */
+    text-align: left;                               /* Alineación del texto a la izquierda */
 }
 
+/* Título y párrafo de la información de la gráfica */
 .informacion-grafica h3 {
-    font-family: var(--fuente-titulos);
-    font-size: 2rem;
-    color: var(--color-primario);
-    margin-bottom: 1.5rem;
+    font-family: var(--fuente-titulos);             /* Tipografía para subtítulos */
+    font-size: 2rem;                                /* Tamaño medio para subtítulos */
+    color: var(--color-primario);                   /* Color principal del subtítulo */
+    margin-bottom: 1.5rem;                          /* Espacio inferior */
 }
 
 .informacion-grafica p {
-    font-size: 1.5rem;
-    color: #666;
-    margin-bottom: 0;
+    font-size: 1.5rem;                              /* Tamaño de fuente */
+    color: #666;                                  /* Color gris */
+    margin-bottom: 0;                               /* Elimina espacio inferior innecesario */
 }
 
 /* Glosario de Términos */
 .glosario-terminos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
+    display: grid;                                                 /* Disposición en cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));   /* Columnas flexibles según el espacio */
+    gap: 2rem;                                                     /* Espaciado entre columnas */
+    margin-top: 4rem;                                              /* Separación con la sección anterior */
 }
 
+/* Estilo de cada término en el glosario */
 .termino {
-    background: white;
-    border-radius: var(--radio-borde-pequeno);
-    padding: 2rem;
-    text-align: center;
-    box-shadow: var(--sombra-suave);
-    transition: var(--transicion-rapida);
+    background: white;                              /* Fondo blanco para destacar cada término */
+    border-radius: var(--radio-borde-pequeno);        /* Bordes redondeados */
+    padding: 2rem;                                    /* Espaciado interno uniforme */
+    text-align: center;                               /* Centrado de contenido */
+    box-shadow: var(--sombra-suave);                  /* Sombra suave para dar profundidad */
+    transition: var(--transicion-rapida);             /* Transición suave al hacer hover */
 }
 
+/* Efecto hover en los términos del glosario */ 
 .termino:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--sombra-media);
+    transform: translateY(-5px);                    /* Efecto de elevación al pasar el cursor */
+    box-shadow: var(--sombra-media);                /* Sombra más marcada para resaltar */
 }
 
+/* Icono dentro del término */
 .icono-termino {
-    font-size: 3rem;
-    color: var(--color-secundario);
-    margin-bottom: 1.5rem;
+    font-size: 3rem;                                /* Tamaño grande para el icono */
+    color: var(--color-secundario);                 /* Color secundario */
+    margin-bottom: 1.5rem;                          /* Separación inferior con el texto */
 }
 
+/* Título y párrafo dentro del término */
 .termino h3 {
-    font-family: var(--fuente-titulos);
-    font-size: 1.8rem;
-    color: var(--color-primario);
-    margin-bottom: 1rem;
+    font-family: var(--fuente-titulos);            /* Tipografía del título del término */
+    font-size: 1.8rem;                             /* Tamaño de título */
+    color: var(--color-primario);                  /* Color principal */
+    margin-bottom: 1rem;                           /* Espacio debajo del título */
 }
 
 .termino p {
-    font-size: 1.4rem;
-    color: #666;
+    font-size: 1.4rem;                              /* Tamaño para descripción */
+    color: #666;                                  /* Color gris suave */
 }
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
