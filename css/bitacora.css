@@ -1,24 +1,34 @@
 /* ===== VARIABLES Y ESTILOS BASE ===== */
 :root {
-    /* Colores */
-    --color-fondo: #0000006d;
-    --color-fondo-secundario: #131313;
-    --color-texto: white;
-    --color-principal: #ff922d;
-    --primary-color: #2c3e50;
-    --secondary-color: #ff922d;
-    --accent-color: #e74c3c;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --success-color: #27ae60;
-    --warning-color: #f39c12;
+    /* Colores principales */
+    --color-primario: #2c3e50;
+    --color-secundario: #ff6b35;
+    --color-accento: #e74c3c;
+    --color-fondo: #f8f9fa;
+    --color-texto: #333333;
+    --color-texto-claro: #ffffff;
+    --color-borde: #e0e0e0;
+    
+    /* Degradados */
+    --degradado-naranja: linear-gradient(135deg, #ff6b35, #ff922d);
+    --degradado-azul: linear-gradient(135deg, #2c3e50, #4a6491);
+    
+    /* Sombras */
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 8px 15px rgba(0, 0, 0, 0.1);
+    --sombra-intensa: 0 10px 25px rgba(0, 0, 0, 0.15);
     
     /* Tipografía */
-    --fuente-principal: 'Arial', sans-serif;
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-texto: 'Poppins', sans-serif;
     
-    /* Tamaños */
-    --header-height: 80px;
-    --sidebar-width: 250px;
+    /* Bordes */
+    --radio-borde: 12px;
+    --radio-borde-pequeno: 8px;
+    
+    /* Transiciones */
+    --transicion-rapida: all 0.3s ease;
+    --transicion-media: all 0.5s ease;
 }
 
 /* ===== RESET Y ESTILOS GLOBALES ===== */
@@ -26,185 +36,173 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--fuente-principal);
 }
 
+/*estilo del html y body*/ 
 html {
     scroll-behavior: smooth;
-    font-size: 63%;
-    height: 100%;
+    font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
-    font-family: var(--fuente-principal);
-    background-color: var(--color-fondo-secundario);
+    font-family: var(--fuente-texto);
+    background-color: var(--color-fondo);
     color: var(--color-texto);
-    margin: 0;
-    padding: 0;
-    padding-top: 100px; /* Espacio para la barra de navegación fija */
+    line-height: 1.6;
+    padding-top: 8rem;
 }
 
-
-
-/* ===== ESTRUCTURA PRINCIPAL ===== */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    flex: 1;
-}
-
-/* ===== CABECERA MEJORADA ===== */
+/* ===== CABECERA ===== */
 .cabecera {
-    background-color: var(--color-fondo-secundario);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    padding: 15px 0;
-    border-bottom: 1px solid var(--color-principal);
-    transition: all 0.3s ease;
+    background: var(--degradado-azul);      /* Degradado azul */
+    color: var(--color-texto-claro);        /* Texto claro */
+    box-shadow: var(--sombra-media);        /* Sombra media */
+    position: fixed;                        /* Fija en la parte superior */
+    width: 100%;                            /* Ancho completo */
+    top: 0;                                 /* Parte superior */
+    z-index: 1000;                          /* Asegura que esté por encima de otros elementos */
+    padding: 1.5rem 0;                      /* Espaciado vertical */
+    transition: var(--transicion-rapida);   /* Transición suave */
 }
 
-.cabecera .contenedor {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+/* Contenedor de la cabecera */
+.contenedor {
+    width: 90%;                         /* Ancho del contenedor */
+    max-width: 1200px;                  /* Ancho máximo */
+    margin: 0 auto;                     /* Centrado automático */
+    display: flex;                      /* Flexbox para alinear elementos */
+    justify-content: space-between;     /* Espacio entre elementos */
+    align-items: center;                /* Alineación vertical */
 }
 
+/* Logo */
 .logo h1 {
-    font-size: 2.4rem;
-    color: var(--color-texto);
-    margin: 0;
-    font-weight: 700;
+    font-family: var(--fuente-titulos);   /* Fuente para el título */
+    font-size: 2.4rem;                    /* Tamaño del título */
+    font-weight: 700;                     /* Peso del título */
+    margin-bottom: 0.5rem;                /* Margen inferior */
 }
 
+/* Logo - parte resaltada */
 .logo h1 span {
-    color: var(--color-principal);
+    color: var(--color-secundario);    /* Color naranja para resaltar */
+    font-weight: 600;                  /* Peso del texto resaltado */
 }
 
+/* Logo - subtítulo */
 .logo p {
-    font-size: 1rem;
-    color: #aaa;
-    margin: 5px 0 0 0;
+    font-size: 1.2rem;              /* Tamaño del subtítulo */
+    opacity: 0.8;                   /* Opacidad del subtítulo */
 }
 
+/* Menu de navegación */
 .navegacion ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
+    display: flex;              /* Flexbox para alinear horizontalmente */
+    list-style: none;           /* Sin viñetas */        
+    gap: 3rem;                  /* Espacio entre los enlaces */
 }
 
+/* Elementos de navegación */
 .navegacion a {
-    color: var(--color-texto);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.6rem;
-    padding: 5px 0;
-    position: relative;
-    transition: color 0.3s ease;
+    color: var(--color-texto-claro);           /* Color del texto blanco */
+    text-decoration: none;                     /* Sin subrayado */
+    font-size: 1.6rem;                         /* Tamaño del texto */
+    font-weight: 500;                          /* Peso del texto */
+    padding: 0.5rem 0;                         /* Espaciado vertical */
+    position: relative;                        /* Posición relativa para el efecto hover */
+    transition: var(--transicion-rapida);      /* Transición suave */
 }
 
+/* Efecto hover en los enlaces de navegación */
 .navegacion a:hover {
-    color: var(--color-principal);
+    color: var(--color-secundario);           /* Cambia el color a naranja al pasar el mouse */
 }
 
+/* Enlace activo */
 .navegacion a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-principal);
-    transition: width 0.3s ease;
+    content: '';                               /* Pseudo-elemento para el efecto de subrayado */
+    position: absolute;                        /* Posición absoluta */
+    bottom: 0;                                 /* Parte inferior */
+    left: 0;                                   /* Alineado a la izquierda */
+    width: 0;                                  /* Ancho inicial 0 */
+    height: 2px;                               /* Altura del subrayado */
+    background: var(--color-secundario);       /* Color del subrayado */
+    transition: var(--transicion-rapida);      /* Transición suave */
 }
 
+/* Efecto hover y activo en los enlaces de navegación */
 .navegacion a:hover::after,
 .navegacion a.activo::after {
-    width: 100%;
+    width: 100%;                  /* Ancho completo al pasar el mouse o estar activo */
 }
 
+/* Botón de menú móvil */
 .menu-movil {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 2.5rem;
-    color: var(--color-texto);
-    cursor: pointer;
-    transition: color 0.3s ease;
+    display: none;                      /* Oculto por defecto */
+    background: none;                   /* Sin fondo */
+    border: none;                       /* Sin borde */
+    color: var(--color-texto-claro);    /* Color del icono */
+    font-size: 2.5rem;                  /* Tamaño del icono */
+    cursor: pointer;                    /* Cambia el cursor al pasar por encima */
 }
 
-.menu-movil:hover {
-    color: var(--color-principal);
-}
-
-/* Responsive para pantallas pequeñas */
-@media (max-width: 768px) {
-    .navegacion {
-        display: none;
-    }
-    
-    .navegacion.activo {
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-fondo-secundario);
-        padding: 20px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
-    
-    .navegacion.activo ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .menu-movil {
-        display: block;
-    }
+/* ===== CONTENIDO PRINCIPAL ===== */
+/* Define el ancho máximo y centra el contenido principal de la página */
+.contenedor-principal {
+    width: 90%;               /* Ancho del contenedor */
+    max-width: 1200px;        /* Ancho máximo */
+    margin: 0 auto;           /* Centrado automático */
+    padding: 2rem 0 6rem;     /* Espaciado superior e inferior */
 }
 
 .contenedor-titulo {
-    background: var(--color-fondo);
-    border-radius: 10px;
-    padding: 20px;
-    padding-bottom: 20px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    max-width: 700px;
-    text-align: center;
+    background: var(--degradado-azul);    /* Degradado azul */
+    color: var(--color-texto-claro);      /* Texto claro */
+    padding: 4rem 2rem;                   /* Espaciado interno */
+    border-radius: var(--radio-borde);    /* Bordes redondeados */
+    text-align: center;                   /* Alineación centrada */
+    margin-bottom: 4rem;                  /* Margen inferior */
+    position: relative;                   /* Posición relativa para el efecto de fondo */
+    overflow: hidden;                     /* Oculta el desbordamiento */
 }
 
-  /* Estilo del titulo principal */
-  h2 {
-    text-align: center; /* Centrar el titulo */
-    margin-bottom: 2rem; /* Espacio debajo del titulo */
-    color: var(--color-texto); /* Color del titulo */
-    font-size: 3rem; /* Tamaño del título */
-    font-weight: 700;
-  }
+/* Título y párrafo de la sección Hero */
+.contenedor-titulo h1 {
+    font-family: var(--fuente-titulos);     /* Fuente para el título */
+    font-size: 3.5rem;                      /* Tamaño del título */
+    margin-bottom: 2rem;                    /* Margen inferior */
+    position: relative;                     /* Posición relativa para el efecto de fondo */
+    z-index: 1;                             /* Asegura que el título esté por encima del efecto de fondo */
+}
   
   /* Contenedor general de la bitacora */
   #bitacora {
-    max-width: 800px; /* Ancho de los recuadros de las actualizaciones */
+    max-width: 900px; /* Ancho de los recuadros de las actualizaciones */
     margin: 0 auto; /* Centrar horizontalmente */
+    padding: 2rem; /* Espaciado interno */
+    background: linear-gradient(90deg, #dbe1e5, #a0a4a7); /* Fondo degradado */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: var(--sombra-suave); /* Sombra suave */
+    font-family: var(--fuente-texto) /* Fuente Arial */
   }
     /* Contenedor de la leyenda */
 .leyenda {
   display: flex;
-  gap: 1.5rem;
   align-items: center;
-  padding: 1rem;
-  background-color: #292929; /* fondo oscuro */
+  justify-content: space-evenly;
+  padding: 1.5rem;
+  background-color: #5d5f63; /* fondo oscuro */
   border-radius: 8px;
   color: #ffffff;
   font-family: sans-serif;
+  max-width: 800px; /* Ancho máximo de la leyenda */
+  margin: 2rem auto; /* Centrar horizontalmente y margen vertical */
+}
+
+.leyenda span {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #ffffff; /* texto blanco */
 }
 
 .leyenda-item {
@@ -215,24 +213,24 @@ body {
 
 /* Estilo de los puntos de la leyenda */
 .leyenda-punto {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 20%;
 }
 
 /* Colores del punto de cambio menor */
 .leyenda-punto.menor {
-  background-color: #7C7C7C; /* gris claro */
+  background-color: #8d98a4; /* gris claro */
 }
 
 /* Colores del punto de cambio medio */
 .leyenda-punto.medio {
-  background-color: #F97316; /* naranja oscuro */
+  background-color: #ffc06d; /* naranja oscuro */
 }
 
 /* Colores del punto de cambio mayor */
 .leyenda-punto.mayor {
-  background-color: #DC2626; /* rojo vino */
+  background-color: #ff6565; /* rojo vino */
 }
 
 /* Estilo del texto de la leyenda */
@@ -242,23 +240,27 @@ body {
   
   /* Cada entrada de la bitacora */
   .reg-entrada {
-    background-color: #fff; /* Fondo blanco para que contraste */
-    border-left: 10px solid #7C7C7C; /* Linea lateral verde */
+    background: linear-gradient(70deg, #f0f4f8 70%, #dbe1e5 30%); /* Fondo azul claro difuminado */
+    border-left: 10px solid #8d98a4; /* Linea lateral verde */
     padding: 1rem 1.5rem; /* Espaciado interno */
     margin-bottom: 2rem; /* Espacio entre entradas */
     box-shadow: 0 2px 5px var(--light-color); /* Sombra suave para dar profundidad */
     border-radius: 5px; /* Bordes redondeados */
     transition: transform 0.3s ease; /* Transición suave al pasar el mouse */
+    max-width: 800px; /* Ancho máximo de la entrada */
+    margin: 1rem auto; /* Centrar horizontalmente y margen vertical */
   }
   
     /* Estilo del cambio medio */
   .reg-entrada.medio{
-    border-left: 10px solid #F97316 !important; /* Linea lateral naranja */
+    border-left: 10px solid #ffc06d !important; /* Linea lateral naranja */
+    background: linear-gradient(70deg, #fcf6ef 70%, #ffedd9 30%); /* Fondo naranja claro difuminado*/
   }
 
     /* Estilo del cambio mayor */
     .reg-entrada.mayor{
-        border-left: 10px solid #DC2626 !important; /* Linea lateral roja */
+        border-left: 10px solid #ff6565 !important; /* Linea lateral roja */
+        background: linear-gradient(70deg, #fcecec 70%, #ffdfde 30%); /* Fondo rojo claro difuminado*/
     }
   .reg-entrada:hover {
     transform: scale(1.02); /* Aumentar ligeramente al pasar el mouse */
@@ -274,17 +276,18 @@ body {
   
   /* Estilo del titulo del cambio del cambio */
   .reg-titulo {
-    font-size: 1.5rem; /* Tamaño de fuente mas grande */
+    font-size: 1.6rem; /* Tamaño de fuente mas grande */
     font-family: arial;
     margin: 0.5rem 0; /* Espaciado vertical */
-    color: #222222; /* Color oscuro */
+    color: #454545; /* Color oscuro */
+    font-weight: 600; /* Negrita */
   }
 
   /* Estilo de la descripción del cambio */
   .reg-descripcion {
     margin: 0; /* Sin margen */
     color: #111111; /* Color del texto*/
-    font-size: 1.2rem; /* Tamaño de fuente */
+    font-size: 1.3rem; /* Tamaño de fuente */
     font-family: Arial; /* Fuente Arial */
     line-height: 1.3; /* Espaciado entre lineas */
   }
