@@ -1,7 +1,7 @@
 /* Variables de colores y fuentes */
 :root {
     --color-primario: #2c3e50;
-    --color-secundario: #3498db;
+    --color-secundario: #db6634;
     --color-terciario: #e74c3c;
     --color-fondo: #f9f9f9;
     --color-texto: #333;
@@ -122,7 +122,7 @@ a:hover {
 
 /* Hero */
 .hero {
-    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    background: linear-gradient(135deg, var(--color-secundario) 0%, var(--color-secundario) 100%);
     color: white;
     padding: 10rem 0 5rem;
     margin-top: 70px;
