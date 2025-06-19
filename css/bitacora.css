@@ -336,3 +336,29 @@ body {
 
 
 /*====== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .navegacion {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-primario);
+        padding: 2rem;
+        box-shadow: var(--sombra-media);
+    }
+    
+    .navegacion.mostrar {
+        display: block;
+    }
+    
+    .navegacion ul {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+        .menu-movil {
+            display: block;
+        }
+    }

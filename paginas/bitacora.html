@@ -178,6 +178,23 @@
     <p class="copyright">&copy; <span id="año">2025</span> <span data-es="Finova Educación Financiera. Todos los derechos reservados." data-en="Finova Financial Education. All rights reserved.">Finova Educación Financiera. Todos los derechos reservados.</span></p>
 </footer>
 
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="../js/credito.js"></script>
+    <script>
+        // Menú móvil
+        document.getElementById('menuMovil').addEventListener('click', function() {
+            const nav = document.querySelector('.navegacion');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Efecto de desplazamiento suave
+        document.querySelector('.icono-desplazamiento').addEventListener('click', function() {
+            window.scrollBy({
+                top: window.innerHeight * 0.8,
+                behavior: 'smooth'
+            });
+        });
+    </script>
     
 </body>
 </html>
