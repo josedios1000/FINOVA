@@ -93,7 +93,7 @@ body {
 }
 
 .logo h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: white;
     margin: 0;
     font-weight: 700;
@@ -103,7 +103,7 @@ body {
 
 .logo h1 span {
     color: var(--accent);
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .logo p {
@@ -123,7 +123,7 @@ body {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     padding: 8px 0;
     position: relative;
     transition: all 0.3s ease;
